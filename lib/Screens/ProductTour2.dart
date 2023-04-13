@@ -1,17 +1,15 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
-import 'package:realstateapp/Screens/ProductTour2.dart';
+import 'package:realstateapp/Screens/ProductTour3.dart';
 
-class ProductTour1 extends StatefulWidget {
-  const ProductTour1({Key? key}) : super(key: key);
+class ProductTour2 extends StatefulWidget {
+  const ProductTour2({Key? key}) : super(key: key);
 
   @override
-  State<ProductTour1> createState() => _ProductTour1State();
+  State<ProductTour2> createState() => _ProductTour2State();
 }
 
-class _ProductTour1State extends State<ProductTour1> {
+class _ProductTour2State extends State<ProductTour2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,25 +54,28 @@ class _ProductTour1State extends State<ProductTour1> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Find best Place",
+                      Text("Fast sell your property",
                           style: ThemeData.light()
                               .textTheme
                               .labelMedium!
                               .copyWith(
-                                  fontSize: 25, fontWeight: FontWeight.bold)),
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: ColorTheme.darkblue)),
                       Row(
                         children: [
-                          Text("to stay in",
+                          Text("in just",
                               style: ThemeData.light()
                                   .textTheme
                                   .labelMedium!
                                   .copyWith(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 25)),
+                                      fontSize: 25,
+                                      color: ColorTheme.darkblue)),
                           const SizedBox(
                             width: 4,
                           ),
-                          Text("good price",
+                          Text("one click",
                               style: ThemeData.light()
                                   .textTheme
                                   .labelMedium!
@@ -114,7 +115,7 @@ class _ProductTour1State extends State<ProductTour1> {
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(55)),
                   image: DecorationImage(
-                    image: AssetImage('images/product1.png'),
+                    image: AssetImage('images/Product2.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -129,7 +130,7 @@ class _ProductTour1State extends State<ProductTour1> {
                     const SizedBox(
                       width: 100,
                       child: LinearProgressIndicator(
-                        value: 0.3,
+                        value: 0.6,
                         backgroundColor: Colors.grey,
                         valueColor:
                             AlwaysStoppedAnimation<Color>(ColorTheme.white),
@@ -150,7 +151,7 @@ class _ProductTour1State extends State<ProductTour1> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const ProductTour2()));
+                                  builder: (context) => const ProductTour3()));
                         },
                         child: Text(
                           "Next",

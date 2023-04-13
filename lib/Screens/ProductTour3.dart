@@ -1,17 +1,15 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Screens/ProductTour2.dart';
 
-class ProductTour1 extends StatefulWidget {
-  const ProductTour1({Key? key}) : super(key: key);
+class ProductTour3 extends StatefulWidget {
+  const ProductTour3({Key? key}) : super(key: key);
 
   @override
-  State<ProductTour1> createState() => _ProductTour1State();
+  State<ProductTour3> createState() => _ProductTour3State();
 }
 
-class _ProductTour1State extends State<ProductTour1> {
+class _ProductTour3State extends State<ProductTour3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +36,13 @@ class _ProductTour1State extends State<ProductTour1> {
                       backgroundColor:
                           MaterialStateProperty.all(ColorTheme.grey),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ProductTour2(),
+                          ));
+                    },
                     child: Text(
                       "skip",
                       style: ThemeData.light()
@@ -56,41 +60,51 @@ class _ProductTour1State extends State<ProductTour1> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Find best Place",
-                          style: ThemeData.light()
-                              .textTheme
-                              .labelMedium!
-                              .copyWith(
-                                  fontSize: 25, fontWeight: FontWeight.bold)),
                       Row(
                         children: [
-                          Text("to stay in",
-                              style: ThemeData.light()
-                                  .textTheme
-                                  .labelMedium!
-                                  .copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 25)),
-                          const SizedBox(
-                            width: 4,
-                          ),
-                          Text("good price",
+                          Text("Find",
                               style: ThemeData.light()
                                   .textTheme
                                   .labelMedium!
                                   .copyWith(
                                       fontSize: 25,
                                       fontWeight: FontWeight.bold,
-                                      color: ColorTheme.blueaccess))
+                                      color: ColorTheme.darkblue)),
+                          const SizedBox(width: 4),
+                          Text("perfect choice",
+                              style: ThemeData.light()
+                                  .textTheme
+                                  .labelMedium!
+                                  .copyWith(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold,
+                                      color: ColorTheme.blueaccess)),
+                          const SizedBox(width: 4),
+                          Text("for",
+                              style: ThemeData.light()
+                                  .textTheme
+                                  .labelMedium!
+                                  .copyWith(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold,
+                                      color: ColorTheme.darkblue)),
                         ],
                       ),
+                      Text("your future house",
+                          style: ThemeData.light()
+                              .textTheme
+                              .labelMedium!
+                              .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 25,
+                                  color: ColorTheme.darkblue)),
                       const SizedBox(height: 20),
                       Text("lorem ipsum dolar sit amet, consectetur",
                           style: ThemeData.light()
                               .textTheme
                               .labelMedium!
                               .copyWith(fontSize: 12)),
-                      Text("adipiscing elit, sed",
+                      Text("adipiscing elit, sed.",
                           style: ThemeData.light()
                               .textTheme
                               .labelMedium!
@@ -114,7 +128,7 @@ class _ProductTour1State extends State<ProductTour1> {
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(55)),
                   image: DecorationImage(
-                    image: AssetImage('images/product1.png'),
+                    image: AssetImage('images/Product3.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -129,7 +143,7 @@ class _ProductTour1State extends State<ProductTour1> {
                     const SizedBox(
                       width: 100,
                       child: LinearProgressIndicator(
-                        value: 0.3,
+                        value: 1,
                         backgroundColor: Colors.grey,
                         valueColor:
                             AlwaysStoppedAnimation<Color>(ColorTheme.white),
@@ -146,12 +160,7 @@ class _ProductTour1State extends State<ProductTour1> {
                           backgroundColor:
                               MaterialStateProperty.all(ColorTheme.deepaccent),
                         ),
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const ProductTour2()));
-                        },
+                        onPressed: () {},
                         child: Text(
                           "Next",
                           style: AppTheme.lightTheme().textTheme.labelMedium,
