@@ -102,103 +102,106 @@ class _ProductTour2State extends State<ProductTour2> {
             ),
           ]),
         ),
-        Stack(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                  left: 7,
-                  right: 7,
-                  bottom: 4,
-                  top: MediaQuery.of(context).size.height / 33),
-              child: Container(
-                height: MediaQuery.of(context).size.height / 1.63,
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(55)),
-                  image: DecorationImage(
-                    image: AssetImage('images/Product2.png'),
-                    fit: BoxFit.cover,
+        Expanded(
+          flex: 1,
+          child: Stack(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 7,
+                    right: 7,
+                    bottom: 4,
+                    top: MediaQuery.of(context).size.height / 33),
+                child: Container(
+                  height: MediaQuery.of(context).size.height / 1.63,
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(55)),
+                    image: DecorationImage(
+                      image: AssetImage('images/Product2.png'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Center(
-              child: Padding(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 1.9),
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      width: 100,
-                      child: LinearProgressIndicator(
-                        value: 0.6,
-                        backgroundColor: Colors.grey,
-                        valueColor:
-                            AlwaysStoppedAnimation<Color>(ColorTheme.white),
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height / 2.2),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        width: 100,
+                        child: LinearProgressIndicator(
+                          value: 0.6,
+                          backgroundColor: Colors.grey,
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(ColorTheme.white),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 5.9),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 54,
-                            width: 54,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30.0)),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProductTour1(),));
-                              },
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: ColorTheme.white,
-                                  shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              )),
-                              child: const Center(
-                                  child: Image(
-                                image: AssetImage('images/Vector.png'),
-                                height: 30,
-                                width: 30,
-                              )),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 16,
-                          ),
-                          SizedBox(
-                            height: 54,
-                            width: 210,
-                            child: ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    ColorTheme.deepaccent),
-                              ),
-                              onPressed: () {
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const ProductTour3()));
-                              },
-                              child: Text(
-                                "Next",
-                                style:
-                                    AppTheme.lightTheme().textTheme.labelMedium,
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 5.9),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 54,
+                              width: 54,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30.0)),
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProductTour1(),));
+                                },
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: ColorTheme.white,
+                                    shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                )),
+                                child: const Center(
+                                    child: Image(
+                                  image: AssetImage('images/Vector.png'),
+                                  height: 30,
+                                  width: 30,
+                                )),
                               ),
                             ),
-                          ),
-                        ],
+                            SizedBox(
+                              width: 7,
+                            ),
+                            SizedBox(
+                              height: 54,
+                              width: 210,
+                              child: ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                      ColorTheme.deepaccent),
+                                ),
+                                onPressed: () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ProductTour3()));
+                                },
+                                child: Text(
+                                  "Next",
+                                  style:
+                                      AppTheme.lightTheme().textTheme.labelMedium,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     ));
