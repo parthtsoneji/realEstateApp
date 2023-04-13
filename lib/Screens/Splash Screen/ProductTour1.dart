@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
-import 'package:realstateapp/Screens/ProductTour2.dart';
+import 'package:realstateapp/Screens/Splash%20Screen/ProductTour2.dart';
 
 class ProductTour1 extends StatefulWidget {
   const ProductTour1({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:realstateapp/Screens/ProductTour2.dart';
-import 'package:realstateapp/Screens/SplashScreen.dart';
+import 'package:realstateapp/Screens/Splash%20Screen/ProductTour2.dart';
+import 'package:realstateapp/Screens/Splash%20Screen/SplashScreen.dart';
 
 void main() {
   runApp(const MyApp());

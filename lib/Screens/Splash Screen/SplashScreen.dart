@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:realstateapp/Screens/ProductTour1.dart';
-import '../AppTheme/Theme.dart';
+import 'package:realstateapp/Screens/Splash%20Screen/ProductTour1.dart';
+import '../../AppTheme/Theme.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
