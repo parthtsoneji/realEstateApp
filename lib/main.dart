@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:realstateapp/Screens/Splash%20Screen/ProductTour2.dart';
-import 'package:realstateapp/Screens/Splash%20Screen/SplashScreen.dart';
+import 'package:realstateapp/Screens/Login%20Ui/LoginForm4.dart';
+import 'package:realstateapp/Screens/Login%20Ui/LoginOption.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: LoginForm4(),
     );
   }
 }

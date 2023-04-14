@@ -143,7 +143,7 @@ class _ProductTour2State extends State<ProductTour2> {
                         height: 10,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 5.9),
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 8),
                         child: Row(
                           children: [
                             Container(

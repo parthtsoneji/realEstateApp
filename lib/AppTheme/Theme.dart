@@ -18,10 +18,12 @@ class ColorTheme {
   static const deepaccent = Color(0xFF8BC83F);
   static const white = Color(0xFFE5E5E5);
   static const green = Color(0xFF8BC83F);
+  static const white1 = Color(0xFFF5F4F8);
   static const orablue = Color(0xFF21628A);
   static const hexablue = Color(0xFF1F4C6B);
   static const grey = Color(0xFFDFDFDF);
   static const black = Colors.black;
   static const blueaccess = Color(0xFF204D6C);
   static const darkblue = Color(0xFF252B5C);
+  static const darktype = Color(0xFF53587A);
 }

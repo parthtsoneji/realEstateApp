@@ -155,7 +155,7 @@ class _ProductTour3State extends State<ProductTour3> {
                         height: 10,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 5.9),
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 8),
                         child: Row(
                           children: [
                             Container(
@@ -165,7 +165,7 @@ class _ProductTour3State extends State<ProductTour3> {
                                   borderRadius: BorderRadius.circular(30.0)),
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProductTour2(),));
+                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ProductTour2(),));
                                 },
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: ColorTheme.white,
@@ -180,7 +180,7 @@ class _ProductTour3State extends State<ProductTour3> {
                                     )),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 7,
                             ),
                             SizedBox(
@@ -196,7 +196,7 @@ class _ProductTour3State extends State<ProductTour3> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                          const ProductTour3()));
+                                          const LoginOption()));
                                 },
                                 child: Text(
                                   "Next",
