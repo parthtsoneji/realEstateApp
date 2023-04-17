@@ -35,10 +35,12 @@ class _OtpScreenState extends State<OtpScreen> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25.0),
                           color: ColorTheme.white1),
-                      child: const Icon(
-                        Icons.arrow_back_ios,
-                        color: ColorTheme.hexablue,
-                        size: 15,
+                      child: const Center(
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: ColorTheme.hexablue,
+                          size: 15,
+                        ),
                       ),
                     ),
                   ),
@@ -59,11 +61,11 @@ class _OtpScreenState extends State<OtpScreen> {
                               .textTheme
                               .labelMedium!
                               .copyWith(
-                                  fontSize: 25, color: ColorTheme.darkblue),
+                                  fontSize: 25, color: ColorTheme.darkblue,fontWeight: FontWeight.w500),
                         ),
                         const SizedBox(width: 5),
                         Text(
-                          "Code",
+                          "code",
                           style: ThemeData.light()
                               .textTheme
                               .labelMedium!
@@ -96,7 +98,6 @@ class _OtpScreenState extends State<OtpScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 24, right: 24),
                 child: OtpTextField(
-                  cursorColor: Colors.green,
                   numberOfFields: 4,
                   textStyle: ThemeData.light()
                       .textTheme
@@ -105,6 +106,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   fieldWidth: MediaQuery.of(context).size.width / 5.5,
                   borderColor: ColorTheme.regterm,
                   showFieldAsBox: true,
+                  cursorColor: Colors.green,
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 4),
@@ -114,22 +116,30 @@ class _OtpScreenState extends State<OtpScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.timer_rounded,
-                          color: ColorTheme.darkblue,
-                          size: 24,
-                        ),
-                        const SizedBox(width: 11),
-                        Text("00:21",
-                            style: ThemeData.light()
-                                .textTheme
-                                .labelSmall!
-                                .copyWith(
-                                    color: ColorTheme.darkblue, fontSize: 17))
-                      ],
+                    Container(
+                      height: 60,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25.0),
+                        color: ColorTheme.white1,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.timer_rounded,
+                            color: ColorTheme.darkblue,
+                            size: 24,
+                          ),
+                          const SizedBox(width: 11),
+                          Text("00:21",
+                              style: ThemeData.light()
+                                  .textTheme
+                                  .labelSmall!
+                                  .copyWith(
+                                      color: ColorTheme.darkblue, fontSize: 17))
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 20),
                     Row(
