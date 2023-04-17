@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages, file_names
+
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
@@ -19,8 +21,8 @@ class _OtpScreenState extends State<OtpScreen> {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width / 30,
-                    top: MediaQuery.of(context).size.height / 90),
+                    left: MediaQuery.of(context).size.width / 18,
+                    top: MediaQuery.of(context).size.height / 35),
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: GestureDetector(
@@ -31,10 +33,13 @@ class _OtpScreenState extends State<OtpScreen> {
                       height: 50,
                       width: 50,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
+                          borderRadius: BorderRadius.circular(25.0),
+                          color: ColorTheme.white1),
+                      child: const Icon(
+                        Icons.arrow_back_ios,
+                        color: ColorTheme.hexablue,
+                        size: 15,
                       ),
-                      child: const Icon(Icons.arrow_back_ios,
-                          color: ColorTheme.hexablue),
                     ),
                   ),
                 ),
@@ -91,11 +96,12 @@ class _OtpScreenState extends State<OtpScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 24, right: 24),
                 child: OtpTextField(
+                  cursorColor: Colors.green,
                   numberOfFields: 4,
                   textStyle: ThemeData.light()
                       .textTheme
                       .labelSmall!
-                      .copyWith(color: ColorTheme.darkblue, fontSize: 20),
+                      .copyWith(color: ColorTheme.darkblue, fontSize: 30),
                   fieldWidth: MediaQuery.of(context).size.width / 5.5,
                   borderColor: ColorTheme.regterm,
                   showFieldAsBox: true,
@@ -116,7 +122,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           color: ColorTheme.darkblue,
                           size: 24,
                         ),
-                        SizedBox(width: 11),
+                        const SizedBox(width: 11),
                         Text("00:21",
                             style: ThemeData.light()
                                 .textTheme
@@ -125,7 +131,7 @@ class _OtpScreenState extends State<OtpScreen> {
                                     color: ColorTheme.darkblue, fontSize: 17))
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -135,16 +141,19 @@ class _OtpScreenState extends State<OtpScreen> {
                               .textTheme
                               .labelLarge!
                               .copyWith(
-                                  fontSize: 17, color: ColorTheme.darktype),
+                                  fontSize:
+                                      MediaQuery.of(context).size.width / 30,
+                                  color: ColorTheme.darktype),
                         ),
-                        SizedBox(width: 4),
+                        const SizedBox(width: 4),
                         Text(
                           "Resend OTP",
                           style: ThemeData.light()
                               .textTheme
                               .labelLarge!
                               .copyWith(
-                                  fontSize: 17,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width / 30,
                                   color: ColorTheme.regterm,
                                   fontWeight: FontWeight.w700),
                         )

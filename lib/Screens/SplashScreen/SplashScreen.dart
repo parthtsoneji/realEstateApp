@@ -1,7 +1,9 @@
+// ignore_for_file: file_names
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:realstateapp/Screens/Splash%20Screen/ProductTour.dart';
+import 'package:realstateapp/Screens/SplashScreen/ProductTour.dart';
 import '../../AppTheme/Theme.dart';
 
 class SplashScreen extends StatefulWidget {

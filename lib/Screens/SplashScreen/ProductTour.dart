@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
-import 'package:realstateapp/Screens/Login%20Ui/LoginOption.dart';
-import 'package:realstateapp/Screens/Splash%20Screen/ProductTourr.dart';
+import 'package:realstateapp/Screens/Login/LoginOption.dart';
+import 'package:realstateapp/Screens/SplashScreen/ProductTourr.dart';
 
 class ProductTour1 extends StatefulWidget {
   const ProductTour1({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _ProductTour1State extends State<ProductTour1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
+        body: SizedBox(
       height: double.infinity,
       width: double.infinity,
       child: Column(
@@ -47,7 +47,7 @@ class _ProductTour1State extends State<ProductTour1> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginOption(),
+                              builder: (context) => const LoginOption(),
                             ));
                       },
                       child: Text(

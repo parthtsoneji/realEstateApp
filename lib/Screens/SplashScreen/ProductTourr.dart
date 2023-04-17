@@ -1,16 +1,20 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
-import 'package:realstateapp/Screens/Login%20Ui/LoginOption.dart';
-import 'package:realstateapp/Screens/Splash%20Screen/ProductTourr.dart';
+import 'package:realstateapp/Screens/Login/LoginOption.dart';
+import 'package:realstateapp/Screens/SplashScreen/ProductTour.dart';
+import 'package:realstateapp/Screens/SplashScreen/ProductTourrr.dart';
 
-class ProductTour3 extends StatefulWidget {
-  const ProductTour3({Key? key}) : super(key: key);
+class ProductTour2 extends StatefulWidget {
+  const ProductTour2({Key? key}) : super(key: key);
 
   @override
-  State<ProductTour3> createState() => _ProductTour3State();
+  State<ProductTour2> createState() => _ProductTour2State();
 }
 
-class _ProductTour3State extends State<ProductTour3> {
+class _ProductTour2State extends State<ProductTour2> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,8 +45,7 @@ class _ProductTour3State extends State<ProductTour3> {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => LoginOption(),
-                          ));
+                              builder: (context) => const LoginOption()));
                     },
                     child: Text(
                       "skip",
@@ -61,51 +64,44 @@ class _ProductTour3State extends State<ProductTour3> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          Text("Find",
-                              style: ThemeData.light()
-                                  .textTheme
-                                  .labelMedium!
-                                  .copyWith(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold,
-                                      color: ColorTheme.darkblue)),
-                          const SizedBox(width: 4),
-                          Text("perfect choice",
-                              style: ThemeData.light()
-                                  .textTheme
-                                  .labelMedium!
-                                  .copyWith(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold,
-                                      color: ColorTheme.blueaccess)),
-                          const SizedBox(width: 4),
-                          Text("for",
-                              style: ThemeData.light()
-                                  .textTheme
-                                  .labelMedium!
-                                  .copyWith(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold,
-                                      color: ColorTheme.darkblue)),
-                        ],
-                      ),
-                      Text("your future house",
+                      Text("Fast sell your property",
                           style: ThemeData.light()
                               .textTheme
                               .labelMedium!
                               .copyWith(
-                                  fontWeight: FontWeight.bold,
                                   fontSize: 25,
+                                  fontWeight: FontWeight.bold,
                                   color: ColorTheme.darkblue)),
+                      Row(
+                        children: [
+                          Text("in just",
+                              style: ThemeData.light()
+                                  .textTheme
+                                  .labelMedium!
+                                  .copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25,
+                                      color: ColorTheme.darkblue)),
+                          const SizedBox(
+                            width: 4,
+                          ),
+                          Text("one click",
+                              style: ThemeData.light()
+                                  .textTheme
+                                  .labelMedium!
+                                  .copyWith(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold,
+                                      color: ColorTheme.blueaccess))
+                        ],
+                      ),
                       const SizedBox(height: 20),
                       Text("lorem ipsum dolar sit amet, consectetur",
                           style: ThemeData.light()
                               .textTheme
                               .labelMedium!
                               .copyWith(fontSize: 12)),
-                      Text("adipiscing elit, sed.",
+                      Text("adipiscing elit, sed",
                           style: ThemeData.light()
                               .textTheme
                               .labelMedium!
@@ -130,7 +126,7 @@ class _ProductTour3State extends State<ProductTour3> {
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(55)),
                     image: DecorationImage(
-                      image: AssetImage('images/Product3.png'),
+                      image: AssetImage('images/Product2.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -145,7 +141,7 @@ class _ProductTour3State extends State<ProductTour3> {
                       child: SizedBox(
                         width: 100,
                         child: LinearProgressIndicator(
-                          value: 1,
+                          value: 0.6,
                           backgroundColor: Colors.grey,
                           valueColor:
                               AlwaysStoppedAnimation<Color>(ColorTheme.white),
@@ -172,7 +168,7 @@ class _ProductTour3State extends State<ProductTour3> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          const ProductTour2(),
+                                          const ProductTour1(),
                                     ));
                               },
                               style: ElevatedButton.styleFrom(
@@ -206,7 +202,7 @@ class _ProductTour3State extends State<ProductTour3> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const LoginOption()));
+                                            const ProductTour3()));
                               },
                               child: Text(
                                 "Next",

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Screens/Register/OTPScreen.dart';
@@ -28,8 +30,8 @@ class _RegisterPageState extends State<RegisterPage> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width / 30,
-                      top: MediaQuery.of(context).size.height / 90),
+                      left: MediaQuery.of(context).size.width / 18,
+                      top: MediaQuery.of(context).size.height / 35),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: GestureDetector(
@@ -41,8 +43,9 @@ class _RegisterPageState extends State<RegisterPage> {
                         width: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25.0),
+                          color: ColorTheme.white1
                         ),
-                        child: const Icon(Icons.arrow_back_ios,
+                        child: const Icon(Icons.arrow_back_ios,size: 15,
                             color: ColorTheme.hexablue),
                       ),
                     ),
@@ -111,9 +114,12 @@ class _RegisterPageState extends State<RegisterPage> {
                       }
                     },
                     controller: nameController,
+                    cursorColor: ColorTheme.green,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: InputDecoration(
                       hintText: 'Full Name',
+                      border: const OutlineInputBorder(
+                        borderSide: BorderSide.none,),
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 25.0, horizontal: 10.0),
                       filled: true,
@@ -126,7 +132,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       prefixIcon: _isShow == false
                           ? IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.person,
                                 color: ColorTheme.darkblue,
                               ),
@@ -135,7 +141,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       suffixIcon: _isShow
                           ? IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.person,
                                 color: ColorTheme.darkblue,
                               ),
@@ -150,6 +156,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       left: MediaQuery.of(context).size.width / 16,
                       right: MediaQuery.of(context).size.width / 16),
                   child: TextFormField(
+                    cursorColor: ColorTheme.green,
                     style: ThemeData.light()
                         .textTheme
                         .labelMedium!
@@ -171,6 +178,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 25.0, horizontal: 10.0),
                       filled: true,
+                      border: const OutlineInputBorder(
+                        borderSide: BorderSide.none,),
                       fillColor: ColorTheme.white1,
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
@@ -180,7 +189,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       prefixIcon: _isEmail == false
                           ? IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.email,
                                 color: ColorTheme.darkblue,
                               ),
@@ -189,7 +198,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       suffixIcon: _isEmail
                           ? IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.email,
                                 color: ColorTheme.darkblue,
                               ),
@@ -204,6 +213,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       left: MediaQuery.of(context).size.width / 16,
                       right: MediaQuery.of(context).size.width / 16),
                   child: TextFormField(
+                    cursorColor: ColorTheme.green,
                     style: ThemeData.light()
                         .textTheme
                         .labelMedium!
@@ -225,6 +235,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 25.0, horizontal: 10.0),
                       filled: true,
+                      border: const OutlineInputBorder(
+                        borderSide: BorderSide.none,),
                       fillColor: ColorTheme.white1,
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
@@ -234,7 +246,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       prefixIcon: _isPass == false
                           ? IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.lock,
                                 color: ColorTheme.darkblue,
                               ),
@@ -243,7 +255,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       suffixIcon: _isPass
                           ? IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.lock,
                                 color: ColorTheme.darkblue,
                               ),
@@ -288,7 +300,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => OtpScreen(),
+                            builder: (context) => const OtpScreen(),
                           ));
                     },
                     child: Text(

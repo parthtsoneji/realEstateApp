@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 
@@ -23,8 +24,8 @@ class _LoginForm4State extends State<LoginForm4> {
           children: [
             Padding(
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width / 30,
-                  top: MediaQuery.of(context).size.height / 90),
+                  left: MediaQuery.of(context).size.width / 18,
+                  top: MediaQuery.of(context).size.height / 35),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: GestureDetector(
@@ -35,10 +36,10 @@ class _LoginForm4State extends State<LoginForm4> {
                     height: 50,
                     width: 50,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25.0),
-                    ),
+                        borderRadius: BorderRadius.circular(25.0),
+                        color: ColorTheme.white1),
                     child: const Icon(Icons.arrow_back_ios,
-                        color: ColorTheme.hexablue),
+                        size: 15, color: ColorTheme.hexablue),
                   ),
                 ),
               ),
@@ -174,10 +175,16 @@ class _LoginForm4State extends State<LoginForm4> {
                   padding: const EdgeInsets.only(left: 30, right: 30),
                   child: TextFormField(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
+                    cursorColor: Colors.green,
                     decoration: InputDecoration(
+                      filled: true,
+                        fillColor: ColorTheme.white1,
                         prefixIcon: const Icon(Icons.search,
                             color: ColorTheme.darkblue),
-                        border: InputBorder.none,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                          borderSide: BorderSide.none,
+                        ),
                         hintStyle: ThemeData.light()
                             .textTheme
                             .labelLarge!
@@ -195,7 +202,10 @@ class _LoginForm4State extends State<LoginForm4> {
                       Container(
                         height: MediaQuery.of(context).size.height / 12,
                         width: MediaQuery.of(context).size.width,
-                        color: ColorTheme.white1,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25.0),
+                          color: ColorTheme.white1,
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -208,9 +218,12 @@ class _LoginForm4State extends State<LoginForm4> {
                               child: Container(
                                 height: MediaQuery.of(context).size.height / 20,
                                 width: MediaQuery.of(context).size.width / 2.8,
-                                color: isBuyerSelected
-                                    ? ColorTheme.white
-                                    : ColorTheme.trasnparent,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25.0),
+                                  color: isBuyerSelected
+                                      ? ColorTheme.white
+                                      : ColorTheme.white1,
+                                ),
                                 child: Center(
                                     child: Text("Buyer",
                                         style: ThemeData.light()
@@ -219,7 +232,7 @@ class _LoginForm4State extends State<LoginForm4> {
                                             .copyWith(
                                                 color: isBuyerSelected
                                                     ? ColorTheme.darkblue
-                                                    : ColorTheme.trasnparent))),
+                                                    : ColorTheme.lightwhite))),
                               ),
                             ),
                             InkWell(
@@ -231,9 +244,12 @@ class _LoginForm4State extends State<LoginForm4> {
                               child: Container(
                                 height: MediaQuery.of(context).size.height / 20,
                                 width: MediaQuery.of(context).size.width / 2.8,
-                                color: !isBuyerSelected
-                                    ? ColorTheme.white
-                                    : ColorTheme.trasnparent,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25.0),
+                                  color: !isBuyerSelected
+                                      ? ColorTheme.white
+                                      : ColorTheme.white1,
+                                ),
                                 child: Center(
                                     child: Text("Estate Agent",
                                         style: ThemeData.light()
@@ -242,7 +258,7 @@ class _LoginForm4State extends State<LoginForm4> {
                                             .copyWith(
                                                 color: !isBuyerSelected
                                                     ? ColorTheme.darkblue
-                                                    : ColorTheme.trasnparent))),
+                                                    : ColorTheme.lightwhite))),
                               ),
                             )
                           ],
@@ -251,78 +267,92 @@ class _LoginForm4State extends State<LoginForm4> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height / 50,
                       ),
-                      ExpansionTile(
-                        trailing: Icon(
-                          isExpanded ? Icons.minimize : Icons.add,
-                          color: ColorTheme.greenadd,
+                      Theme(
+                        data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                        child: ExpansionTile(
+                          trailing: Icon(
+                            isExpanded ? Icons.minimize : Icons.add,
+                            color: ColorTheme.greenadd,
+                          ),
+                          title: Text("What is Rise Real Estate?",
+                              style: ThemeData.light()
+                                  .textTheme
+                                  .labelMedium!
+                                  .copyWith(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 18,
+                                      color: ColorTheme.darkblue)),
+                          children: [
+                            Container(
+                              height: MediaQuery.of(context).size.height / 5,
+                              width: MediaQuery.of(context).size.width / 1.2,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15.0), color: ColorTheme.white1,
+
+                              ),
+                              child: Text(
+                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                                  "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                  " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut. "
+                                  "aliquip ex ea commodo consequat. Duis aute irure dolor.",
+                                  style: ThemeData.light()
+                                      .textTheme
+                                      .labelMedium!
+                                      .copyWith(
+                                          color: ColorTheme.darktype,
+                                          fontSize: 15)),
+                            )
+                          ],
+                          onExpansionChanged: (isExpanded) {
+                            setState(() {
+                              this.isExpanded = isExpanded;
+                            });
+                          },
                         ),
-                        title: Text("What is Rise Real Estate?",
-                            style: ThemeData.light()
-                                .textTheme
-                                .labelMedium!
-                                .copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 18,
-                                    color: ColorTheme.darkblue)),
-                        children: [
-                          Container(
-                            height: MediaQuery.of(context).size.height / 10,
-                            width: MediaQuery.of(context).size.width / 1.2,
-                            child: Text(
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut. "
-                                "aliquip ex ea commodo consequat. Duis aute irure dolor.",
-                                style: ThemeData.light()
-                                    .textTheme
-                                    .labelMedium!
-                                    .copyWith(
-                                        color: ColorTheme.darktype,
-                                        fontSize: 12)),
-                          )
-                        ],
-                        onExpansionChanged: (isExpanded) {
-                          setState(() {
-                            this.isExpanded = isExpanded;
-                          });
-                        },
                       ),
                       const SizedBox(
                         height: 19,
                       ),
-                      ExpansionTile(
-                        trailing: Icon(_isExpanded ? Icons.minimize : Icons.add,
-                            color: ColorTheme.greenadd),
-                        title: Text("Why choose buy in Rise?",
-                            style: ThemeData.light()
-                                .textTheme
-                                .labelMedium!
-                                .copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 18,
-                                    color: ColorTheme.darkblue)),
-                        children: [
-                          Container(
-                            height: MediaQuery.of(context).size.height / 10,
-                            width: MediaQuery.of(context).size.width / 1.4,
-                            child: Text(
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut. "
-                                "aliquip ex ea commodo consequat. Duis aute irure dolor.",
-                                style: ThemeData.light()
-                                    .textTheme
-                                    .labelMedium!
-                                    .copyWith(
-                                        color: ColorTheme.darktype,
-                                        fontSize: 12)),
-                          ),
-                        ],
-                        onExpansionChanged: (_isExpanded) {
-                          setState(() {
-                            this._isExpanded = _isExpanded;
-                          });
-                        },
+                      Theme(
+                        data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                        child: ExpansionTile(
+                          trailing: Icon(_isExpanded ? Icons.minimize : Icons.add,
+                              color: ColorTheme.greenadd),
+                          title: Text("Why choose buy in Rise?",
+                              style: ThemeData.light()
+                                  .textTheme
+                                  .labelMedium!
+                                  .copyWith(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 18,
+                                      color: ColorTheme.darkblue)),
+                          children: [
+                            Container(
+                              height: MediaQuery.of(context).size.height / 5,
+                              width: MediaQuery.of(context).size.width / 1.2,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15.0), color: ColorTheme.white1,
+
+                              ),
+                              child: Text(
+                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                                  "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                  " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut. "
+                                  "aliquip ex ea commodo consequat. Duis aute irure dolor.",
+                                  style: ThemeData.light()
+                                      .textTheme
+                                      .labelMedium!
+                                      .copyWith(
+                                          color: ColorTheme.darktype,
+                                          fontSize: 12)),
+                            ),
+                          ],
+                          onExpansionChanged: (_isExpanded) {
+                            setState(() {
+                              this._isExpanded = _isExpanded;
+                            });
+                          },
+                        ),
                       ),
                     ],
                   ),

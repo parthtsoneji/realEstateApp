@@ -1,6 +1,8 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
-import 'package:realstateapp/Screens/Login%20Ui/FAQ&SignIn.dart';
+import 'package:realstateapp/Screens/Login/FAQ&SignIn.dart';
 import 'package:realstateapp/Screens/Register/RegisterPage.dart';
 
 class LoginForm1 extends StatefulWidget {
@@ -112,6 +114,7 @@ class _LoginForm1State extends State<LoginForm1> {
                       height: MediaQuery.of(context).size.height / 13,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
+
                         color: ColorTheme.hexablue,
                       ),
                       child: Center(
@@ -133,9 +136,12 @@ class _LoginForm1State extends State<LoginForm1> {
                       left: MediaQuery.of(context).size.width / 16,
                       right: MediaQuery.of(context).size.width / 16),
                   child: TextFormField(
+                    cursorColor: ColorTheme.green,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: InputDecoration(
                         filled: true,
+                        border: const OutlineInputBorder(
+                          borderSide: BorderSide.none,),
                         fillColor: ColorTheme.white1,
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
@@ -155,9 +161,12 @@ class _LoginForm1State extends State<LoginForm1> {
                       left: MediaQuery.of(context).size.width / 16,
                       right: MediaQuery.of(context).size.width / 16),
                   child: TextFormField(
+                    cursorColor: ColorTheme.green,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: InputDecoration(
                         filled: true,
+                        border: const OutlineInputBorder(
+                      borderSide: BorderSide.none,),
                         fillColor: ColorTheme.white1,
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
@@ -326,7 +335,7 @@ class _LoginForm1State extends State<LoginForm1> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => RegisterPage(),
+                                builder: (context) => const RegisterPage(),
                               ));
                         },
                       )

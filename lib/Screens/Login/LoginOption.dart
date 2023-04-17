@@ -1,7 +1,9 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Class/classimage.dart';
-import 'package:realstateapp/Screens/Login%20Ui/LoginForm.dart';
+import 'package:realstateapp/Screens/Login/LoginForm.dart';
 import 'package:realstateapp/Screens/Register/RegisterPage.dart';
 
 class LoginOption extends StatefulWidget {
@@ -29,15 +31,15 @@ class _LoginOptionState extends State<LoginOption> {
             Expanded(
               flex: 1,
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: image.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 10,
                       crossAxisSpacing: 8,
-                      mainAxisExtent: 178,
+                      mainAxisExtent: MediaQuery.of(context).size.height / 5,
                       mainAxisSpacing: 9,
                     ),
                     itemBuilder: (BuildContext context, int index) {
@@ -73,7 +75,7 @@ class _LoginOptionState extends State<LoginOption> {
             ),
             SizedBox(height: MediaQuery.of(context).size.height / 20),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 17,
+              height: MediaQuery.of(context).size.height / 15,
               width: MediaQuery.of(context).size.width / 1.5,
               child: ElevatedButton(
                 style: ButtonStyle(
@@ -81,8 +83,10 @@ class _LoginOptionState extends State<LoginOption> {
                       MaterialStateProperty.all(ColorTheme.deepaccent),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => LoginForm1()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginForm1()));
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -200,7 +204,7 @@ class _LoginOptionState extends State<LoginOption> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => RegisterPage(),
+                            builder: (context) => const RegisterPage(),
                           ));
                     },
                   )
