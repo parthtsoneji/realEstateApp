@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
-import 'package:realstateapp/Screens/Login%20Ui/LoginForm2.dart';
+import 'package:realstateapp/Screens/Login%20Ui/FAQ&SignIn.dart';
+import 'package:realstateapp/Screens/Register/RegisterPage.dart';
 
 class LoginForm1 extends StatefulWidget {
   const LoginForm1({Key? key}) : super(key: key);
@@ -11,6 +12,37 @@ class LoginForm1 extends StatefulWidget {
 
 class _LoginForm1State extends State<LoginForm1> {
   final GlobalKey<FormState> globalKey = GlobalKey();
+  bool _isShow = false;
+  bool pass = true;
+
+  String? _validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Enter Password";
+    } else if (value.length < 6) {
+      return "Password must be at least 6 characters";
+    } else {
+      return null;
+    }
+  }
+
+  void _onFormSubmitted() {
+    if (globalKey.currentState!.validate()) {
+      setState(() {
+        _isShow = false;
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const LoginForm4(),
+            ));
+      });
+      // Form is valid, do something here
+    } else {
+      // Form is invalid, show error message
+      setState(() {
+        _isShow = true;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +101,32 @@ class _LoginForm1State extends State<LoginForm1> {
                     ],
                   ),
                 ),
+                SizedBox(height: MediaQuery.of(context).size.height / 35),
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 16,
+                      right: MediaQuery.of(context).size.width / 16),
+                  child: Visibility(
+                    visible: _isShow,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height / 13,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: ColorTheme.hexablue,
+                      ),
+                      child: Center(
+                          child: Text(
+                        "your password in incomplete",
+                        style: ThemeData.light()
+                            .textTheme
+                            .labelMedium!
+                            .copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: ColorTheme.white),
+                      )),
+                    ),
+                  ),
+                ),
                 Padding(
                   padding: EdgeInsets.only(
                       top: MediaQuery.of(context).size.height / 55,
@@ -81,7 +139,8 @@ class _LoginForm1State extends State<LoginForm1> {
                         fillColor: ColorTheme.white1,
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide(width: 1.5,color: ColorTheme.green),
+                          borderSide: const BorderSide(
+                              width: 1.5, color: ColorTheme.green),
                         ),
                         prefixIcon: const Icon(Icons.email_outlined,
                             color: ColorTheme.darkblue),
@@ -102,13 +161,15 @@ class _LoginForm1State extends State<LoginForm1> {
                         fillColor: ColorTheme.white1,
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide(width: 1.5,color: ColorTheme.green),
+                          borderSide: const BorderSide(
+                              width: 1.5, color: ColorTheme.green),
                         ),
                         prefixIcon: const Icon(
                           Icons.lock_outline_rounded,
                           color: ColorTheme.darkblue,
                         ),
                         hintText: "Password"),
+                    validator: _validatePassword,
                   ),
                 ),
                 SizedBox(
@@ -122,15 +183,21 @@ class _LoginForm1State extends State<LoginForm1> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("Forgot Password?",
-                          style: ThemeData.light().textTheme.labelLarge!.copyWith(
-                              color: ColorTheme.hexablue,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600)),
+                          style: ThemeData.light()
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                  color: ColorTheme.hexablue,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600)),
                       Text("Show password",
-                          style: ThemeData.light().textTheme.labelLarge!.copyWith(
-                              color: ColorTheme.hexablue,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600))
+                          style: ThemeData.light()
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                  color: ColorTheme.hexablue,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600))
                     ],
                   ),
                 ),
@@ -141,9 +208,9 @@ class _LoginForm1State extends State<LoginForm1> {
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
-                      MaterialStateProperty.all(ColorTheme.deepaccent),
+                          MaterialStateProperty.all(ColorTheme.deepaccent),
                     ),
-                    onPressed: () {},
+                    onPressed: _onFormSubmitted,
                     child: Text(
                       "Login",
                       style: ThemeData.light().textTheme.labelMedium!.copyWith(
@@ -170,10 +237,13 @@ class _LoginForm1State extends State<LoginForm1> {
                       ),
                       Text(
                         "OR",
-                        style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            color: ColorTheme.grey),
+                        style: ThemeData.light()
+                            .textTheme
+                            .labelMedium!
+                            .copyWith(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: ColorTheme.grey),
                       ),
                       const SizedBox(
                         width: 5,
@@ -187,7 +257,7 @@ class _LoginForm1State extends State<LoginForm1> {
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height / 70),
+                SizedBox(height: MediaQuery.of(context).size.height / 80),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -199,17 +269,15 @@ class _LoginForm1State extends State<LoginForm1> {
                           style: ButtonStyle(
                             elevation: const MaterialStatePropertyAll(0),
                             backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.white1),
+                                MaterialStateProperty.all(ColorTheme.white1),
                           ),
-                          onPressed: () {
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginForm2()));
-                          },
+                          onPressed: () {},
                           child: const Center(
                               child: Image(
-                                image: AssetImage('images/123.png'),
-                                height: 32,
-                                width: 32,
-                              ))),
+                            image: AssetImage('images/123.png'),
+                            height: 32,
+                            width: 32,
+                          ))),
                     ),
                     const SizedBox(width: 8),
                     SizedBox(
@@ -219,35 +287,49 @@ class _LoginForm1State extends State<LoginForm1> {
                           style: ButtonStyle(
                             elevation: const MaterialStatePropertyAll(0),
                             backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.white1),
+                                MaterialStateProperty.all(ColorTheme.white1),
                           ),
                           onPressed: () {},
                           child: const Center(
                               child: Image(
-                                image: AssetImage('images/icons8.png'),
-                                height: 32,
-                                width: 32,
-                              ))),
+                            image: AssetImage('images/icons8.png'),
+                            height: 32,
+                            width: 32,
+                          ))),
                     ),
                   ],
                 ),
                 Padding(
-                  padding:
-                  EdgeInsets.only(top: MediaQuery.of(context).size.height / 16),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Don't have a account?",
-                          style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: ColorTheme.darktype)),
+                          style: ThemeData.light()
+                              .textTheme
+                              .labelMedium!
+                              .copyWith(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  color: ColorTheme.darktype)),
                       const SizedBox(width: 3),
-                      Text('Register',
-                          style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: ColorTheme.blueaccess))
+                      TextButton(
+                        child: Text("Register",
+                            style: ThemeData.light()
+                                .textTheme
+                                .labelMedium!
+                                .copyWith(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    color: ColorTheme.blueaccess)),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => RegisterPage(),
+                              ));
+                        },
+                      )
                     ],
                   ),
                 )

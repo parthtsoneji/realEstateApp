@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Class/classimage.dart';
-import 'package:realstateapp/Screens/Login%20Ui/LoginForm1.dart';
+import 'package:realstateapp/Screens/Login%20Ui/LoginForm.dart';
+import 'package:realstateapp/Screens/Register/RegisterPage.dart';
 
 class LoginOption extends StatefulWidget {
   const LoginOption({Key? key}) : super(key: key);
@@ -31,7 +32,8 @@ class _LoginOptionState extends State<LoginOption> {
                 padding: EdgeInsets.all(8.0),
                 child: GridView.builder(
                     itemCount: image.length,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 10,
                       crossAxisSpacing: 8,
@@ -40,8 +42,11 @@ class _LoginOptionState extends State<LoginOption> {
                     ),
                     itemBuilder: (BuildContext context, int index) {
                       return ClipRRect(
-                         borderRadius: BorderRadius.circular(20),
-                        child: Image.asset(image[index].image,fit: BoxFit.cover,),
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          image[index].image,
+                          fit: BoxFit.cover,
+                        ),
                       );
                     }),
               ),
@@ -49,7 +54,7 @@ class _LoginOptionState extends State<LoginOption> {
             SizedBox(height: MediaQuery.of(context).size.height / 32),
             Padding(
               padding:
-              EdgeInsets.only(left: MediaQuery.of(context).size.width / 10),
+                  EdgeInsets.only(left: MediaQuery.of(context).size.width / 10),
               child: Row(
                 children: [
                   Text("Ready to",
@@ -73,13 +78,11 @@ class _LoginOptionState extends State<LoginOption> {
               child: ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor:
-                  MaterialStateProperty.all(ColorTheme.deepaccent),
+                      MaterialStateProperty.all(ColorTheme.deepaccent),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginOption()));
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => LoginForm1()));
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -142,17 +145,15 @@ class _LoginOptionState extends State<LoginOption> {
                       style: ButtonStyle(
                         elevation: const MaterialStatePropertyAll(0),
                         backgroundColor:
-                        MaterialStateProperty.all(ColorTheme.white1),
+                            MaterialStateProperty.all(ColorTheme.white1),
                       ),
-                      onPressed: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginForm1()));
-                      },
+                      onPressed: () {},
                       child: const Center(
                           child: Image(
-                            image: AssetImage('images/123.png'),
-                            height: 32,
-                            width: 32,
-                          ))),
+                        image: AssetImage('images/123.png'),
+                        height: 32,
+                        width: 32,
+                      ))),
                 ),
                 const SizedBox(width: 8),
                 SizedBox(
@@ -162,21 +163,21 @@ class _LoginOptionState extends State<LoginOption> {
                       style: ButtonStyle(
                         elevation: const MaterialStatePropertyAll(0),
                         backgroundColor:
-                        MaterialStateProperty.all(ColorTheme.white1),
+                            MaterialStateProperty.all(ColorTheme.white1),
                       ),
                       onPressed: () {},
                       child: const Center(
                           child: Image(
-                            image: AssetImage('images/icons8.png'),
-                            height: 32,
-                            width: 32,
-                          ))),
+                        image: AssetImage('images/icons8.png'),
+                        height: 32,
+                        width: 32,
+                      ))),
                 ),
               ],
             ),
             Padding(
-              padding:
-              EdgeInsets.only(top: MediaQuery.of(context).size.height / 15,bottom: 30),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 15, bottom: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -186,11 +187,23 @@ class _LoginOptionState extends State<LoginOption> {
                           fontWeight: FontWeight.bold,
                           color: ColorTheme.darktype)),
                   const SizedBox(width: 3),
-                  Text('Register',
-                      style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: ColorTheme.blueaccess))
+                  TextButton(
+                    child: Text("Register",
+                        style: ThemeData.light()
+                            .textTheme
+                            .labelMedium!
+                            .copyWith(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: ColorTheme.blueaccess)),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RegisterPage(),
+                          ));
+                    },
+                  )
                 ],
               ),
             )

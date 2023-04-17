@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
-import 'package:realstateapp/Screens/Splash%20Screen/ProductTour1.dart';
-import 'package:realstateapp/Screens/Splash%20Screen/ProductTour3.dart';
+import 'package:realstateapp/Screens/Login%20Ui/LoginOption.dart';
+import 'package:realstateapp/Screens/Splash%20Screen/ProductTour.dart';
+import 'package:realstateapp/Screens/Splash%20Screen/ProductTourrr.dart';
 
 class ProductTour2 extends StatefulWidget {
   const ProductTour2({Key? key}) : super(key: key);
@@ -11,6 +12,8 @@ class ProductTour2 extends StatefulWidget {
 }
 
 class _ProductTour2State extends State<ProductTour2> {
+  bool _isExpanded = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +40,12 @@ class _ProductTour2State extends State<ProductTour2> {
                       backgroundColor:
                           MaterialStateProperty.all(ColorTheme.grey),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginOption()));
+                    },
                     child: Text(
                       "skip",
                       style: ThemeData.light()
@@ -110,7 +118,6 @@ class _ProductTour2State extends State<ProductTour2> {
                 padding: EdgeInsets.only(
                     left: 7,
                     right: 7,
-                    bottom: 4,
                     top: MediaQuery.of(context).size.height / 33),
                 child: Container(
                   height: MediaQuery.of(context).size.height / 1.63,
@@ -124,13 +131,13 @@ class _ProductTour2State extends State<ProductTour2> {
                   ),
                 ),
               ),
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 2.2),
-                  child: Column(
-                    children: [
-                      const SizedBox(
+              Padding(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height / 2.2),
+                child: Column(
+                  children: [
+                    const Center(
+                      child: SizedBox(
                         width: 100,
                         child: LinearProgressIndicator(
                           value: 0.6,
@@ -139,65 +146,74 @@ class _ProductTour2State extends State<ProductTour2> {
                               AlwaysStoppedAnimation<Color>(ColorTheme.white),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 8),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 54,
-                              width: 54,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30.0)),
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProductTour1(),));
-                                },
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: ColorTheme.white,
-                                    shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                )),
-                                child: const Center(
-                                    child: Image(
-                                  image: AssetImage('images/Vector.png'),
-                                  height: 30,
-                                  width: 30,
-                                )),
-                              ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width / 7),
+                          child: Container(
+                            height: 54,
+                            width: 54,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ProductTour1(),
+                                    ));
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: ColorTheme.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  )),
+                              child: const Center(
+                                  child: Image(
+                                image: AssetImage('images/Vector.png'),
+                                height: 30,
+                                width: 30,
+                              )),
                             ),
-                            SizedBox(
-                              width: 7,
-                            ),
-                            SizedBox(
-                              height: 54,
-                              width: 210,
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      ColorTheme.deepaccent),
-                                ),
-                                onPressed: () {
-                                  Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const ProductTour3()));
-                                },
-                                child: Text(
-                                  "Next",
-                                  style:
-                                      AppTheme.lightTheme().textTheme.labelMedium,
-                                ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 20,
+                        ),
+                        Center(
+                          child: SizedBox(
+                            height: 54,
+                            width: 210,
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                    ColorTheme.deepaccent),
+                              ),
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ProductTour3()));
+                              },
+                              child: Text(
+                                "Next",
+                                style:
+                                    AppTheme.lightTheme().textTheme.labelMedium,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],
