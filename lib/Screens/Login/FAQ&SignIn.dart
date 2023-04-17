@@ -21,24 +21,24 @@ class _LoginForm4State extends State<LoginForm4> {
         child: Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: EdgeInsets.only(
                   left: MediaQuery.of(context).size.width / 18,
                   top: MediaQuery.of(context).size.height / 35),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
-                        color: ColorTheme.white1),
-                    child: const Icon(Icons.arrow_back_ios,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25.0),
+                      color: ColorTheme.white1),
+                  child: const Center(
+                    child: Icon(Icons.arrow_back_ios,
                         size: 15, color: ColorTheme.hexablue),
                   ),
                 ),

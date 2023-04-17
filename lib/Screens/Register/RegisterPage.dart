@@ -27,25 +27,25 @@ class _RegisterPageState extends State<RegisterPage> {
           key: globalkey,
           child: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: EdgeInsets.only(
                       left: MediaQuery.of(context).size.width / 18,
                       top: MediaQuery.of(context).size.height / 35),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25.0),
-                          color: ColorTheme.white1
-                        ),
-                        child: const Icon(Icons.arrow_back_ios,size: 15,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25.0),
+                        color: ColorTheme.white1
+                      ),
+                      child: const Center(
+                        child: Icon(Icons.arrow_back_ios,size: 15,
                             color: ColorTheme.hexablue),
                       ),
                     ),
@@ -288,27 +288,29 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height / 15),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 13,
-                  width: MediaQuery.of(context).size.width / 1.5,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(ColorTheme.deepaccent),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const OtpScreen(),
-                          ));
-                    },
-                    child: Text(
-                      "Register",
-                      style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 18,
-                          color: ColorTheme.white),
+                Center(
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height / 13,
+                    width: MediaQuery.of(context).size.width / 1.5,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(ColorTheme.deepaccent),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const OtpScreen(),
+                            ));
+                      },
+                      child: Text(
+                        "Register",
+                        style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 18,
+                            color: ColorTheme.white),
+                      ),
                     ),
                   ),
                 ),
