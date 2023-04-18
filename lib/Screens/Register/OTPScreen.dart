@@ -28,21 +28,15 @@ class _OtpScreenState extends State<OtpScreen> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Container(
+                  child: const SizedBox(
                     height: 50,
                     width: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
-                        color: ColorTheme.white1),
-                    child: const Center(
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        color: ColorTheme.hexablue,
-                        size: 15,
-                      ),
+                    child: CircleAvatar(
+                      backgroundColor: ColorTheme.white1,
+                    child: Icon(Icons.arrow_back_ios,size: 10,color: ColorTheme.darkblue,),
                     ),
                   ),
-                ),
+                )
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
@@ -110,66 +104,68 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 4),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 6,
-                width: MediaQuery.of(context).size.width / 1.8,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 60,
-                      width: 120,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
-                        color: ColorTheme.white1,
+              Center(
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height / 6,
+                  width: MediaQuery.of(context).size.width / 1.8,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 60,
+                        width: 120,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25.0),
+                          color: ColorTheme.white1,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.timer_rounded,
+                              color: ColorTheme.darkblue,
+                              size: 24,
+                            ),
+                            const SizedBox(width: 11),
+                            Text("00:21",
+                                style: ThemeData.light()
+                                    .textTheme
+                                    .labelSmall!
+                                    .copyWith(
+                                        color: ColorTheme.darkblue, fontSize: 17))
+                          ],
+                        ),
                       ),
-                      child: Row(
+                      const SizedBox(height: 20),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(
-                            Icons.timer_rounded,
-                            color: ColorTheme.darkblue,
-                            size: 24,
+                          Text(
+                            "Didn't receive the OTP?",
+                            style: ThemeData.light()
+                                .textTheme
+                                .labelLarge!
+                                .copyWith(
+                                    fontSize:
+                                        MediaQuery.of(context).size.width / 30,
+                                    color: ColorTheme.darktype),
                           ),
-                          const SizedBox(width: 11),
-                          Text("00:21",
-                              style: ThemeData.light()
-                                  .textTheme
-                                  .labelSmall!
-                                  .copyWith(
-                                      color: ColorTheme.darkblue, fontSize: 17))
+                          const SizedBox(width: 4),
+                          Text(
+                            "Resend OTP",
+                            style: ThemeData.light()
+                                .textTheme
+                                .labelLarge!
+                                .copyWith(
+                                    fontSize:
+                                        MediaQuery.of(context).size.width / 30,
+                                    color: ColorTheme.regterm,
+                                    fontWeight: FontWeight.w700),
+                          )
                         ],
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Didn't receive the OTP?",
-                          style: ThemeData.light()
-                              .textTheme
-                              .labelLarge!
-                              .copyWith(
-                                  fontSize:
-                                      MediaQuery.of(context).size.width / 30,
-                                  color: ColorTheme.darktype),
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          "Resend OTP",
-                          style: ThemeData.light()
-                              .textTheme
-                              .labelLarge!
-                              .copyWith(
-                                  fontSize:
-                                      MediaQuery.of(context).size.width / 30,
-                                  color: ColorTheme.regterm,
-                                  fontWeight: FontWeight.w700),
-                        )
-                      ],
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],

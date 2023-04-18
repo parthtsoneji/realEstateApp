@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
+import 'package:realstateapp/Screens/Account/AccountLocation.dart';
 import 'package:realstateapp/Screens/Login/FAQ&SignIn.dart';
 import 'package:realstateapp/Screens/Register/RegisterPage.dart';
 
@@ -114,7 +115,6 @@ class _LoginForm1State extends State<LoginForm1> {
                       height: MediaQuery.of(context).size.height / 13,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
-
                         color: ColorTheme.hexablue,
                       ),
                       child: Center(
@@ -132,25 +132,30 @@ class _LoginForm1State extends State<LoginForm1> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 55,
-                      left: MediaQuery.of(context).size.width / 16,
-                      right: MediaQuery.of(context).size.width / 16),
+                    top: MediaQuery.of(context).size.height / 55,
+                    left: MediaQuery.of(context).size.width / 16,
+                    right: MediaQuery.of(context).size.width / 16,
+                  ),
                   child: TextFormField(
                     cursorColor: ColorTheme.green,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: InputDecoration(
-                        filled: true,
-                        border: const OutlineInputBorder(
-                          borderSide: BorderSide.none,),
-                        fillColor: ColorTheme.white1,
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: const BorderSide(
-                              width: 1.5, color: ColorTheme.green),
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      fillColor: ColorTheme.white1,
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: const BorderSide(
+                          width: 1.5,
+                          color: ColorTheme.green,
                         ),
-                        prefixIcon: const Icon(Icons.email_outlined,
-                            color: ColorTheme.darkblue),
-                        hintText: " Email"),
+                      ),
+                      prefixIcon: const Icon(Icons.email_outlined, color: ColorTheme.darkblue),
+                      hintText: " Email",
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -158,29 +163,36 @@ class _LoginForm1State extends State<LoginForm1> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width / 16,
-                      right: MediaQuery.of(context).size.width / 16),
+                    left: MediaQuery.of(context).size.width / 16,
+                    right: MediaQuery.of(context).size.width / 16,
+                  ),
                   child: TextFormField(
                     cursorColor: ColorTheme.green,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: InputDecoration(
-                        filled: true,
-                        border: const OutlineInputBorder(
-                      borderSide: BorderSide.none,),
-                        fillColor: ColorTheme.white1,
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: const BorderSide(
-                              width: 1.5, color: ColorTheme.green),
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      fillColor: ColorTheme.white1,
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide(
+                          width: 1.5,
+                          color: ColorTheme.green,
                         ),
-                        prefixIcon: const Icon(
-                          Icons.lock_outline_rounded,
-                          color: ColorTheme.darkblue,
-                        ),
-                        hintText: "Password"),
+                      ),
+                      prefixIcon: const Icon(
+                        Icons.lock_outline_rounded,
+                        color: ColorTheme.darkblue,
+                      ),
+                      hintText: "Password",
+                    ),
                     validator: _validatePassword,
                   ),
                 ),
+
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 80,
                 ),
@@ -212,7 +224,7 @@ class _LoginForm1State extends State<LoginForm1> {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height / 20),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 17,
+                  height: MediaQuery.of(context).size.height / 15,
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: ElevatedButton(
                     style: ButtonStyle(
@@ -280,7 +292,9 @@ class _LoginForm1State extends State<LoginForm1> {
                             backgroundColor:
                                 MaterialStateProperty.all(ColorTheme.white1),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => LocationPage(),));
+                          },
                           child: const Center(
                               child: Image(
                             image: AssetImage('images/123.png'),

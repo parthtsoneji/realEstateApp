@@ -27,22 +27,19 @@ class _LoginForm4State extends State<LoginForm4> {
               padding: EdgeInsets.only(
                   left: MediaQuery.of(context).size.width / 18,
                   top: MediaQuery.of(context).size.height / 35),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25.0),
-                      color: ColorTheme.white1),
-                  child: const Center(
-                    child: Icon(Icons.arrow_back_ios,
-                        size: 15, color: ColorTheme.hexablue),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: const SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: CircleAvatar(
+                      backgroundColor: ColorTheme.white1,
+                      child: Icon(Icons.arrow_back_ios,size: 10,color: ColorTheme.darkblue,),
+                    ),
                   ),
-                ),
-              ),
+                )
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height / 20,
@@ -182,7 +179,7 @@ class _LoginForm4State extends State<LoginForm4> {
                         prefixIcon: const Icon(Icons.search,
                             color: ColorTheme.darkblue),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25.0),
+                          borderRadius: BorderRadius.circular(10.0),
                           borderSide: BorderSide.none,
                         ),
                         hintStyle: ThemeData.light()
@@ -284,23 +281,26 @@ class _LoginForm4State extends State<LoginForm4> {
                                       color: ColorTheme.darkblue)),
                           children: [
                             Container(
-                              height: MediaQuery.of(context).size.height / 5,
                               width: MediaQuery.of(context).size.width / 1.2,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15.0), color: ColorTheme.white1,
 
                               ),
-                              child: Text(
-                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                                  "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                  " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut. "
-                                  "aliquip ex ea commodo consequat. Duis aute irure dolor.",
-                                  style: ThemeData.light()
-                                      .textTheme
-                                      .labelMedium!
-                                      .copyWith(
-                                          color: ColorTheme.darktype,
-                                          fontSize: 15)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                                    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                    " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut. "
+                                    "aliquip ex ea commodo consequat. Duis aute irure dolor.",
+                                    style: ThemeData.light()
+                                        .textTheme
+                                        .labelMedium!
+                                        .copyWith(
+                                            color: ColorTheme.darktype,
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 12)),
+                              ),
                             )
                           ],
                           onExpansionChanged: (isExpanded) {
@@ -328,23 +328,26 @@ class _LoginForm4State extends State<LoginForm4> {
                                       color: ColorTheme.darkblue)),
                           children: [
                             Container(
-                              height: MediaQuery.of(context).size.height / 5,
                               width: MediaQuery.of(context).size.width / 1.2,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15.0), color: ColorTheme.white1,
 
                               ),
-                              child: Text(
-                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                                  "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                  " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut. "
-                                  "aliquip ex ea commodo consequat. Duis aute irure dolor.",
-                                  style: ThemeData.light()
-                                      .textTheme
-                                      .labelMedium!
-                                      .copyWith(
-                                          color: ColorTheme.darktype,
-                                          fontSize: 12)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                                    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                    " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut. "
+                                    "aliquip ex ea commodo consequat. Duis aute irure dolor.",
+                                    style: ThemeData.light()
+                                        .textTheme
+                                        .labelMedium!
+                                        .copyWith(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12,
+                                            color: ColorTheme.darktype)),
+                              ),
                             ),
                           ],
                           onExpansionChanged: (_isExpanded) {

@@ -127,23 +127,26 @@ class _SplashScreenState extends State<SplashScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                Column(
-                  children: [
-                    Text(
-                      'Made with love',
-                      style: AppTheme.lightTheme()
-                          .textTheme
-                          .labelSmall!
-                          .copyWith(color: ColorTheme.white),
-                    ),
-                    Text(
-                      'v.1.0',
-                      style: AppTheme.lightTheme()
-                          .textTheme
-                          .labelSmall!
-                          .copyWith(color: ColorTheme.white),
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Made with love',
+                        style: AppTheme.lightTheme()
+                            .textTheme
+                            .labelSmall!
+                            .copyWith(color: ColorTheme.white),
+                      ),
+                      Text(
+                        'v.1.0',
+                        style: AppTheme.lightTheme()
+                            .textTheme
+                            .labelSmall!
+                            .copyWith(color: ColorTheme.white),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

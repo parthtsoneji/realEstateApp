@@ -46,6 +46,10 @@ dev_dependencies:
   flutter_expanded_tile: ^0.3.7
   otp_text_field: ^1.1.3
   flutter_otp_text_field: ^1.1.1
+  google_maps_flutter: ^2.2.5
+  google_maps:
+  location:
+  flutter_polyline_points:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

@@ -11,6 +11,7 @@ class AppTheme {
       textTheme: TextTheme(
           labelSmall:
               GoogleFonts.montserrat(fontSize: 12, color: ColorTheme.white),
+          bodyMedium: GoogleFonts.dmSans(fontSize: 12,color: ColorTheme.darktype,fontWeight: FontWeight.w400),
           labelMedium:
               GoogleFonts.lato(fontSize: 16, fontWeight: FontWeight.w700),
           labelLarge:
@@ -35,4 +36,7 @@ class ColorTheme {
   static const darkblue = Color(0xFF252B5C);
   static const darktype = Color(0xFF53587A);
   static const regterm = Color(0xFF234F68);
+  static const skip = Color(0xFF3A3F67);
+  static const gradiantpinkl = Color(0xFF634AFD);
+  static const locationcolor = Color(0xFFECEDF3);
 }

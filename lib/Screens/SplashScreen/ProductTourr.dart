@@ -14,7 +14,6 @@ class ProductTour2 extends StatefulWidget {
 }
 
 class _ProductTour2State extends State<ProductTour2> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +69,7 @@ class _ProductTour2State extends State<ProductTour2> {
                               .labelMedium!
                               .copyWith(
                                   fontSize: 25,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w500,
                                   color: ColorTheme.darkblue)),
                       Row(
                         children: [
@@ -79,7 +78,7 @@ class _ProductTour2State extends State<ProductTour2> {
                                   .textTheme
                                   .labelMedium!
                                   .copyWith(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w500,
                                       fontSize: 25,
                                       color: ColorTheme.darkblue)),
                           const SizedBox(
@@ -91,7 +90,7 @@ class _ProductTour2State extends State<ProductTour2> {
                                   .labelMedium!
                                   .copyWith(
                                       fontSize: 25,
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w800,
                                       color: ColorTheme.blueaccess))
                         ],
                       ),
@@ -117,11 +116,12 @@ class _ProductTour2State extends State<ProductTour2> {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    left: 7,
-                    right: 7,
+                    left: MediaQuery.of(context).size.width / 100,
+                    right: MediaQuery.of(context).size.width / 100,
+                    bottom: MediaQuery.of(context).size.width / 100,
                     top: MediaQuery.of(context).size.height / 33),
                 child: Container(
-                  height: MediaQuery.of(context).size.height / 1.63,
+                  height: double.infinity,
                   width: double.infinity,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(55)),
@@ -158,8 +158,8 @@ class _ProductTour2State extends State<ProductTour2> {
                           padding: EdgeInsets.only(
                               left: MediaQuery.of(context).size.width / 7),
                           child: Container(
-                            height: 54,
-                            width: 54,
+                            height: MediaQuery.of(context).size.height / 15,
+                            width: MediaQuery.of(context).size.width / 10,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30.0)),
                             child: ElevatedButton(
@@ -190,8 +190,8 @@ class _ProductTour2State extends State<ProductTour2> {
                         ),
                         Center(
                           child: SizedBox(
-                            height: 54,
-                            width: 210,
+                            height: MediaQuery.of(context).size.height / 15,
+                            width: MediaQuery.of(context).size.width / 2.5,
                             child: ElevatedButton(
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(

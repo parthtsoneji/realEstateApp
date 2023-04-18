@@ -33,23 +33,19 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: EdgeInsets.only(
                       left: MediaQuery.of(context).size.width / 18,
                       top: MediaQuery.of(context).size.height / 35),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
-                        color: ColorTheme.white1
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: const SizedBox(
+                        height: 50,
+                        width: 50,
+                        child: CircleAvatar(
+                          backgroundColor: ColorTheme.white1,
+                          child: Icon(Icons.arrow_back_ios,size: 10,color: ColorTheme.darkblue,),
+                        ),
                       ),
-                      child: const Center(
-                        child: Icon(Icons.arrow_back_ios,size: 15,
-                            color: ColorTheme.hexablue),
-                      ),
-                    ),
-                  ),
+                    )
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height / 20),
                 Padding(
@@ -118,14 +114,15 @@ class _RegisterPageState extends State<RegisterPage> {
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: InputDecoration(
                       hintText: 'Full Name',
-                      border: const OutlineInputBorder(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
                         borderSide: BorderSide.none,),
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 25.0, horizontal: 10.0),
                       filled: true,
                       fillColor: ColorTheme.white1,
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                        borderRadius: BorderRadius.circular(10.0),
                         borderSide: const BorderSide(
                             width: 1.5, color: ColorTheme.green),
                       ),
@@ -178,11 +175,12 @@ class _RegisterPageState extends State<RegisterPage> {
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 25.0, horizontal: 10.0),
                       filled: true,
-                      border: const OutlineInputBorder(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
                         borderSide: BorderSide.none,),
                       fillColor: ColorTheme.white1,
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                        borderRadius: BorderRadius.circular(10.0),
                         borderSide: const BorderSide(
                             width: 1.5, color: ColorTheme.green),
                       ),
@@ -235,11 +233,12 @@ class _RegisterPageState extends State<RegisterPage> {
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 25.0, horizontal: 10.0),
                       filled: true,
-                      border: const OutlineInputBorder(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
                         borderSide: BorderSide.none,),
                       fillColor: ColorTheme.white1,
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                        borderRadius: BorderRadius.circular(10.0),
                         borderSide: const BorderSide(
                             width: 1.5, color: ColorTheme.green),
                       ),
