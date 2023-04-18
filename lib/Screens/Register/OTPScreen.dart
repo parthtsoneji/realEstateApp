@@ -104,6 +104,8 @@ class _OtpScreenState extends State<OtpScreen> {
                   fieldWidth: MediaQuery.of(context).size.width / 5.5,
                   borderColor: ColorTheme.regterm,
                   showFieldAsBox: true,
+                  fillColor: ColorTheme.white1,
+                  filled: true,
                   cursorColor: Colors.green,
                 ),
               ),
