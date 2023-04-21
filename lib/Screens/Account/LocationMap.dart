@@ -107,7 +107,7 @@ class _GoogleMapLocState extends State<GoogleMapLoc> {
                           color: ColorTheme.grey.withOpacity(0.3),
                           spreadRadius: 10,
                           blurRadius: 2,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
@@ -151,20 +151,6 @@ class _GoogleMapLocState extends State<GoogleMapLoc> {
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 10.0, horizontal: 20.0),
                     ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 1.17,
-                    left: MediaQuery.of(context).size.width / 1.25),
-                child: SizedBox(
-                  height: MediaQuery.of(context).size.height / 14,
-                  width: MediaQuery.of(context).size.width / 10,
-                  child: const CircleAvatar(
-                    backgroundColor: ColorTheme.hexablue,
-                    child: Icon(Icons.lightbulb_circle,
-                        size: 20, color: ColorTheme.white),
                   ),
                 ),
               ),
@@ -235,29 +221,49 @@ class _GoogleMapLocState extends State<GoogleMapLoc> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 31),
+                padding: EdgeInsets.only(bottom: 31,left: MediaQuery.of(context).size.width / 5),
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                    height: MediaQuery.of(context).size.height / 12,
-                    width: MediaQuery.of(context).size.width / 1.8,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.deepaccent),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height / 12,
+                        width: MediaQuery.of(context).size.width / 1.8,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(ColorTheme.deepaccent),
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            "Choose your location",
+                            style: AppTheme.lightTheme()
+                                .textTheme
+                                .labelMedium!
+                                .copyWith(
+                                    color: ColorTheme.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16),
+                          ),
+                        ),
                       ),
-                      onPressed: () {},
-                      child: Text(
-                        "Choose your location",
-                        style: AppTheme.lightTheme()
-                            .textTheme
-                            .labelMedium!
-                            .copyWith(
-                                color: ColorTheme.white,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16),
+                      Padding(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height / 14,
+                          width: MediaQuery.of(context).size.width / 10,
+                          child: CircleAvatar(
+                              backgroundColor: ColorTheme.hexablue,
+                              child: Stack(
+                                children: const [
+                                  Center(child: Image(image: AssetImage('images/Shape.png'))),
+                                  Center(child: Image(image: AssetImage("images/Shape12.png")))
+                                ],
+                              )
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),

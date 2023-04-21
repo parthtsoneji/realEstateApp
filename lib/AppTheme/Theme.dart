@@ -35,8 +35,9 @@ class ColorTheme {
   static const blueaccess = Color(0xFF204D6C);
   static const darkblue = Color(0xFF252B5C);
   static const darktype = Color(0xFF53587A);
-  static const regterm = Color(0xFF234F68);
+  static const regterm = Color(0xFF1F4C6B);
   static const skip = Color(0xFF3A3F67);
   static const gradiantpinkl = Color(0xFF634AFD);
   static const locationcolor = Color(0xFFECEDF3);
+  static const checkcard = Color(0xFF1F4C6B);
 }
