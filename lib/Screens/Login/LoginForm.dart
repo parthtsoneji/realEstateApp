@@ -312,7 +312,9 @@ class _LoginForm1State extends State<LoginForm1> {
                             backgroundColor:
                                 MaterialStateProperty.all(ColorTheme.white1),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => LocationPage(),));
+                          },
                           child: const Center(
                               child: Image(
                             image: AssetImage('images/icons8.png'),

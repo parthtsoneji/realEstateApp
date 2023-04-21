@@ -21,51 +21,56 @@ class _LocationPageState extends State<LocationPage> {
             Padding(
               padding: const EdgeInsets.only(top: 20, left: 24, right: 24),
               child: Column(children: [
-                Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: const SizedBox(
-                      height: 50,
-                      width: 50,
-                      child: CircleAvatar(
-                        backgroundColor: ColorTheme.white1,
-                        child: Icon(
-                          Icons.arrow_back_ios,
-                          size: 10,
-                          color: ColorTheme.darkblue,
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: const SizedBox(
+                          height: 50,
+                          width: 50,
+                          child: CircleAvatar(
+                            backgroundColor: ColorTheme.white1,
+                            child: Icon(
+                              Icons.arrow_back_ios,
+                              size: 10,
+                              color: ColorTheme.darkblue,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 38,
-                    width: 86,
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                      SizedBox(
+                        height: 38,
+                        width: 86,
+                        child: ElevatedButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          )),
-                          backgroundColor:
-                              MaterialStateProperty.all(ColorTheme.white1),
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          "skip",
-                          style: ThemeData.light().textTheme.labelSmall!.copyWith(
-                              fontWeight: FontWeight.w400,
-                              color: ColorTheme.skip),
-                        )),
-                  )
-                ]),
+                                borderRadius: BorderRadius.circular(18.0),
+                              )),
+                              backgroundColor:
+                                  MaterialStateProperty.all(ColorTheme.white1),
+                            ),
+                            onPressed: () {},
+                            child: Text(
+                              "skip",
+                              style: ThemeData.light()
+                                  .textTheme
+                                  .labelSmall!
+                                  .copyWith(
+                                      fontWeight: FontWeight.w400,
+                                      color: ColorTheme.skip),
+                            )),
+                      )
+                    ]),
                 const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.only(left: 24),
                   child: SizedBox(
-                      height: MediaQuery.of(context).size.height /10,
+                      height: MediaQuery.of(context).size.height / 10,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -93,7 +98,8 @@ class _LocationPageState extends State<LocationPage> {
                             ],
                           ),
                           const SizedBox(height: 20),
-                          Text("You can edit this later on your account setting.",
+                          Text(
+                              "You can edit this later on your account setting.",
                               style: ThemeData.light()
                                   .textTheme
                                   .labelMedium!
@@ -155,7 +161,11 @@ class _LocationPageState extends State<LocationPage> {
             SizedBox(height: MediaQuery.of(context).size.height / 20),
             GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => GoogleMapLoc(),));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => GoogleMapLoc(),
+                    ));
               },
               child: Container(
                 height: MediaQuery.of(context).size.height / 11.5,
@@ -176,17 +186,20 @@ class _LocationPageState extends State<LocationPage> {
                             color: ColorTheme.lightwhite,
                             fontSize: 12,
                             fontWeight: FontWeight.w400)),
-                    SizedBox(width: MediaQuery.of(context).size.width / 2.1),
-                    const Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      size: 20,
-                      color: ColorTheme.lightwhite,
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 2.5),
+                      child: const Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        size: 20,
+                        color: ColorTheme.lightwhite,
+                      ),
                     )
                   ],
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 15),
+            SizedBox(height: MediaQuery.of(context).size.height / 11),
             Column(
               children: [
                 const Center(
@@ -200,17 +213,23 @@ class _LocationPageState extends State<LocationPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 100,
                 ),
                 Center(
                   child: SizedBox(
                     height: MediaQuery.of(context).size.height / 12,
-                    width: MediaQuery.of(context).size.width / 1.8,
+                    width: MediaQuery.of(context).size.width / 1.3,
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(ColorTheme.deepaccent),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
                       ),
                       onPressed: () {},
                       child: Text(
