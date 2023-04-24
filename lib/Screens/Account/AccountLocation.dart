@@ -98,7 +98,7 @@ class _LocationPageState extends State<LocationPage> {
                                         .copyWith(
                                             fontSize: 25,
                                             fontWeight: FontWeight.w800,
-                                            color: ColorTheme.blueaccess))
+                                            color: ColorTheme.blueAccent))
                               ],
                             ),
                             const SizedBox(height: 20),
@@ -174,7 +174,7 @@ class _LocationPageState extends State<LocationPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => GoogleMapLoc(),
+                      builder: (context) => const GoogleMapLoc(),
                     ),
                   );
                 },
@@ -190,19 +190,19 @@ class _LocationPageState extends State<LocationPage> {
                       SizedBox(width: MediaQuery.of(context).size.width / 18),
                       const Icon(
                         Icons.location_on,
-                        color: ColorTheme.hexablue,
+                        color: ColorTheme.blue,
                         size: 22,
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width / 40),
                       Text(
                         "Location detail",
                         style: ThemeData.light().textTheme.labelLarge!.copyWith(
-                          color: ColorTheme.lightwhite,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
+                              color: ColorTheme.lightwhite,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                            ),
                       ),
-                      Spacer(), // Add Spacer widget here
+                      const Spacer(), // Add Spacer widget here
                       const Icon(
                         Icons.arrow_forward_ios_sharp,
                         size: 20,
@@ -212,7 +212,6 @@ class _LocationPageState extends State<LocationPage> {
                   ),
                 ),
               ),
-
               SizedBox(height: MediaQuery.of(context).size.height / 11),
               Column(
                 children: [
@@ -223,7 +222,7 @@ class _LocationPageState extends State<LocationPage> {
                         value: 0.3,
                         backgroundColor: ColorTheme.white1,
                         valueColor:
-                            AlwaysStoppedAnimation<Color>(ColorTheme.hexablue),
+                            AlwaysStoppedAnimation<Color>(ColorTheme.blue),
                       ),
                     ),
                   ),
@@ -237,7 +236,7 @@ class _LocationPageState extends State<LocationPage> {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor:
-                              MaterialStateProperty.all(ColorTheme.deepaccent),
+                              MaterialStateProperty.all(ColorTheme.greenAccent),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
@@ -247,10 +246,11 @@ class _LocationPageState extends State<LocationPage> {
                         ),
                         onPressed: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => PreferablePage(),
-                              ));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PreferablePage(),
+                            ),
+                          );
                         },
                         child: Text(
                           "Next",

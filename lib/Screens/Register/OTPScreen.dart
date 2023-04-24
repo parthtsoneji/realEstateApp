@@ -64,7 +64,7 @@ class _OtpScreenState extends State<OtpScreen> {
                               .copyWith(
                                   fontSize: 25,
                                   fontWeight: FontWeight.w800,
-                                  color: ColorTheme.hexablue),
+                                  color: ColorTheme.blue),
                         ),
                       ],
                     ),
@@ -96,7 +96,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       .labelSmall!
                       .copyWith(color: ColorTheme.darkblue, fontSize: 30),
                   fieldWidth: MediaQuery.of(context).size.width / 5.5,
-                  borderColor: ColorTheme.regterm,
+                  borderColor: ColorTheme.blue,
                   showFieldAsBox: true,
                   fillColor: ColorTheme.white1,
                   filled: true,
@@ -159,7 +159,7 @@ class _OtpScreenState extends State<OtpScreen> {
                                 .copyWith(
                                     fontSize:
                                         MediaQuery.of(context).size.width / 30,
-                                    color: ColorTheme.regterm,
+                                    color: ColorTheme.blue,
                                     fontWeight: FontWeight.w700),
                           )
                         ],

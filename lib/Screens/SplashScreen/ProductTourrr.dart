@@ -81,7 +81,7 @@ class _ProductTour3State extends State<ProductTour3> {
                                   .copyWith(
                                       fontSize: 25,
                                       fontWeight: FontWeight.w800,
-                                      color: ColorTheme.blueaccess)),
+                                      color: ColorTheme.blueAccent)),
                           const SizedBox(width: 4),
                           Text("for",
                               style: ThemeData.light()
@@ -202,7 +202,7 @@ class _ProductTour3State extends State<ProductTour3> {
                             child: ElevatedButton(
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(
-                                    ColorTheme.deepaccent),
+                                    ColorTheme.greenAccent),
                               ),
                               onPressed: () {
                                 Navigator.pushReplacement(

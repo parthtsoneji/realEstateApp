@@ -73,7 +73,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 .copyWith(
                                     fontSize: 25,
                                     fontWeight: FontWeight.w800,
-                                    color: ColorTheme.hexablue),
+                                    color: ColorTheme.blue),
                           ),
                         ],
                       ),
@@ -276,11 +276,11 @@ class _RegisterPageState extends State<RegisterPage> {
                               .textTheme
                               .labelLarge!
                               .copyWith(
-                                  color: ColorTheme.regterm, fontSize: 16)),
+                                  color: ColorTheme.blue, fontSize: 16)),
                       Text("hide password",
                           style:
                               ThemeData.light().textTheme.labelLarge!.copyWith(
-                                    color: ColorTheme.regterm,
+                                    color: ColorTheme.blue,
                                     fontSize: 16,
                                   ))
                     ],
@@ -294,7 +294,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.deepaccent),
+                            MaterialStateProperty.all(ColorTheme.greenAccent),
                       ),
                       onPressed: () {
                         Navigator.push(

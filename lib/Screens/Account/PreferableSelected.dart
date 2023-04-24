@@ -24,7 +24,14 @@ class _PreferableSelectedState extends State<PreferableSelected> {
     preferableData(image: 'images/image4.png', name: 'Villa')
   ];
   final int index = 0;
-  bool selectedIndex = false;
+  List<bool> selectedIndex = [];
+
+
+  @override
+  void initState() {
+    super.initState();
+    selectedIndex = List.generate(images.length, (index) => false);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +43,8 @@ class _PreferableSelectedState extends State<PreferableSelected> {
               Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 20, left: 24, right: 24),
+                    padding:
+                        const EdgeInsets.only(top: 20, left: 24, right: 24),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -66,12 +74,12 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                               child: ElevatedButton(
                                 style: ButtonStyle(
                                   shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
+                                          RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(18.0),
-                                      )),
-                                  backgroundColor:
-                                  MaterialStateProperty.all(ColorTheme.white1),
+                                    borderRadius: BorderRadius.circular(18.0),
+                                  )),
+                                  backgroundColor: MaterialStateProperty.all(
+                                      ColorTheme.white1),
                                 ),
                                 onPressed: () {},
                                 child: Text(
@@ -80,14 +88,15 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                       .textTheme
                                       .labelSmall!
                                       .copyWith(
-                                      fontWeight: FontWeight.w400,
-                                      color: ColorTheme.skip),
+                                          fontWeight: FontWeight.w400,
+                                          color: ColorTheme.skip),
                                 ),
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(height: MediaQuery.of(context).size.height / 20),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 20),
                         Padding(
                           padding: EdgeInsets.only(
                               left: MediaQuery.of(context).size.width / 20),
@@ -101,17 +110,17 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                         .textTheme
                                         .labelMedium!
                                         .copyWith(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.w500,
-                                        color: ColorTheme.darkblue)),
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w500,
+                                            color: ColorTheme.darkblue)),
                                 Text("real estate type ",
                                     style: ThemeData.light()
                                         .textTheme
                                         .labelMedium!
                                         .copyWith(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.w800,
-                                        color: ColorTheme.hexablue)),
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w800,
+                                            color: ColorTheme.blue)),
                                 SizedBox(height: 20),
                                 Text(
                                   "You can edit this later on your account setting.",
@@ -119,9 +128,9 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                       .textTheme
                                       .labelMedium!
                                       .copyWith(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: ColorTheme.darktype),
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: ColorTheme.darktype),
                                 ),
                               ],
                             ),
@@ -135,75 +144,70 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                         top: MediaQuery.of(context).size.height / 15,
                         left: MediaQuery.of(context).size.width / 20,
                         right: MediaQuery.of(context).size.width / 20),
-                    child: Container(
+                    child: SizedBox(
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: GridView.builder(
                         gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisSpacing: 12,
-                            mainAxisSpacing: 14,
-                            crossAxisCount: 2),
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisSpacing: 12,
+                                mainAxisSpacing: 14,
+                                crossAxisCount: 2),
                         itemCount: images.length,
                         itemBuilder: (context, index) {
                           final select = images[index];
                           return GestureDetector(
                             onTap: () {
                               setState(() {
-                                setState(() {
-                                  selectedIndex = !selectedIndex;
-                                });
+                                selectedIndex[index] = !selectedIndex[index];
                               });
                             },
                             child: Card(
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25.0)
-                              ),
-                              color: selectedIndex == true
-                                  ? ColorTheme.checkcard
+                                  borderRadius: BorderRadius.circular(25.0)),
+                              color: selectedIndex[index] == true
+                                  ? ColorTheme.blue
                                   : ColorTheme.white1,
                               child: Stack(
                                 children: [
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(
                                             left: MediaQuery.of(context)
-                                                .size
-                                                .width /
+                                                    .size
+                                                    .width /
                                                 70,
                                             right: MediaQuery.of(context)
-                                                .size
-                                                .width /
+                                                    .size
+                                                    .width /
                                                 70,
                                             top: MediaQuery.of(context)
-                                                .size
-                                                .height /
+                                                    .size
+                                                    .height /
                                                 90),
                                         child: Container(
-                                            height: MediaQuery.of(context)
+                                            height: MediaQuery.of(context).size.height /4.8,
+                                            width: MediaQuery.of(context)
                                                 .size
-                                                .height /
-                                                4.8,
-                                            width:
-                                            MediaQuery.of(context).size.width,
+                                                .width,
                                             decoration: BoxDecoration(
                                               borderRadius:
-                                              BorderRadius.circular(15),
+                                                  BorderRadius.circular(15),
                                               image: DecorationImage(
-                                                image: AssetImage(
-                                                    select.image),
+                                                image: AssetImage(select.image),
                                                 fit: BoxFit.cover,
                                               ),
                                             )),
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            top: 10,
+                                            top: MediaQuery.of(context).size.height / 80,
                                             left: MediaQuery.of(context)
-                                                .size
-                                                .width /
+                                                    .size
+                                                    .width /
                                                 30),
                                         child: Text(
                                           select.name,
@@ -211,11 +215,11 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                               .textTheme
                                               .labelMedium!
                                               .copyWith(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w700,
-                                              color: selectedIndex == true
-                                                  ? ColorTheme.white
-                                                  : ColorTheme.black),
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: selectedIndex == true
+                                                      ? ColorTheme.white
+                                                      : ColorTheme.black),
                                         ),
                                       ),
                                     ],
@@ -227,14 +231,15 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                       child: Checkbox(
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
-                                            BorderRadius.circular(10)),
+                                                BorderRadius.circular(10)),
                                         side: const BorderSide(
                                             width: 3, color: ColorTheme.white),
                                         checkColor: ColorTheme.white,
                                         activeColor: ColorTheme.green,
-                                        value: selectedIndex,
+                                        value: selectedIndex[index],
                                         onChanged: (value) {
                                           setState(() {
+                                            selectedIndex[index] = value!;
                                           });
                                         },
                                       ),
@@ -260,19 +265,22 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
-                        MaterialStateProperty.all(ColorTheme.deepaccent),
-                        shadowColor:
-                        MaterialStateProperty.all(ColorTheme.regterm),
+                            MaterialStateProperty.all(ColorTheme.greenAccent),
+                        shadowColor: MaterialStateProperty.all(ColorTheme.blue),
                         elevation: MaterialStateProperty.all(50),
                         shape:
-                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentPage(),));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PaymentPage(),
+                            ));
                       },
                       child: Text(
                         "Next",
@@ -280,9 +288,9 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                             .textTheme
                             .labelMedium!
                             .copyWith(
-                            color: ColorTheme.white,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16),
+                                color: ColorTheme.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16),
                       ),
                     ),
                   ),

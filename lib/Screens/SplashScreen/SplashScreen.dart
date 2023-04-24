@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 end: Alignment.bottomLeft,
                 colors: [
                   ColorTheme.orablue.withOpacity(0.5), // 0.8 opacity
-                  ColorTheme.hexablue.withOpacity(1.0), // 1.0 opacity
+                  ColorTheme.blue.withOpacity(1.0), // 1.0 opacity
                 ],
               ),
             ),
@@ -110,7 +110,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(ColorTheme.deepaccent),
+                          MaterialStateProperty.all(ColorTheme.greenAccent),
                     ),
                     onPressed: () {
                       Navigator.pushReplacement(

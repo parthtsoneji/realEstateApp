@@ -89,7 +89,7 @@ class _LoginForm1State extends State<LoginForm1> {
                                 .copyWith(
                                     fontSize: 25,
                                     fontWeight: FontWeight.w800,
-                                    color: ColorTheme.hexablue),
+                                    color: ColorTheme.blue),
                           ),
                         ],
                       ),
@@ -115,7 +115,7 @@ class _LoginForm1State extends State<LoginForm1> {
                       height: MediaQuery.of(context).size.height / 13,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
-                        color: ColorTheme.hexablue,
+                        color: ColorTheme.blue,
                       ),
                       child: Center(
                           child: Text(
@@ -208,7 +208,7 @@ class _LoginForm1State extends State<LoginForm1> {
                               .textTheme
                               .labelLarge!
                               .copyWith(
-                                  color: ColorTheme.hexablue,
+                                  color: ColorTheme.blue,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600)),
                       Text("Show password",
@@ -216,7 +216,7 @@ class _LoginForm1State extends State<LoginForm1> {
                               .textTheme
                               .labelLarge!
                               .copyWith(
-                                  color: ColorTheme.hexablue,
+                                  color: ColorTheme.blue,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600))
                     ],
@@ -229,7 +229,7 @@ class _LoginForm1State extends State<LoginForm1> {
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(ColorTheme.deepaccent),
+                          MaterialStateProperty.all(ColorTheme.greenAccent),
                     ),
                     onPressed: _onFormSubmitted,
                     child: Text(
@@ -346,7 +346,7 @@ class _LoginForm1State extends State<LoginForm1> {
                                 .copyWith(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
-                                    color: ColorTheme.blueaccess)),
+                                    color: ColorTheme.blueAccent)),
                         onPressed: () {
                           Navigator.push(
                               context,

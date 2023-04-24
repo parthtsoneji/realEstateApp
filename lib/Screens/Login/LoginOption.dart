@@ -69,7 +69,7 @@ class _LoginOptionState extends State<LoginOption> {
                       style: ThemeData.light().textTheme.labelMedium!.copyWith(
                           fontSize: 25,
                           fontWeight: FontWeight.w500,
-                          color: ColorTheme.blueaccess))
+                          color: ColorTheme.blueAccent))
                 ],
               ),
             ),
@@ -80,7 +80,7 @@ class _LoginOptionState extends State<LoginOption> {
               child: ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(ColorTheme.deepaccent),
+                      MaterialStateProperty.all(ColorTheme.greenAccent),
                 ),
                 onPressed: () {
                   Navigator.pushReplacement(
@@ -133,7 +133,7 @@ class _LoginOptionState extends State<LoginOption> {
                       height: 1,
                       color: ColorTheme.grey,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -146,36 +146,40 @@ class _LoginOptionState extends State<LoginOption> {
                   height: MediaQuery.of(context).size.height / 13,
                   width: MediaQuery.of(context).size.width / 2.6,
                   child: ElevatedButton(
-                      style: ButtonStyle(
-                        elevation: const MaterialStatePropertyAll(0),
-                        backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.white1),
-                      ),
-                      onPressed: () {},
-                      child: const Center(
-                          child: Image(
+                    style: ButtonStyle(
+                      elevation: const MaterialStatePropertyAll(0),
+                      backgroundColor:
+                          MaterialStateProperty.all(ColorTheme.white1),
+                    ),
+                    onPressed: () {},
+                    child: const Center(
+                      child: Image(
                         image: AssetImage('images/123.png'),
                         height: 32,
                         width: 32,
-                      ))),
+                      ),
+                    ),
+                  ),
                 ),
                 const SizedBox(width: 8),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 13,
                   width: MediaQuery.of(context).size.width / 2.6,
                   child: ElevatedButton(
-                      style: ButtonStyle(
-                        elevation: const MaterialStatePropertyAll(0),
-                        backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.white1),
-                      ),
-                      onPressed: () {},
-                      child: const Center(
-                          child: Image(
+                    style: ButtonStyle(
+                      elevation: const MaterialStatePropertyAll(0),
+                      backgroundColor:
+                          MaterialStateProperty.all(ColorTheme.white1),
+                    ),
+                    onPressed: () {},
+                    child: const Center(
+                      child: Image(
                         image: AssetImage('images/icons8.png'),
                         height: 32,
                         width: 32,
-                      ))),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -199,13 +203,14 @@ class _LoginOptionState extends State<LoginOption> {
                             .copyWith(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: ColorTheme.blueaccess)),
+                                color: ColorTheme.blueAccent)),
                     onPressed: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const RegisterPage(),
-                          ));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterPage(),
+                        ),
+                      );
                     },
                   )
                 ],

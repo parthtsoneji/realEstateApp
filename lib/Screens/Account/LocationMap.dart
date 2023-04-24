@@ -232,7 +232,7 @@ class _GoogleMapLocState extends State<GoogleMapLoc> {
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all(ColorTheme.deepaccent),
+                                MaterialStateProperty.all(ColorTheme.greenAccent),
                           ),
                           onPressed: () {},
                           child: Text(
@@ -253,7 +253,7 @@ class _GoogleMapLocState extends State<GoogleMapLoc> {
                           height: MediaQuery.of(context).size.height / 14,
                           width: MediaQuery.of(context).size.width / 10,
                           child: CircleAvatar(
-                              backgroundColor: ColorTheme.hexablue,
+                              backgroundColor: ColorTheme.blue,
                               child: Stack(
                                 children: const [
                                   Center(child: Image(image: AssetImage('images/Shape.png'))),

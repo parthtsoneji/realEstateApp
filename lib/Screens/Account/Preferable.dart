@@ -117,7 +117,7 @@ class _PreferablePageState extends State<PreferablePage> {
                                         .copyWith(
                                             fontSize: 25,
                                             fontWeight: FontWeight.w800,
-                                            color: ColorTheme.hexablue)),
+                                            color: ColorTheme.blue)),
                                 SizedBox(
                                     height: MediaQuery.of(context).size.height /
                                         35),
@@ -173,9 +173,9 @@ class _PreferablePageState extends State<PreferablePage> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.deepaccent),
+                            MaterialStateProperty.all(ColorTheme.greenAccent),
                         shadowColor:
-                            MaterialStateProperty.all(ColorTheme.regterm),
+                            MaterialStateProperty.all(ColorTheme.blue),
                         elevation: MaterialStateProperty.all(50),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
