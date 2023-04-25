@@ -70,6 +70,7 @@ class _PreferablePageState extends State<PreferablePage> {
                               width: 86,
                               child: ElevatedButton(
                                 style: ButtonStyle(
+                                  elevation: MaterialStatePropertyAll(0),
                                   shape: MaterialStateProperty.all<
                                           RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
@@ -92,13 +93,11 @@ class _PreferablePageState extends State<PreferablePage> {
                             ),
                           ],
                         ),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height / 25),
                         Padding(
                           padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width / 20),
+                              left: MediaQuery.of(context).size.width / 20,top: MediaQuery.of(context).size.height / 30),
                           child: SizedBox(
-                            height: MediaQuery.of(context).size.height / 8,
+                            height: MediaQuery.of(context).size.height / 7,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -139,6 +138,8 @@ class _PreferablePageState extends State<PreferablePage> {
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 30),
+
+                  //Images of Real Estate
                   Container(
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,

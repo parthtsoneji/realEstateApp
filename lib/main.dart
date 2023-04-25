@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realstateapp/Screens/Account/AccountLocation.dart';
-import 'package:realstateapp/Screens/Account/PaymentPage.dart';
-import 'package:realstateapp/Screens/Account/PreferableSelected.dart';
-import 'package:realstateapp/Screens/Register/RegisterPage.dart';
 import 'package:realstateapp/Screens/SplashScreen/SplashScreen.dart';
-
 void main() {
   runApp(const MyApp());
 }

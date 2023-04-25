@@ -102,14 +102,6 @@ class _GoogleMapLocState extends State<GoogleMapLoc> {
                     decoration: BoxDecoration(
                       color: ColorTheme.white,
                       borderRadius: BorderRadius.circular(25.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: ColorTheme.grey.withOpacity(0.3),
-                          spreadRadius: 10,
-                          blurRadius: 2,
-                          offset: const Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
                     ),
                   child: TextFormField(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -221,54 +213,39 @@ class _GoogleMapLocState extends State<GoogleMapLoc> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 31,left: MediaQuery.of(context).size.width / 5),
+                padding: EdgeInsets.all(15.0),
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height / 12,
-                        width: MediaQuery.of(context).size.width / 1.8,
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(ColorTheme.greenAccent),
-                          ),
-                          onPressed: () {},
-                          child: Text(
-                            "Choose your location",
-                            style: AppTheme.lightTheme()
-                                .textTheme
-                                .labelMedium!
-                                .copyWith(
-                                    color: ColorTheme.white,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 16),
-                          ),
-                        ),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height / 12,
+                    width: MediaQuery.of(context).size.width / 1.8,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(ColorTheme.greenAccent),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
-                        child: SizedBox(
-                          height: MediaQuery.of(context).size.height / 14,
-                          width: MediaQuery.of(context).size.width / 10,
-                          child: CircleAvatar(
-                              backgroundColor: ColorTheme.blue,
-                              child: Stack(
-                                children: const [
-                                  Center(child: Image(image: AssetImage('images/Shape.png'))),
-                                  Center(child: Image(image: AssetImage("images/Shape12.png")))
-                                ],
-                              )
-                          ),
-                        ),
+                      onPressed: () {},
+                      child: Text(
+                        "Choose your location",
+                        style: AppTheme.lightTheme()
+                            .textTheme
+                            .labelMedium!
+                            .copyWith(
+                                color: ColorTheme.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16),
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
             ],
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          elevation: 0, onPressed: () {},
+backgroundColor: ColorTheme.blueAccent,
+          child: Image(image: AssetImage("images/Center.png"),fit: BoxFit.cover,),
         ),
       ),
     );

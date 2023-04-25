@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Screens/Account/LocationMap.dart';
@@ -48,6 +47,7 @@ class _LocationPageState extends State<LocationPage> {
                           width: 86,
                           child: ElevatedButton(
                             style: ButtonStyle(
+                              elevation: MaterialStatePropertyAll(0),
                               shape: MaterialStateProperty.all<
                                       RoundedRectangleBorder>(
                                   RoundedRectangleBorder(

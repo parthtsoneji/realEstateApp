@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Screens/Login/LoginOption.dart';
@@ -35,6 +33,7 @@ class _ProductTour1State extends State<ProductTour1> {
                   width: 86,
                   child: ElevatedButton(
                       style: ButtonStyle(
+                        elevation: MaterialStatePropertyAll(0),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(

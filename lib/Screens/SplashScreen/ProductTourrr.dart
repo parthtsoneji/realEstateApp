@@ -32,6 +32,7 @@ class _ProductTour3State extends State<ProductTour3> {
                 width: 86,
                 child: ElevatedButton(
                     style: ButtonStyle(
+                      elevation: MaterialStatePropertyAll(0),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
+import 'package:intl/intl.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({Key? key}) : super(key: key);
@@ -13,6 +14,24 @@ class _PaymentPageState extends State<PaymentPage> {
   bool _isShow = false;
   bool _isMasterCard = false;
   bool _isVisa = false;
+
+  DateTime? _selectedDate;
+
+  void _pickDateDialog() {
+    showDatePicker(
+            context: context,
+            initialDate: DateTime.now(),
+            firstDate: DateTime(1950),
+            lastDate: DateTime.now())
+        .then((pickedDate) {
+      if (pickedDate == null) {
+        return;
+      }
+      setState(() {
+        _selectedDate = pickedDate;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -132,8 +151,9 @@ class _PaymentPageState extends State<PaymentPage> {
                   Padding(
                     padding: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height / 80,
-                        left: MediaQuery.of(context).size.width / 8),
+                        left: MediaQuery.of(context).size.width /80),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         GestureDetector(
                           onTap: () {
@@ -156,7 +176,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                   image:
                                       AssetImage('images/Paymentrounded.png')),
                         ),
-                        SizedBox(width: MediaQuery.of(context).size.width / 40),
+
                         GestureDetector(
                           onTap: () {
                             if (_isMasterCard == false) {
@@ -178,27 +198,27 @@ class _PaymentPageState extends State<PaymentPage> {
                               : const Image(
                                   image: AssetImage('images/Paymentunded.png')),
                         ),
-                        SizedBox(width: MediaQuery.of(context).size.width / 40),
-              GestureDetector(
-                onTap: () {
-                  if (_isVisa == false) {
-                    setState(() {
-                      _isVisa = true;
-                      _isMasterCard = false;
-                      _isShow = false;
-                    });
-                  } else {
-                    setState(() {
-                      _isVisa = false;
-                    });
-                  }
-                },
-                child: _isVisa == true
-                    ? const Image(
-                    image:
-                    AssetImage('images/PaymentVisa.png'))
-                    : const Image(
-                    image: AssetImage('images/PaymentVisa.png')),),
+
+                        GestureDetector(
+                          onTap: () {
+                            if (_isVisa == false) {
+                              setState(() {
+                                _isVisa = true;
+                                _isMasterCard = false;
+                                _isShow = false;
+                              });
+                            } else {
+                              setState(() {
+                                _isVisa = false;
+                              });
+                            }
+                          },
+                          child: _isVisa == true
+                              ? const Image(
+                                  image: AssetImage('images/PaymentVisa.png'))
+                              : const Image(
+                                  image: AssetImage('images/PaymentVisa.png')),
+                        ),
                       ],
                     ),
                   ),
@@ -320,70 +340,74 @@ class _PaymentPageState extends State<PaymentPage> {
                             hintText: "1234 5678 9012 3456",
                           ),
                         ),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height / 30),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            GestureDetector(
-                              onTap: (){},
-                              child: Container(
-                                height: MediaQuery.of(context).size.height / 14,
-                                width: MediaQuery.of(context).size.height / 3.5,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  color: ColorTheme.white1,
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(15.0),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "11/05/23",
-                                        style: ThemeData.light()
-                                            .textTheme
-                                            .bodyMedium!
-                                            .copyWith(
-                                                color: ColorTheme.darktype),
-                                      ),
-                                      const Icon(
-                                        Icons.calendar_today_outlined,
-                                        color: ColorTheme.darktype,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.height / 3.5,
-                              child: TextFormField(
-                                cursorColor: ColorTheme.green,
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                decoration: InputDecoration(
-                                  filled: true,
-                                  border: OutlineInputBorder(
+                        // Date Picker
+                        Padding(
+                          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 30),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              GestureDetector(
+                                onTap: _pickDateDialog,
+                                child: Container(
+                                  height: MediaQuery.of(context).size.height / 14,
+                                  width: MediaQuery.of(context).size.height / 5.2,
+                                  decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
-                                    borderSide: BorderSide.none,
+                                    color: ColorTheme.white1,
                                   ),
-                                  fillColor: ColorTheme.white1,
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    borderSide: const BorderSide(
-                                      width: 1.5,
-                                      color: ColorTheme.green,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(15.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          _selectedDate == null
+                                              ? "11/05/23"
+                                              : 'Picked Date: ${DateFormat.yMMMd().format(_selectedDate!)}',
+                                          style: ThemeData.light()
+                                              .textTheme
+                                              .bodyMedium!
+                                              .copyWith(
+                                                  color: ColorTheme.darktype),
+                                        ),
+                                        const Icon(
+                                          Icons.calendar_today_outlined,
+                                          color: ColorTheme.darktype,
+                                        )
+                                      ],
                                     ),
                                   ),
-                                  prefixIcon: const Icon(Icons.credit_card,
-                                      color: ColorTheme.darkblue),
-                                  hintText: "CVV",
                                 ),
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                width: MediaQuery.of(context).size.height / 5.2,
+                                child: TextFormField(
+                                  cursorColor: ColorTheme.green,
+                                  autovalidateMode:
+                                      AutovalidateMode.onUserInteraction,
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    fillColor: ColorTheme.white1,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: const BorderSide(
+                                        width: 1.5,
+                                        color: ColorTheme.green,
+                                      ),
+                                    ),
+                                    prefixIcon: const Icon(Icons.credit_card,
+                                        color: ColorTheme.darkblue),
+                                    hintText: "CVV",
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -447,14 +471,16 @@ class _PaymentPageState extends State<PaymentPage> {
                         ),
                         SizedBox(
                             height: MediaQuery.of(context).size.height / 30),
+
+                        // Date Picker
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             GestureDetector(
-                              onTap: (){},
+                              onTap: _pickDateDialog,
                               child: Container(
                                 height: MediaQuery.of(context).size.height / 14,
-                                width: MediaQuery.of(context).size.height / 3.5,
+                                width: MediaQuery.of(context).size.height / 5.2,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
                                   color: ColorTheme.white1,
@@ -466,7 +492,9 @@ class _PaymentPageState extends State<PaymentPage> {
                                     MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        "11/05/23",
+                                        _selectedDate == null
+                                            ? "11/05/23"
+                                            : 'Picked Date: ${DateFormat.yMMMd().format(_selectedDate!)}',
                                         style: ThemeData.light()
                                             .textTheme
                                             .bodyMedium!
@@ -483,7 +511,7 @@ class _PaymentPageState extends State<PaymentPage> {
                               ),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.height / 3.5,
+                              width: MediaQuery.of(context).size.height / 5.2,
                               child: TextFormField(
                                 cursorColor: ColorTheme.green,
                                 autovalidateMode:
@@ -522,7 +550,9 @@ class _PaymentPageState extends State<PaymentPage> {
                             : MediaQuery.of(context).size.height / 7),
                     child: Column(
                       children: [
-                        _isShow == true || _isMasterCard == true || _isVisa == true
+                        _isShow == true ||
+                                _isMasterCard == true ||
+                                _isVisa == true
                             ? Container()
                             : const Center(
                                 child: SizedBox(
@@ -535,7 +565,6 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                 ),
                               ),
-
                         Center(
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -546,8 +575,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                 style: ButtonStyle(
                                   backgroundColor: MaterialStateProperty.all(
                                       ColorTheme.greenAccent),
-                                  shadowColor:
-                                      MaterialStateProperty.all(ColorTheme.blue),
+                                  shadowColor: MaterialStateProperty.all(
+                                      ColorTheme.blue),
                                   elevation: MaterialStateProperty.all(50),
                                   shape: MaterialStateProperty.all<
                                       RoundedRectangleBorder>(
@@ -560,7 +589,8 @@ class _PaymentPageState extends State<PaymentPage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const PaymentPage(),
+                                        builder: (context) =>
+                                            const PaymentPage(),
                                       ));
                                 },
                                 child: Text(
