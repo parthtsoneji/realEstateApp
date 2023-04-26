@@ -26,7 +26,6 @@ class _PreferableSelectedState extends State<PreferableSelected> {
   final int index = 0;
   List<bool> selectedIndex = [];
 
-
   @override
   void initState() {
     super.initState();
@@ -39,134 +38,114 @@ class _PreferableSelectedState extends State<PreferableSelected> {
       child: Scaffold(
         body: SingleChildScrollView(
           physics: const NeverScrollableScrollPhysics(),
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 20, left: 24, right: 24),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: const SizedBox(
-                                height: 50,
-                                width: 50,
-                                child: CircleAvatar(
-                                  backgroundColor: ColorTheme.white1,
-                                  child: Icon(
-                                    Icons.arrow_back_ios,
-                                    size: 10,
-                                    color: ColorTheme.darkblue,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 38,
-                              width: 86,
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  elevation: const MaterialStatePropertyAll(0),
-                                  shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(18.0),
-                                  )),
-                                  backgroundColor: MaterialStateProperty.all(
-                                      ColorTheme.white1),
-                                ),
-                                onPressed: () {},
-                                child: Text(
-                                  "skip",
-                                  style: ThemeData.light()
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(
-                                          fontWeight: FontWeight.w400,
-                                          color: ColorTheme.skip),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height / 20),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width / 20),
-                          child: SizedBox(
-                            height: 100,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Select your preferable",
-                                    style: ThemeData.light()
-                                        .textTheme
-                                        .labelMedium!
-                                        .copyWith(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w500,
-                                            color: ColorTheme.darkblue)),
-                                Text("real estate type ",
-                                    style: ThemeData.light()
-                                        .textTheme
-                                        .labelMedium!
-                                        .copyWith(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w800,
-                                            color: ColorTheme.blue)),
-                                const SizedBox(height: 20),
-                                Text(
-                                  "You can edit this later on your account setting.",
-                                  style: ThemeData.light()
-                                      .textTheme
-                                      .labelMedium!
-                                      .copyWith(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: ColorTheme.darktype),
-                                ),
-                              ],
+          child: Stack(children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24, right: 24, top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: const SizedBox(
+                          height: 50,
+                          width: 50,
+                          child: CircleAvatar(
+                            backgroundColor: ColorTheme.white1,
+                            child: Icon(
+                              Icons.arrow_back_ios,
+                              size: 10,
+                              color: ColorTheme.darkblue,
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        height: 38,
+                        width: 86,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            elevation: const MaterialStatePropertyAll(0),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                            )),
+                            backgroundColor:
+                                MaterialStateProperty.all(ColorTheme.white1),
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            "skip",
+                            style: ThemeData.light()
+                                .textTheme
+                                .labelSmall!
+                                .copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    color: ColorTheme.skip),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height / 15,
-                        left: MediaQuery.of(context).size.width / 20,
-                        right: MediaQuery.of(context).size.width / 20),
-                    child: SizedBox(
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width,
-                      child: GridView.builder(
-                        scrollDirection: Axis.vertical,
-                        gridDelegate:
-                            SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisSpacing: 12,
-                                childAspectRatio: MediaQuery.of(context).size.height / 800,
-                                mainAxisSpacing: 14,
-                                crossAxisCount: 2),
-                        itemCount: images.length,
-                        itemBuilder: (context, index) {
-                          final select = images[index];
-                          return GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                 selectedIndex[index] = !selectedIndex[index];
-                              });
-                            },
-                            child: Card(
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height / 20, left: 30),
+                  child: Text("Select your preferable",
+                      style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                          color: ColorTheme.blueheading,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30),
+                  child: Text(
+                    'real estate type',
+                    style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                        color: ColorTheme.blue,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 25),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 30),
+                  child: Text(
+                      "You can edit this later on your account setting.",
+                      style: ThemeData.light()
+                          .textTheme
+                          .labelMedium!
+                          .copyWith(fontSize: 12, fontWeight: FontWeight.w400)),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height / 20,
+                      left: MediaQuery.of(context).size.width / 20,
+                      right: MediaQuery.of(context).size.width / 20),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    child: GridView.builder(
+                      scrollDirection: Axis.vertical,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisSpacing: 12,
+                          childAspectRatio:
+                              MediaQuery.of(context).size.height / 800,
+                          mainAxisSpacing: 14,
+                          crossAxisCount: 2),
+                      itemCount: images.length,
+                      itemBuilder: (context, index) {
+                        final select = images[index];
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedIndex[index] = !selectedIndex[index];
+                            });
+                          },
+                          child: Card(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25.0)),
                               color: selectedIndex[index] == true
@@ -176,28 +155,33 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                 children: [
                                   Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(
                                             left: MediaQuery.of(context)
-                                                .size
-                                                .width /
+                                                    .size
+                                                    .width /
                                                 70,
                                             right: MediaQuery.of(context)
-                                                .size
-                                                .width /
+                                                    .size
+                                                    .width /
                                                 70,
                                             top: MediaQuery.of(context)
-                                                .size
-                                                .height /
+                                                    .size
+                                                    .height /
                                                 90),
                                         child: Container(
-                                            height: MediaQuery.of(context).size.height / 4.8,
-                                            width: MediaQuery.of(context).size.width,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height /
+                                                4.8,
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
                                             decoration: BoxDecoration(
                                               borderRadius:
-                                              BorderRadius.circular(15),
+                                                  BorderRadius.circular(15),
                                               image: DecorationImage(
                                                 image: AssetImage(select.image),
                                                 fit: BoxFit.cover,
@@ -206,10 +190,13 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            top: MediaQuery.of(context).size.height / 80,
+                                            top: MediaQuery.of(context)
+                                                    .size
+                                                    .height /
+                                                80,
                                             left: MediaQuery.of(context)
-                                                .size
-                                                .width /
+                                                    .size
+                                                    .width /
                                                 30),
                                         child: Text(
                                           select.name,
@@ -217,75 +204,85 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                               .textTheme
                                               .labelMedium!
                                               .copyWith(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w700,
-                                              color: selectedIndex[index] == true
-                                                  ? ColorTheme.white
-                                                  : ColorTheme.black),
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: selectedIndex[index] ==
+                                                          true
+                                                      ? ColorTheme.white
+                                                      : ColorTheme.black),
                                         ),
                                       ),
                                     ],
                                   ),
-                                  selectedIndex[index] == true ? const Padding(
-                                    padding: EdgeInsets.all(15.0),
-                                    child: Image(image: AssetImage("images/Component.png"),height: 25,width: 25,),
-                                  ) : const Padding(
-                                    padding: EdgeInsets.all(15.0),
-                                    child: Image(image: AssetImage("images/Radio.png"),height: 25,width: 25,),
-                                  )
+                                  selectedIndex[index] == true
+                                      ? const Padding(
+                                          padding: EdgeInsets.all(15.0),
+                                          child: Image(
+                                            image: AssetImage(
+                                                "images/Component.png"),
+                                            height: 25,
+                                            width: 25,
+                                          ),
+                                        )
+                                      : const Padding(
+                                          padding: EdgeInsets.all(15.0),
+                                          child: Image(
+                                            image:
+                                                AssetImage("images/Radio.png"),
+                                            height: 25,
+                                            width: 25,
+                                          ),
+                                        )
                                 ],
-                              )
-                            ),
-                          );
-                        },
-                      ),
+                              )),
+                        );
+                      },
                     ),
                   ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 1.2),
-                child: Center(
-                  child: SizedBox(
-                    height: MediaQuery.of(context).size.height / 12,
-                    width: MediaQuery.of(context).size.width / 1.4,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.greenAccent),
-                        shadowColor: MaterialStateProperty.all(ColorTheme.blue),
-                        elevation: MaterialStateProperty.all(50),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 1.2),
+              child: Center(
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height / 12,
+                  width: MediaQuery.of(context).size.width / 1.4,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(ColorTheme.greenAccent),
+                      shadowColor: MaterialStateProperty.all(ColorTheme.blue),
+                      elevation: MaterialStateProperty.all(50),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const PaymentPage(),
-                            ));
-                      },
-                      child: Text(
-                        "Next",
-                        style: AppTheme.lightTheme()
-                            .textTheme
-                            .labelMedium!
-                            .copyWith(
-                                color: ColorTheme.white,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16),
-                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PaymentPage(),
+                          ));
+                    },
+                    child: Text(
+                      "Next",
+                      style: AppTheme.lightTheme()
+                          .textTheme
+                          .labelMedium!
+                          .copyWith(
+                              color: ColorTheme.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16),
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ]),
         ),
       ),
     );

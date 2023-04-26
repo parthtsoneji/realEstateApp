@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Class/classimage.dart';
@@ -53,59 +51,71 @@ class _LoginOptionState extends State<LoginOption> {
                     }),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 32),
             Padding(
-              padding:
-                  EdgeInsets.only(left: MediaQuery.of(context).size.width / 10),
-              child: Row(
-                children: [
-                  Text("Ready to",
-                      style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500,
-                          color: ColorTheme.darkblue)),
-                  const SizedBox(width: 4),
-                  Text("explore ?",
-                      style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500,
-                          color: ColorTheme.blueAccent))
-                ],
-              ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height / 20),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 15,
-              width: MediaQuery.of(context).size.width / 1.5,
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(ColorTheme.greenAccent),
-                ),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginForm1()));
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.email, color: ColorTheme.white),
-                    Text(
-                      "Continue with Email",
-                      style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          color: ColorTheme.white),
-                    ),
-                  ],
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 32,
+              left: 24),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Ready to',
+                        style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                            color: ColorTheme.darkblue),
+                      ),
+                      TextSpan(
+                          text: "explore ?",
+                          style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500,
+                              color: ColorTheme.blueAccent)),
+                    ],
+                  ),
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 20),
+
             Padding(
-              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 20),
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height / 15,
+                width: MediaQuery.of(context).size.width / 1.5,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(ColorTheme.greenAccent),
+                  ),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const FirstLoginForm()));
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.email, color: ColorTheme.white),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Continue with Email",
+                          style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                              color: ColorTheme.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 30,right: 30,top: MediaQuery.of(context).size.height / 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -193,7 +203,7 @@ class _LoginOptionState extends State<LoginOption> {
                       style: ThemeData.light().textTheme.labelMedium!.copyWith(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
-                          color: ColorTheme.darktype)),
+                          color: ColorTheme.blueheading)),
                   const SizedBox(width: 3),
                   TextButton(
                     child: Text("Register",

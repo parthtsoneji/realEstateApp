@@ -47,50 +47,48 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     )
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height / 20),
+
                 Padding(
-                  padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width / 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Create your",
-                            style: ThemeData.light()
-                                .textTheme
-                                .labelMedium!
-                                .copyWith(
-                                    fontSize: 25, color: ColorTheme.darkblue),
-                          ),
-                          const SizedBox(width: 5),
-                          Text(
-                            "account",
-                            style: ThemeData.light()
-                                .textTheme
-                                .labelMedium!
-                                .copyWith(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.w800,
-                                    color: ColorTheme.blue),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: MediaQuery.of(context).size.height / 25),
-                      Text("quis nostrud execitation ullamco laboris nisi ut",
+                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 20,left: 24),
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Create your",
                           style: ThemeData.light()
                               .textTheme
                               .labelMedium!
                               .copyWith(
-                                  fontWeight: FontWeight.w400,
-                                  color: ColorTheme.darktype)),
-                    ],
+                              fontSize: 25, color: ColorTheme.darkblue),
+                        ),
+                        const WidgetSpan(child: SizedBox(width: 10)),
+                        TextSpan(
+                          text: "account",
+                          style: ThemeData.light()
+                              .textTheme
+                              .labelMedium!
+                              .copyWith(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w800,
+                              color: ColorTheme.blue),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height / 10),
+                Padding(
+                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 25,left: 24),
+                  child: Text("quis nostrud execitation ullamco laboris nisi ut",
+                      style: ThemeData.light()
+                          .textTheme
+                          .labelMedium!
+                          .copyWith(
+                          fontWeight: FontWeight.w400,
+                          color: ColorTheme.blueheading)),
+                ),
                 Padding(
                   padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height / 10,
                       left: MediaQuery.of(context).size.width / 16,
                       right: MediaQuery.of(context).size.width / 16),
                   child: TextFormField(

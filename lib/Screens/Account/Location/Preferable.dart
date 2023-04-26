@@ -36,131 +36,116 @@ class _PreferablePageState extends State<PreferablePage> {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
           child: Stack(
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsets.only(top: 20, left: 24, right: 24),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    padding: const EdgeInsets.only(left: 24, right: 24, top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: const SizedBox(
-                                height: 50,
-                                width: 50,
-                                child: CircleAvatar(
-                                  backgroundColor: ColorTheme.white1,
-                                  child: Icon(
-                                    Icons.arrow_back_ios,
-                                    size: 10,
-                                    color: ColorTheme.darkblue,
-                                  ),
-                                ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: const SizedBox(
+                            height: 50,
+                            width: 50,
+                            child: CircleAvatar(
+                              backgroundColor: ColorTheme.white1,
+                              child: Icon(
+                                Icons.arrow_back_ios,
+                                size: 10,
+                                color: ColorTheme.darkblue,
                               ),
                             ),
-                            SizedBox(
-                              height: 38,
-                              width: 86,
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  elevation: MaterialStatePropertyAll(0),
-                                  shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
+                          ),
+                        ),
+                        SizedBox(
+                          height: 38,
+                          width: 86,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              elevation: const MaterialStatePropertyAll(0),
+                              shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18.0),
                                   )),
-                                  backgroundColor: MaterialStateProperty.all(
-                                      ColorTheme.white1),
-                                ),
-                                onPressed: () {},
-                                child: Text(
-                                  "skip",
-                                  style: ThemeData.light()
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(
-                                          fontWeight: FontWeight.w400,
-                                          color: ColorTheme.skip),
-                                ),
-                              ),
+                              backgroundColor:
+                              MaterialStateProperty.all(ColorTheme.white1),
                             ),
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width / 20,top: MediaQuery.of(context).size.height / 30),
-                          child: SizedBox(
-                            height: MediaQuery.of(context).size.height / 7,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Select your preferable",
-                                    style: ThemeData.light()
-                                        .textTheme
-                                        .labelMedium!
-                                        .copyWith(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w500,
-                                            color: ColorTheme.darkblue)),
-                                Text("real estate type ",
-                                    style: ThemeData.light()
-                                        .textTheme
-                                        .labelMedium!
-                                        .copyWith(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w800,
-                                            color: ColorTheme.blue)),
-                                SizedBox(
-                                    height: MediaQuery.of(context).size.height /
-                                        35),
-                                Text(
-                                  "You can edit this later on your account setting.",
-                                  style: ThemeData.light()
-                                      .textTheme
-                                      .labelMedium!
-                                      .copyWith(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: ColorTheme.darktype),
-                                ),
-                              ],
+                            onPressed: () {},
+                            child: Text(
+                              "skip",
+                              style: ThemeData.light()
+                                  .textTheme
+                                  .labelSmall!
+                                  .copyWith(
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorTheme.skip),
                             ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height / 30),
+                  Padding(
+                    padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 20,left: 24),
+                    child: Text("Select your preferable",
+                        style: ThemeData.light()
+                            .textTheme
+                            .labelMedium!
+                            .copyWith(color: ColorTheme.blueheading,
+                            fontSize: 25, fontWeight: FontWeight.w500)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: Text('real estate type',
+                      style: ThemeData.light()
+                          .textTheme
+                          .labelMedium!
+                          .copyWith(color: ColorTheme.blue,
+                          fontWeight: FontWeight.w800, fontSize: 25),),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20,left: 24),
+                    child: Text("You can edit this later on your account setting.",
+                        style: ThemeData.light()
+                            .textTheme
+                            .labelMedium!
+                            .copyWith(
+                            fontSize: 12, fontWeight: FontWeight.w400)),
+                  ),
 
                   //Images of Real Estate
-                  Container(
-                    height: MediaQuery.of(context).size.height,
-                    width: MediaQuery.of(context).size.width,
-                    child: StaggeredGridView.countBuilder(
-                      crossAxisCount: 3,
-                      // number of grid columns
-                      itemCount: images.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          margin: EdgeInsets.all(2),
-                          child: Image(
-                            image: AssetImage(images[index]),
-                            fit: BoxFit.cover,
-                          ),
-                        );
-                      },
-                      staggeredTileBuilder: (int index) =>
-                          StaggeredTile.count(1, index.isEven ? 1.8 : 1.2),
-                      mainAxisSpacing: 2.0,
-                      crossAxisSpacing: 2.0,
+                  Padding(
+                    padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 20),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+                      child: StaggeredGridView.countBuilder(
+                        scrollDirection: Axis.vertical,
+                        crossAxisCount: 3,
+                        // number of grid columns
+                        itemCount: images.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            margin: const EdgeInsets.all(2),
+                            child: Image(
+                              image: AssetImage(images[index]),
+                              fit: BoxFit.cover,
+                            ),
+                          );
+                        },
+                        staggeredTileBuilder: (int index) =>
+                            StaggeredTile.count(1, index.isEven ? 1.8 : 1.2),
+                        mainAxisSpacing: 2.0,
+                        crossAxisSpacing: 2.0,
+                      ),
                     ),
                   ),
                 ],
@@ -187,7 +172,7 @@ class _PreferablePageState extends State<PreferablePage> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSetUp(),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AccountSetUp(),));
                       },
                       child: Text(
                         "Show more",

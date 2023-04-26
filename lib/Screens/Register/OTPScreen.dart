@@ -38,57 +38,57 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                 )
               ),
-              SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width / 12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          "Enter The ",
-                          style: ThemeData.light()
-                              .textTheme
-                              .labelMedium!
-                              .copyWith(
-                                  fontSize: 25, color: ColorTheme.darkblue,fontWeight: FontWeight.w500),
-                        ),
-                        const SizedBox(width: 5),
-                        Text(
-                          "code",
-                          style: ThemeData.light()
-                              .textTheme
-                              .labelMedium!
-                              .copyWith(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w800,
-                                  color: ColorTheme.blue),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: MediaQuery.of(context).size.height / 25),
-                    Text("Enter the 4 digit code that we just sent to ",
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 20,left: 24),
+                child: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Enter The ",
                         style: ThemeData.light()
                             .textTheme
                             .labelMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w400,
-                                color: ColorTheme.darktype)),
-                    Text("jonathan@gmail.com",
+                            fontSize: 25, color: ColorTheme.darkblue,fontWeight: FontWeight.w500),
+                      ),
+                      const WidgetSpan(child: SizedBox(width: 5)),
+                      TextSpan(
+                        text: "code",
                         style: ThemeData.light()
                             .textTheme
                             .labelMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w700,
-                                color: ColorTheme.darktype)),
-                  ],
+                            fontSize: 25,
+                            fontWeight: FontWeight.w800,
+                            color: ColorTheme.blue),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height / 10),
               Padding(
-                padding: const EdgeInsets.only(left: 24, right: 24),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 25,left: 24),
+                child: Text("Enter the 4 digit code that we just sent to ",
+                    style: ThemeData.light()
+                        .textTheme
+                        .labelMedium!
+                        .copyWith(
+                        fontWeight: FontWeight.w400,
+                        color: ColorTheme.blueheading)),
+              ),
+              Padding(
+                padding:  EdgeInsets.only(left: 24),
+                child: Text("jonathan@gmail.com",
+                    style: ThemeData.light()
+                        .textTheme
+                        .labelMedium!
+                        .copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: ColorTheme.blueheading)),
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(left: 24,top: MediaQuery.of(context).size.height / 10, right: 24),
                 child: OtpTextField(
                   numberOfFields: 4,
                   textStyle: ThemeData.light()
@@ -148,7 +148,7 @@ class _OtpScreenState extends State<OtpScreen> {
                                 .copyWith(
                                     fontSize:
                                         MediaQuery.of(context).size.width / 30,
-                                    color: ColorTheme.darktype),
+                                    color: ColorTheme.blueheading),
                           ),
                           const SizedBox(width: 4),
                           Text(

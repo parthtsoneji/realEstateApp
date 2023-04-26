@@ -15,7 +15,7 @@ class AppTheme {
         ),
         bodyMedium: GoogleFonts.dmSans(
             fontSize: 12,
-            color: ColorTheme.darktype,
+            color: ColorTheme.blueheading,
             fontWeight: FontWeight.w400),
         labelMedium: GoogleFonts.lato(
           fontSize: 16,
@@ -43,8 +43,8 @@ class ColorTheme {
   static const blue = Color(0xFF1F4C6B);
   static const blueAccent = Color(0xFF204D6C);
   static const gradiantpinkl = Color(0xFF634AFD);
-  static const darktype = Color(0xFF53587A);
+  static const blueheading = Color(0xFF252B5C);
   static const skip = Color(0xFF3A3F67);
   static const darkblue = Color(0xFF234F68);
-  static const blueheading = Color(0xFF252B5C);
+  
 }

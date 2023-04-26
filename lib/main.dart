@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:realstateapp/Screens/Account/AccountSetUp/AccoutnSetUp.dart';
+import 'package:realstateapp/Screens/Home/HomeScreen.dart';
+import 'package:realstateapp/Screens/Home/NavigationBar.dart';
 import 'package:realstateapp/Screens/SplashScreen/SplashScreen.dart';
+
 
 void main() {
   runApp(const MyApp());
