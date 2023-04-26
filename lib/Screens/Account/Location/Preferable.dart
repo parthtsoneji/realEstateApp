@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:realstateapp/Screens/Account/PreferableSelected.dart';
+import 'package:realstateapp/Screens/Account/AccountSetUp/AccoutnSetUp.dart';
+import 'package:realstateapp/Screens/Account/Location/PreferableSelected.dart';
 
 class PreferablePage extends StatefulWidget {
   const PreferablePage({Key? key}) : super(key: key);
@@ -186,7 +187,7 @@ class _PreferablePageState extends State<PreferablePage> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PreferableSelected(),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSetUp(),));
                       },
                       child: Text(
                         "Show more",

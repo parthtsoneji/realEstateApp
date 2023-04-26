@@ -45,5 +45,6 @@ class ColorTheme {
   static const gradiantpinkl = Color(0xFF634AFD);
   static const darktype = Color(0xFF53587A);
   static const skip = Color(0xFF3A3F67);
-  static const darkblue = Color(0xFF252B5C);
+  static const darkblue = Color(0xFF234F68);
+  static const blueheading = Color(0xFF252B5C);
 }

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
-import 'package:realstateapp/Screens/Account/AccountLocation.dart';
+import 'package:realstateapp/Screens/Account/Location/AccountLocation.dart';
 import 'package:realstateapp/Screens/Login/FAQ&SignIn.dart';
 import 'package:realstateapp/Screens/Register/RegisterPage.dart';
 

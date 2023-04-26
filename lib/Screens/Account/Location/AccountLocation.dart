@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
-import 'package:realstateapp/Screens/Account/LocationMap.dart';
-import 'package:realstateapp/Screens/Account/Preferable.dart';
+import 'package:realstateapp/Screens/Account/Location/LocationMap.dart';
+import 'package:realstateapp/Screens/Account/Location/Preferable.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({Key? key}) : super(key: key);
