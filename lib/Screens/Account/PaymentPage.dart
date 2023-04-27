@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:intl/intl.dart';
+import 'package:realstateapp/Screens/Account/AccountSetUp/AccoutnSetUp.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({Key? key}) : super(key: key);
@@ -561,7 +562,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const PaymentPage(),
+                              builder: (context) => const AccountSetUp(),
                             ));
                       },
                       child: Text(

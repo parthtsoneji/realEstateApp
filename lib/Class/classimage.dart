@@ -13,3 +13,9 @@ class paymentProcess{
   final String image;
   paymentProcess(this.image);
 }
+
+
+class categoryName{
+  final String name;
+  categoryName({required this.name});
+}

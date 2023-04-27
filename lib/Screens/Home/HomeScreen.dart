@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
+import 'package:realstateapp/Class/classimage.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,6 +10,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<categoryName> categoryname = [
+    categoryName(name: "All"),
+    categoryName(name: "House"),
+    categoryName(name: "Apartment"),
+    categoryName(name: "House")
+  ];
+
+  int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -66,10 +76,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.pop(context);
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 3.2),
+                            padding: EdgeInsets.only(
+                                left: MediaQuery.of(context).size.width / 3.2),
                             child: Container(
                                 height: MediaQuery.of(context).size.height / 15,
-                                width: MediaQuery.of(context).size.width /10,
+                                width: MediaQuery.of(context).size.width / 10,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(25.0),
                                   color: ColorTheme.white1,
@@ -81,10 +92,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width / 30),
                           child: Container(
                               height: MediaQuery.of(context).size.height / 15,
-                              width: MediaQuery.of(context).size.width /10,
+                              width: MediaQuery.of(context).size.width / 10,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(25.0),
                                 color: ColorTheme.white1,
@@ -99,7 +111,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
 
                   Padding(
-                    padding: EdgeInsets.only(left: 30, top: MediaQuery.of(context).size.height / 30),
+                    padding: EdgeInsets.only(
+                        left: 30, top: MediaQuery.of(context).size.height / 30),
                     child: RichText(
                       text: TextSpan(
                         children: [
@@ -109,9 +122,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 .textTheme
                                 .labelMedium!
                                 .copyWith(
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
-                                color: ColorTheme.blueheading),
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.w500,
+                                    color: ColorTheme.blueheading),
                           ),
                           const WidgetSpan(child: SizedBox(width: 10)),
                           TextSpan(
@@ -120,9 +133,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 .textTheme
                                 .labelMedium!
                                 .copyWith(
-                                fontSize: 25,
-                                fontWeight: FontWeight.w600,
-                                color: ColorTheme.darkblue),
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.w600,
+                                    color: ColorTheme.darkblue),
                           ),
                         ],
                       ),
@@ -142,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: EdgeInsets.only(
                       left: 30,
                       right: 30,
-                      top: MediaQuery.of(context).size.height /25,
+                      top: MediaQuery.of(context).size.height / 25,
                     ),
                     child: Container(
                       decoration: BoxDecoration(
@@ -161,10 +174,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(10.0),
                             borderSide: BorderSide.none,
                           ),
-                          hintStyle: ThemeData.light().textTheme.labelLarge!.copyWith(
-                              color: ColorTheme.lightwhite,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12),
+                          hintStyle: ThemeData.light()
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                  color: ColorTheme.lightwhite,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12),
                           hintText: "Search House, Apartment, etc",
                           suffixIcon: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -175,13 +191,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 40,
                                   width: 1.0,
                                   color: ColorTheme.lightwhite,
-                                  margin:
-                                  const EdgeInsets.only(left: 10.0, right: 10.0),
+                                  margin: const EdgeInsets.only(
+                                      left: 10.0, right: 10.0),
                                 ),
                               ),
                               const Padding(
                                 padding: EdgeInsets.only(left: 10, right: 15),
-                                child: Icon(Icons.mic, color: ColorTheme.lightwhite),
+                                child: Icon(Icons.mic,
+                                    color: ColorTheme.lightwhite),
                               ),
                             ],
                           ),
@@ -191,6 +208,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+
+                  //List View for horizontale details
+                  ListView.builder(
+                    itemCount: categoryname.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        height: MediaQuery.of(context).size.width * 0.1,
+                        width: MediaQuery.of(context).size.width * 0.1,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: Text(categoryname[index].name,
+                            style: ThemeData.light()
+                                .textTheme
+                                .labelLarge!
+                                .copyWith(
+                                    color: ColorTheme.blueheading,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 10)),
+                      );
+                    },
+                  )
                 ],
               ),
             ],

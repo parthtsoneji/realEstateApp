@@ -154,8 +154,7 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                               child: Stack(
                                 children: [
                                   Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(
@@ -170,12 +169,12 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                             top: MediaQuery.of(context)
                                                     .size
                                                     .height /
-                                                90),
+                                                110),
                                         child: Container(
                                             height: MediaQuery.of(context)
                                                     .size
                                                     .height /
-                                                4.8,
+                                                5.6,
                                             width: MediaQuery.of(context)
                                                 .size
                                                 .width,
