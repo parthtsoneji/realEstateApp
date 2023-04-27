@@ -135,8 +135,11 @@ class _PaymentPageState extends State<PaymentPage> {
                 padding: EdgeInsets.only(
                     top: MediaQuery.of(context).size.height / 80,
                     left: MediaQuery.of(context).size.width / 80),
-                child: Center(
-                  child: Row(
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width / 1.2,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
                     children: [
                       GestureDetector(
                         onTap: () {
@@ -154,16 +157,16 @@ class _PaymentPageState extends State<PaymentPage> {
                         },
                         child: _isShow == true
                             ? Image(
-                                image: AssetImage('images/PaymentActive.png'),
-                                height: 50,
-                                width: MediaQuery.of(context).size.width / 4.5,
-                              )
+                          image: AssetImage('images/PaymentActive.png'),
+                          height: 50,
+                          width: 137,
+                        )
                             : Image(
-                                image: AssetImage('images/Paymentrounded.png'),
-                                height: 50,
-                                width: MediaQuery.of(context).size.width / 4.5),
+                            image: AssetImage('images/Paymentrounded.png'),
+                            height: 50,
+                            width: 137),
                       ),
-                      SizedBox(width: MediaQuery.of(context).size.width / 40),
+                      SizedBox(width: MediaQuery.of(context).size.width / 150),
                       GestureDetector(
                         onTap: () {
                           if (_isMasterCard == false) {
@@ -180,17 +183,17 @@ class _PaymentPageState extends State<PaymentPage> {
                         },
                         child: _isMasterCard == true
                             ? Image(
-                                image: AssetImage('images/PaymentActive2.png'),
-                                height: 50,
-                                width: MediaQuery.of(context).size.width / 4.5,
-                              )
+                          image: AssetImage('images/PaymentActive2.png'),
+                          height: 50,
+                          width: 137,
+                        )
                             : Image(
-                                image: AssetImage('images/Paymentunded.png'),
-                                height: 50,
-                                width: MediaQuery.of(context).size.width / 4.5,
-                              ),
+                          image: AssetImage('images/Paymentunded.png'),
+                          height: 50,
+                          width: 137,
+                        ),
                       ),
-                      SizedBox(width: MediaQuery.of(context).size.width / 30),
+                      SizedBox(width: MediaQuery.of(context).size.width / 150),
                       GestureDetector(
                         onTap: () {
                           if (_isVisa == false) {
@@ -207,17 +210,18 @@ class _PaymentPageState extends State<PaymentPage> {
                         },
                         child: _isVisa == true
                             ? Image(
-                                image: AssetImage('images/PaymentVisa.png'),
-                                height: 50,
-                                width: MediaQuery.of(context).size.width / 4.5,
-                              )
+                          image: AssetImage('images/PaymentVisa.png'),
+                          height: 50,
+                          width: 137,
+                        )
                             : Image(
-                                image: AssetImage('images/PaymentVisa.png'),
-                                height: 50,
-                                width: MediaQuery.of(context).size.width / 4.5,
-                              ),
+                          image: AssetImage('images/PaymentVisa.png'),
+                          height: 50,
+                          width: 137,
+                        ),
                       ),
                     ],
+
                   ),
                 ),
               ),
@@ -541,7 +545,7 @@ class _PaymentPageState extends State<PaymentPage> {
               Center(
                 child: Padding(
                   padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 15),
+                      top: MediaQuery.of(context).size.height / 15,bottom: 20),
                   child: SizedBox(
                     height: MediaQuery.of(context).size.height / 12,
                     width: MediaQuery.of(context).size.width / 1.4,

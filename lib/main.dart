@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:realstateapp/Screens/Account/AccountSetUp/AccoutnSetUp.dart';
 import 'package:realstateapp/Screens/Account/Location/PreferableSelected.dart';
+import 'package:realstateapp/Screens/Account/PaymentPage.dart';
 import 'package:realstateapp/Screens/Home/HomeScreen.dart';
 import 'package:realstateapp/Screens/Home/NavigationBar.dart';
 import 'package:realstateapp/Screens/SplashScreen/SplashScreen.dart';

@@ -132,8 +132,9 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                       scrollDirection: Axis.vertical,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisSpacing: 12,
+                          mainAxisExtent: MediaQuery.of(context).size.height / 3.5,
                           childAspectRatio:
-                              MediaQuery.of(context).size.height / 800,
+                              MediaQuery.of(context).size.height / 900,
                           mainAxisSpacing: 14,
                           crossAxisCount: 2),
                       itemCount: images.length,
@@ -169,7 +170,8 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                             top: MediaQuery.of(context)
                                                     .size
                                                     .height /
-                                                110),
+                                                100,
+                                        bottom: 20),
                                         child: Container(
                                             height: MediaQuery.of(context)
                                                     .size
@@ -189,10 +191,6 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            top: MediaQuery.of(context)
-                                                    .size
-                                                    .height /
-                                                80,
                                             left: MediaQuery.of(context)
                                                     .size
                                                     .width /

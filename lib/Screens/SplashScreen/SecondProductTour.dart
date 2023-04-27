@@ -154,7 +154,7 @@ class _ProductTour2State extends State<ProductTour2> {
                     children: [
                       Container(
                         height: MediaQuery.of(context).size.height / 15,
-                        width: MediaQuery.of(context).size.width / 9.2,
+                        width: MediaQuery.of(context).size.width / 8.2,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30.0)),
                         child: ElevatedButton(

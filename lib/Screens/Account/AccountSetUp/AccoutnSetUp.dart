@@ -88,7 +88,7 @@ class _AccountSetUpState extends State<AccountSetUp> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 30, top: 10),
+                  padding: const EdgeInsets.only(left: 30, top: 51),
                   child: RichText(
                     text: TextSpan(
                       children: [
@@ -141,18 +141,17 @@ class _AccountSetUpState extends State<AccountSetUp> {
                   child: Stack(
                     children: [
                       imageFile == null
-                          ? const CircleAvatar(
-                              radius: 50,
+                          ? CircleAvatar(
+                              radius: MediaQuery.of(context).size.height / 16,
                               backgroundColor: ColorTheme.white1,
                               backgroundImage:
                                   AssetImage("images/Userimage.png"),
                             )
                           : Container(
                               height: MediaQuery.of(context).size.height / 7.3,
-                              width: MediaQuery.of(context).size.width / 4.8,
+                              width: MediaQuery.of(context).size.width / 4.7,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: Colors.red),
+                                  borderRadius: BorderRadius.circular(100)),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(100),
                                 child:
@@ -174,8 +173,8 @@ class _AccountSetUpState extends State<AccountSetUp> {
                         },
                         child: Padding(
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height / 11,
-                              left: MediaQuery.of(context).size.width / 9),
+                              top: MediaQuery.of(context).size.height / 16,
+                              left: MediaQuery.of(context).size.width / 6.5),
                           child: const CircleAvatar(
                             radius: 20,
                             backgroundColor: ColorTheme.blueAccent,
@@ -327,66 +326,77 @@ class _AccountSetUpState extends State<AccountSetUp> {
 
   Widget _bottomSheetBar() {
     return Container(
-      height: MediaQuery.of(context).size.height / 7,
+      height: MediaQuery.of(context).size.height / 6,
       width: MediaQuery.of(context).size.width,
       margin: const EdgeInsets.symmetric(
-        horizontal: 50,
+        horizontal: 60,
         vertical: 50,
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Column(
-            children: [
-              Text(
-                "Camera",
-                style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                    color: ColorTheme.darkblue),
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height / 30),
-              SizedBox(
-                  height: MediaQuery.of(context).size.height / 13,
-                  width: MediaQuery.of(context).size.width / 3,
-                  child: ElevatedButton(
-                      style: const ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(ColorTheme.green)),
-                      onPressed: () {
-                        takePhoto(ImageSource.camera);
-                        Navigator.pop(context);
-                      },
-                      child: const Icon(Icons.camera))),
-            ],
-          ),
-          SizedBox(width: MediaQuery.of(context).size.width / 30),
-          Column(
-            children: [
-              Text(
-                "Gallery",
-                style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                    color: ColorTheme.darkblue),
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height / 30),
-              SizedBox(
-                  height: MediaQuery.of(context).size.height / 13,
-                  width: MediaQuery.of(context).size.width / 3,
-                  child: ElevatedButton(
-                      style: const ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(ColorTheme.green)),
-                      onPressed: () {
-                        takePhoto(ImageSource.gallery);
-                        Navigator.pop(context);
+      child: Expanded(
+        flex: 1,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              children: [
+                Text(
+                  "Camera",
+                  style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      color: ColorTheme.darkblue),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: SizedBox(
+                      height: MediaQuery.of(context).size.height / 17,
+                      width: MediaQuery.of(context).size.width / 3,
+                      child: ElevatedButton(
+                          style: const ButtonStyle(
+                              backgroundColor:
+                                  MaterialStatePropertyAll(ColorTheme.green)),
+                          onPressed: () {
+                            takePhoto(ImageSource.camera);
+                            Navigator.pop(context);
+                          },
+                          child: const Icon(Icons.camera))),
+                ),
+              ],
+            ),
+            SizedBox(width: MediaQuery.of(context).size.width / 30),
+            Expanded(
+              flex: 1,
+              child: Column(
+                children: [
+                  Text(
+                    "Gallery",
+                    style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                        color: ColorTheme.darkblue),
+                  ),
 
-                      },
-                      child: const Icon(Icons.image))),
-            ],
-          ),
-        ],
+                  Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: SizedBox(
+                        height: MediaQuery.of(context).size.height / 17,
+                        width: MediaQuery.of(context).size.width / 3,
+                        child: ElevatedButton(
+                            style: const ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll(ColorTheme.green)),
+                            onPressed: () {
+                              takePhoto(ImageSource.gallery);
+                              Navigator.pop(context);
+
+                            },
+                            child: const Icon(Icons.image))),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
