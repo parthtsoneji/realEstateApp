@@ -210,7 +210,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         },
                         child: _isVisa == true
                             ? Image(
-                          image: AssetImage('images/PaymentVisa.png'),
+                          image: AssetImage('images/visa.png'),
                           height: 50,
                           width: 137,
                         )
