@@ -284,7 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
 
                   Padding(padding: const EdgeInsets.only(top: 32,left: 10,right: 20),
-                    child: Container(
+                    child: SizedBox(
                       height: 200 ,
                       child: ListView.builder(
                         itemCount: images.length,
@@ -358,7 +358,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
                   ),
                   Padding(padding: const EdgeInsets.only(top: 32,left: 10,right: 20),
-                    child: Container(
+                    child: SizedBox(
                       height: MediaQuery.of(context).size.height / 3.8,
                       child: ListView.builder(
                         itemCount: imagesFeature.length,
@@ -472,7 +472,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
                   ),
                   Padding(padding: const EdgeInsets.only(top: 32,left: 20,right: 20),
-                    child: Container(
+                    child: SizedBox(
                       height: MediaQuery.of(context).size.height / 12,
                       child: ListView.builder(
                         itemCount: locImages.length,
@@ -519,8 +519,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
                   ),
                   Padding(padding: const EdgeInsets.only(top: 32,left: 20,right: 20),
-                    child: Container(
-                      height: MediaQuery.of(context).size.height / 8,
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height / 7.5,
                       child: ListView.builder(
                         itemCount: locImages.length,
                         scrollDirection: Axis.horizontal,
@@ -595,22 +595,26 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 .height /
                                                 100,
                                             bottom: 20),
-                                        child: Container(
-                                            height: MediaQuery.of(context)
-                                                .size
-                                                .height /
-                                                5.6,
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                              BorderRadius.circular(15),
-                                              image: DecorationImage(
-                                                image: AssetImage(select.image),
-                                                fit: BoxFit.cover,
-                                              ),
-                                            )),
+                                        child: CircleAvatar(
+                                          backgroundColor: ColorTheme.white1,
+                                          radius: 60,
+                                          child: Container(
+                                              height: MediaQuery.of(context)
+                                                  .size
+                                                  .height /
+                                                  5.6,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                BorderRadius.circular(15),
+                                                image: DecorationImage(
+                                                  image: AssetImage(select.image),
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              )),
+                                        ),
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(
