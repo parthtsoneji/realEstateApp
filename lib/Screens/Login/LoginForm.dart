@@ -209,7 +209,7 @@ class _FirstLoginFormState extends State<FirstLoginForm> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.greenAccent),
+                            MaterialStateProperty.all(ColorTheme.green),
                       ),
                       onPressed: () {
                         if(_isShow == false){

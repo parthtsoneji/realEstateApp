@@ -207,7 +207,7 @@ class _LocationPageState extends State<LocationPage> {
                   ),
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height / 13),
+              SizedBox(height: MediaQuery.of(context).size.height / 16),
               const Center(
                 child: SizedBox(
                   width: 100,
@@ -227,7 +227,7 @@ class _LocationPageState extends State<LocationPage> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.greenAccent),
+                            MaterialStateProperty.all(ColorTheme.green),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
@@ -257,6 +257,7 @@ class _LocationPageState extends State<LocationPage> {
                   ),
                 ),
               ),
+              SizedBox(height: 15)
             ],
           ),
         ),

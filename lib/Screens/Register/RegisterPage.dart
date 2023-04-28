@@ -292,7 +292,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.greenAccent),
+                            MaterialStateProperty.all(ColorTheme.green),
                       ),
                       onPressed: () {
                         Navigator.push(

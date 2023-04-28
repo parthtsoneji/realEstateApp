@@ -27,7 +27,6 @@ class _LoginOptionState extends State<LoginOption> {
         body: Column(
           children: [
             Expanded(
-              flex: 1,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: GridView.builder(
@@ -87,7 +86,7 @@ class _LoginOptionState extends State<LoginOption> {
                 child: ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(ColorTheme.greenAccent),
+                        MaterialStateProperty.all(ColorTheme.green),
                   ),
                   onPressed: () {
                     Navigator.pushReplacement(

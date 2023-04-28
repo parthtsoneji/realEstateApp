@@ -215,7 +215,7 @@ class _GoogleMapLocState extends State<GoogleMapLoc> {
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(ColorTheme.greenAccent),
+                          MaterialStateProperty.all(ColorTheme.green),
                     ),
                     onPressed: () {},
                     child: Text(

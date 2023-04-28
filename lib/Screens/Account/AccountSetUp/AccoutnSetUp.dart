@@ -145,7 +145,7 @@ class _AccountSetUpState extends State<AccountSetUp> {
                               radius: MediaQuery.of(context).size.height / 16,
                               backgroundColor: ColorTheme.white1,
                               backgroundImage:
-                                  AssetImage("images/Userimage.png"),
+                                  const AssetImage("images/Userimage.png"),
                             )
                           : Container(
                               height: MediaQuery.of(context).size.height / 7.3,
@@ -288,7 +288,7 @@ class _AccountSetUpState extends State<AccountSetUp> {
                         child: ElevatedButton(
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(
-                                  ColorTheme.greenAccent),
+                                  ColorTheme.green),
                               elevation: MaterialStateProperty.all(15),
                               shape: MaterialStateProperty.all<
                                       RoundedRectangleBorder>(
@@ -347,7 +347,7 @@ class _AccountSetUpState extends State<AccountSetUp> {
                       color: ColorTheme.darkblue),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 10),
                   child: SizedBox(
                       height: MediaQuery.of(context).size.height / 17,
                       width: MediaQuery.of(context).size.width / 3,
@@ -377,7 +377,7 @@ class _AccountSetUpState extends State<AccountSetUp> {
                   ),
 
                   Padding(
-                    padding: EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 10),
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height / 17,
                         width: MediaQuery.of(context).size.width / 3,
@@ -388,7 +388,6 @@ class _AccountSetUpState extends State<AccountSetUp> {
                             onPressed: () {
                               takePhoto(ImageSource.gallery);
                               Navigator.pop(context);
-
                             },
                             child: const Icon(Icons.image))),
                   ),
@@ -402,21 +401,21 @@ class _AccountSetUpState extends State<AccountSetUp> {
   }
 
   Widget _finishModelBottomSheet() {
-    return Container(
-      height: MediaQuery.of(context).size.height / 1.85,
+    return SizedBox(
+      height: MediaQuery.of(context).size.height / 1.65,
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 27),
-            child: Image(image: AssetImage("images/Slide.png"),width: MediaQuery.of(context).size.width / 3),
+            padding: const EdgeInsets.only(top: 13),
+            child: Image(image: const AssetImage("images/Slide.png"),width: MediaQuery.of(context).size.width / 3),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 20),
-            child: Image(image: AssetImage("images/alertsuccess.png"),height: MediaQuery.of(context).size.height / 5.3,width: 142),
+            padding: const EdgeInsets.only(top: 13),
+            child: Image(image: const AssetImage("images/alertsuccess.png"),height: MediaQuery.of(context).size.height / 5.3,width: 142),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 24),
+            padding: const EdgeInsets.only(top: 18),
             child: RichText(
               text: TextSpan(
                 children: [
@@ -462,14 +461,14 @@ class _AccountSetUpState extends State<AccountSetUp> {
                     .copyWith(fontSize: 12, fontWeight: FontWeight.w400)),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 23),
+            padding: const EdgeInsets.only(top: 23),
             child: SizedBox(
                 height: MediaQuery.of(context).size.height / 12,
                 width: MediaQuery.of(context).size.width / 1.4,
                 child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                          ColorTheme.greenAccent),
+                          ColorTheme.green),
                       elevation: MaterialStateProperty.all(15),
                       shape: MaterialStateProperty.all<
                           RoundedRectangleBorder>(
@@ -477,7 +476,7 @@ class _AccountSetUpState extends State<AccountSetUp> {
                             borderRadius: BorderRadius.circular(10.0),
                           ))),
                   onPressed: () {
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NavigationScreen(),));
+                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const NavigationScreen(),));
                   },
                   child: Text("Finish",
                       style: AppTheme.lightTheme()

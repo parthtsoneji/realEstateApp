@@ -552,7 +552,7 @@ class _PaymentPageState extends State<PaymentPage> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all(ColorTheme.greenAccent),
+                            MaterialStateProperty.all(ColorTheme.green),
                         shadowColor: MaterialStateProperty.all(ColorTheme.blue),
                         elevation: MaterialStateProperty.all(50),
                         shape:

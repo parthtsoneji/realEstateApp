@@ -132,7 +132,7 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                       scrollDirection: Axis.vertical,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisSpacing: 12,
-                          mainAxisExtent: MediaQuery.of(context).size.height / 3.5,
+                          mainAxisExtent: MediaQuery.of(context).size.height / 3.1,
                           childAspectRatio:
                               MediaQuery.of(context).size.height / 900,
                           mainAxisSpacing: 14,
@@ -176,7 +176,7 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                                             height: MediaQuery.of(context)
                                                     .size
                                                     .height /
-                                                5.6,
+                                                4.2,
                                             width: MediaQuery.of(context)
                                                 .size
                                                 .width,
@@ -237,6 +237,7 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                     ),
                   ),
                 ),
+                SizedBox(height: 50)
               ],
             ),
             Padding(
@@ -249,7 +250,7 @@ class _PreferableSelectedState extends State<PreferableSelected> {
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(ColorTheme.greenAccent),
+                          MaterialStateProperty.all(ColorTheme.green),
                       shadowColor: MaterialStateProperty.all(ColorTheme.blue),
                       elevation: MaterialStateProperty.all(50),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(

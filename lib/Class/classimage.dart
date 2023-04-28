@@ -42,3 +42,15 @@ class LocationImages {
 
   LocationImages({required this.image, required this.name});
 }
+
+class HomeEstate {
+  final String name;
+  final String image;
+  final String price;
+  final String icon;
+  final String start;
+
+  HomeEstate({required this.name, required this.image, required this.price, required this.icon, required this.start});
+
+
+}

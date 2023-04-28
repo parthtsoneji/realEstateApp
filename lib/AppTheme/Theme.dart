@@ -33,7 +33,7 @@ class AppTheme {
 class ColorTheme {
   static const black = Colors.black;
   static const green = Color(0xFF8BC83F);
-  static const greenAccent = Color(0xFF8BC83F);
+  static const greenaccent = Color(0xFF8BC83D);
   static const white = Color(0xFFFFFFFF);
   static const white1 = Color(0xFFF5F4F8);
   static const grey = Color(0xFFDFDFDF);

@@ -211,7 +211,7 @@ class _ProductTour3State extends State<ProductTour3> {
                           child: ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(
-                                  ColorTheme.greenAccent),
+                                  ColorTheme.green),
                             ),
                             onPressed: () {
                               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginOption(),));

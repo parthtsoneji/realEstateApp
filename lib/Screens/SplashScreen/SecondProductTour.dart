@@ -189,7 +189,7 @@ class _ProductTour2State extends State<ProductTour2> {
                             child: ElevatedButton(
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(
-                                    ColorTheme.greenAccent),
+                                    ColorTheme.green),
                               ),
                               onPressed: () {
                                 Navigator.pushReplacement(
