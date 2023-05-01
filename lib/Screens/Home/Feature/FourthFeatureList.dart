@@ -41,7 +41,7 @@ class _FourthLocationListState extends State<FourthLocationList> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                            height: 200,
+                            height: 180,
                             width: 100,
                             child: const Image(
                               image:
@@ -49,7 +49,7 @@ class _FourthLocationListState extends State<FourthLocationList> {
                               fit: BoxFit.cover,
                             )),
                         Container(
-                            height: 100,
+                            height: 80,
                             width: 100,
                             child: const Image(
                               image:
@@ -383,7 +383,6 @@ class _FourthLocationListState extends State<FourthLocationList> {
                         itemCount: imagesFeature.length,
                         itemBuilder: (context, index) {
                           return GestureDetector(
-
                             onTap: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context) => AgentList(),));
                             },
@@ -435,7 +434,7 @@ class _FourthLocationListState extends State<FourthLocationList> {
                                                 decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(8),
-                                                    color: ColorTheme.darkblue
+                                                    color: ColorTheme.darkblue.withOpacity(0.67)
                                                         .withOpacity(0.8)),
                                                 child: Center(
                                                   child: Text(

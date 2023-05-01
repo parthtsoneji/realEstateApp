@@ -327,7 +327,7 @@ class _SecondFeatureListState extends State<SecondFeatureList> {
                                 padding: const EdgeInsets.all(10.0),
                                 child: Container(
                                   height: 40,
-                                  width: 1.0,
+                                  width: 0.3,
                                   color: ColorTheme.lightwhite,
                                   margin:
                                   const EdgeInsets.only(left: 10.0, right: 10.0),
@@ -535,7 +535,7 @@ class _SecondFeatureListState extends State<SecondFeatureList> {
                                                       borderRadius:
                                                       BorderRadius.circular(
                                                           8),
-                                                      color: ColorTheme.darkblue),
+                                                      color: ColorTheme.darkblue.withOpacity(0.67)),
                                                   child: RichText(
                                                     text: TextSpan(children: [
                                                       TextSpan(

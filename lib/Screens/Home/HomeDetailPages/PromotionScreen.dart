@@ -67,77 +67,82 @@ class _PromotionScreeenState extends State<PromotionScreeen> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.height / 8.5, top: 32),
+                        left:  24,right: 24, top: 32),
                     child: SizedBox(
-                      height: 200,
+                      height: MediaQuery.of(context).size.height / 3.6,
                       child: Stack(
                         children: [
-                          Container(
-                            height: 200,
-                            width: MediaQuery.of(context).size.width / 1.6,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25.0),
-                                image: const DecorationImage(
-                                    image: AssetImage("images/image5.png"),
-                                    fit: BoxFit.cover)),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 22, top: 44),
-                                  child: Text(
-                                    "Halloween",
-                                    style: ThemeData.light()
-                                        .textTheme
-                                        .labelLarge!
-                                        .copyWith(
-                                        color: ColorTheme.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w700),
+                          Center(
+                            child: Container(
+                              height: MediaQuery.of(context).size.height / 2,
+                              width: MediaQuery.of(context).size.width / 1.4,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25.0),
+                                  image: const DecorationImage(
+                                      image: AssetImage("images/image5.png"),
+                                      fit: BoxFit.cover)),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 22, top: 44),
+                                    child: Text(
+                                      "Halloween",
+                                      style: ThemeData.light()
+                                          .textTheme
+                                          .labelLarge!
+                                          .copyWith(
+                                          color: ColorTheme.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700),
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 22),
-                                  child: Text(
-                                    "Sale!",
-                                    style: ThemeData.light()
-                                        .textTheme
-                                        .labelLarge!
-                                        .copyWith(
-                                        color: ColorTheme.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w700),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 22),
+                                    child: Text(
+                                      "Sale!",
+                                      style: ThemeData.light()
+                                          .textTheme
+                                          .labelLarge!
+                                          .copyWith(
+                                          color: ColorTheme.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700),
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 22, top: 8),
-                                  child: Text(
-                                    "All discount up to 60%",
-                                    style: ThemeData.light()
-                                        .textTheme
-                                        .labelLarge!
-                                        .copyWith(
-                                        color: ColorTheme.white,
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.w400),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 22, top: 8),
+                                    child: Text(
+                                      "All discount up to 60%",
+                                      style: ThemeData.light()
+                                          .textTheme
+                                          .labelLarge!
+                                          .copyWith(
+                                          color: ColorTheme.white,
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w400),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Container(
-                              height: 56,
-                              width: 93,
-                              decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(25.0),
+                          Padding(
+                            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 10.3),
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Container(
+                                height: 56,
+                                width: 93,
+                                decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(25.0),
+                                  ),
+                                  color: ColorTheme.darkblue,
                                 ),
-                                color: ColorTheme.darkblue,
+                                child: const Image(
+                                    image: AssetImage('images/arrowhome.png')),
                               ),
-                              child: const Image(
-                                  image: AssetImage('images/arrowhome.png')),
                             ),
                           )
                         ],

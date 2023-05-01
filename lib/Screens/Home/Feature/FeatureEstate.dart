@@ -96,7 +96,7 @@ class _FeatureEstateState extends State<FeatureEstate> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 12, top: 8, right: 4),
+                padding: const EdgeInsets.only(left: 12, top: 8),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,28 +114,29 @@ class _FeatureEstateState extends State<FeatureEstate> {
                     Padding(
                       padding: const EdgeInsets.only(left: 6),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
                             height: MediaQuery.of(context).size.height / 4.7,
-                            width: MediaQuery.of(context).size.width / 2.5,
+                            width: MediaQuery.of(context).size.width / 2.7,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
                                 image: const DecorationImage(
                                     image: AssetImage(
                                         "images/FeatureList/image2.png"),
-                                    fit: BoxFit.cover)),
+                                    fit: BoxFit.fitWidth)),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 3),
                             child: Container(
                               height: MediaQuery.of(context).size.height / 4.7,
-                              width: MediaQuery.of(context).size.width / 2.5,
+                              width: MediaQuery.of(context).size.width / 2.7,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   image: const DecorationImage(
                                       image: AssetImage(
                                           "images/FeatureList/image3.png"),
-                                      fit: BoxFit.cover)),
+                                      fit: BoxFit.fitWidth)),
                             ),
                           ),
                         ],
@@ -195,7 +196,7 @@ class _FeatureEstateState extends State<FeatureEstate> {
                     decoration: InputDecoration(
                       filled: true,
 
-                      fillColor: ColorTheme.white1.withOpacity(0.11),
+                      fillColor: ColorTheme.white1,
                       prefixIcon: const Icon(Icons.search,
                           color: ColorTheme.darkblue, size: 30),
                       border: OutlineInputBorder(
@@ -214,7 +215,7 @@ class _FeatureEstateState extends State<FeatureEstate> {
                             padding: const EdgeInsets.all(10.0),
                             child: Container(
                               height: 40,
-                              width: 1.0,
+                              width: 0.3,
                               color: ColorTheme.lightwhite,
                               margin:
                                   const EdgeInsets.only(left: 10.0, right: 10.0),
@@ -422,7 +423,7 @@ class _FeatureEstateState extends State<FeatureEstate> {
                                                   borderRadius:
                                                   BorderRadius.circular(
                                                       8),
-                                                  color: ColorTheme.darkblue),
+                                                  color: ColorTheme.darkblue.withOpacity(0.67)),
                                               child: RichText(
                                                 text: TextSpan(children: [
                                                   TextSpan(

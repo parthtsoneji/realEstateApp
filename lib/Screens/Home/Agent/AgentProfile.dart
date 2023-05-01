@@ -340,6 +340,7 @@ class _AgentProfileDetailState extends State<AgentProfileDetail> {
                                   child: const Center(
                                       child: Image(
                                         image: AssetImage("images/FeatureList/dot1.png"),
+                                        color: ColorTheme.blueheading,
                                       )),
                                 ),
                               ),
@@ -467,7 +468,7 @@ class _AgentProfileDetailState extends State<AgentProfileDetail> {
                                                       borderRadius:
                                                       BorderRadius.circular(
                                                           8),
-                                                      color: ColorTheme.darkblue),
+                                                      color: ColorTheme.darkblue.withOpacity(0.67)),
                                                   child: RichText(
                                                     text: TextSpan(children: [
                                                       TextSpan(
