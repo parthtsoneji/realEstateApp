@@ -1,28 +1,29 @@
-class ImageData{
+class ImageData {
   final String image;
 
   ImageData(this.image);
 }
 
-
-class preferableData{
+class preferableData {
   final String image;
   final String name;
+
   preferableData({required this.image, required this.name});
 }
 
-class paymentProcess{
+class paymentProcess {
   final String image;
+
   paymentProcess(this.image);
 }
 
-
-class categoryName{
+class categoryName {
   final String name;
+
   categoryName({required this.name});
 }
 
-class ImageHome{
+class ImageHome {
   final String name;
   final String sale;
   final String imaeg;
@@ -30,12 +31,13 @@ class ImageHome{
   ImageHome({required this.name, required this.sale, required this.imaeg});
 }
 
-class FeatureImages{
+class FeatureImages {
   final String image;
   final String name;
 
   FeatureImages({required this.image, required this.name});
 }
+
 class LocationImages {
   final String image;
   final String name;
@@ -50,7 +52,27 @@ class HomeEstate {
   final String icon;
   final String start;
 
-  HomeEstate({required this.name, required this.image, required this.price, required this.icon, required this.start});
+  HomeEstate(
+      {required this.name,
+      required this.image,
+      required this.price,
+      required this.icon,
+      required this.start});
+}
 
+class FeatureListImage{
+  final String name;
+  final String image;
+  final String number;
 
+  FeatureListImage({required this.name, required this.image, required this.number});
+}
+
+class AgentDetails{
+  final String name;
+  final String image;
+  final String star;
+  final String number;
+
+  AgentDetails({required this.name, required this.image, required this.star, required this.number});
 }

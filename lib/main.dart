@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realstateapp/Screens/SplashScreen/SplashScreen.dart';
+import 'package:realstateapp/Screens/Home/Feature/FeatureEstate.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: FeatureEstate(
+      ),
     );
   }
 }

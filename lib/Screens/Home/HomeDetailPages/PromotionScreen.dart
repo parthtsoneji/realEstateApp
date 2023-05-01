@@ -311,7 +311,7 @@ class _PromotionScreeenState extends State<PromotionScreeen> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => FestureEstate(),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => FeatureEstate(),));
                       },
                       child: Text(
                         "Explore  more",

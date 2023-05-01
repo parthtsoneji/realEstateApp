@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
         start: "3"),
     HomeEstate(
         image: 'images/image5.png',
-        name: 'Sky Dandelions Apartment',
+        name: 'Sky Dandelions',
         icon: "images/HomeImages/heartgrey.png",
         price: "\$ 300",
         start: "3.2"),
@@ -222,6 +222,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 25),
                     ),
                   ),
+
+                  // Search text field
                   Padding(
                     padding: EdgeInsets.only(
                       left: 30,
@@ -428,7 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsets.only(top: 24, left: 24, right: 24),
+                        EdgeInsets.only(top: 24, left: 24, right: 10),
                     child: RichText(
                         text: TextSpan(children: [
                       TextSpan(
@@ -442,7 +444,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize: 18)),
                       WidgetSpan(
                           child: SizedBox(
-                              width: MediaQuery.of(context).size.width / 1.7)),
+                              width: MediaQuery.of(context).size.width / 2.3)),
                       TextSpan(
                           text: "view all",
                           style: ThemeData.light()
@@ -655,7 +657,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize: 18)),
                       WidgetSpan(
                           child: SizedBox(
-                              width: MediaQuery.of(context).size.width / 1.7)),
+                              width: MediaQuery.of(context).size.width / 2.3)),
                       TextSpan(
                           text: "explore",
                           style: ThemeData.light()
@@ -738,7 +740,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize: 18)),
                       WidgetSpan(
                           child: SizedBox(
-                              width: MediaQuery.of(context).size.width / 1.8)),
+                              width: MediaQuery.of(context).size.width / 2.3)),
                       TextSpan(
                           text: "explore",
                           style: ThemeData.light()
@@ -754,7 +756,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding:
                         const EdgeInsets.only(top: 32, left: 20, right: 20),
                     child: SizedBox(
-                      height: MediaQuery.of(context).size.height / 7.3,
+                      height: MediaQuery.of(context).size.height / 6.3,
                       child: ListView.builder(
                         itemCount: locImages.length,
                         scrollDirection: Axis.horizontal,
@@ -768,8 +770,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   radius: 39,
                                   backgroundColor: ColorTheme.white1,
                                   child: Container(
-                                    height: 70,
-                                    width: 70,
+                                    height: MediaQuery.of(context).size.height / 4,
+                                    width: MediaQuery.of(context).size.width / 3,
                                     decoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(50.0),
@@ -852,7 +854,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Container(
                                       height:
                                           MediaQuery.of(context).size.height /
-                                              4.2,
+                                              4.1,
                                       width: MediaQuery.of(context).size.width,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(15),
@@ -1025,13 +1027,13 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 13),
+              padding: const EdgeInsets.only(top: 11),
               child: Image(
                   image: const AssetImage("images/Slide.png"),
                   width: MediaQuery.of(context).size.width / 3),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 49, bottom: 48),
+              padding: const EdgeInsets.only(top: 49, bottom: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -1080,27 +1082,29 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Icon(Icons.location_on, color: ColorTheme.white),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 15, top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Srengseng, Kembangan, West Jakarta",
-                              style: ThemeData.light()
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(
-                                      color: ColorTheme.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400)),
-                          Text("City, Jakarta 11630",
-                              style: ThemeData.light()
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(
-                                      color: ColorTheme.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400))
-                        ],
+                      padding: EdgeInsets.only(left: 15,top: MediaQuery.of(context).size.height / 50),
+                      child: Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Srengseng, Kembangan, West Jakarta",
+                                style: ThemeData.light()
+                                    .textTheme
+                                    .labelLarge!
+                                    .copyWith(
+                                        color: ColorTheme.white,
+                                        fontSize: MediaQuery.of(context).size.width / 30,
+                                        fontWeight: FontWeight.w400)),
+                            Text("City, Jakarta 11630",
+                                style: ThemeData.light()
+                                    .textTheme
+                                    .labelLarge!
+                                    .copyWith(
+                                        color: ColorTheme.white,
+                                        fontSize: MediaQuery.of(context).size.width / 30,
+                                        fontWeight: FontWeight.w400))
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -1128,36 +1132,37 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Icon(Icons.location_on_outlined, color: ColorTheme.greyopasity),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 15, top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Petompon, Kec. Gajahmungkur, Kota",
-                              style: ThemeData.light()
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(
-                                  color: ColorTheme.greyopasity,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w400)),
-                          Text("Semarang, Jawa Tengah 50232",
-                              style: ThemeData.light()
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(
-                                  color: ColorTheme.greyopasity,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w400))
-                        ],
+                      padding: EdgeInsets.only(left: 15,top: MediaQuery.of(context).size.height / 50),
+                      child: Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Petompon, Kec. Gajahmungkur, Kota",
+                                style: ThemeData.light()
+                                    .textTheme
+                                    .labelLarge!
+                                    .copyWith(
+                                    color: ColorTheme.greyopasity,
+                                    fontSize: MediaQuery.of(context).size.width / 30,
+                                    fontWeight: FontWeight.w400)),
+                            Text("Semarang, Jawa Tengah 50232",
+                                style: ThemeData.light()
+                                    .textTheme
+                                    .labelLarge!
+                                    .copyWith(
+                                    color: ColorTheme.greyopasity,
+                                    fontSize: MediaQuery.of(context).size.width / 30,
+                                    fontWeight: FontWeight.w400))
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 40),
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.only(top: 20,bottom: 10),
               child: Center(
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height / 12,

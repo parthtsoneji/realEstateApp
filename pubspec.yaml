@@ -52,7 +52,9 @@ dev_dependencies:
   flutter_staggered_grid_view: ^0.4.0
   date_time_picker: ^2.1.0
   intl: ^0.17.0
+  flutter_rating_bar: ^4.0.1
   image_picker: ^0.8.7+4
+  flutter_svg: ^2.0.5
   modal_bottom_sheet: ^2.1.2
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -76,6 +78,8 @@ flutter:
   assets:
     - images/
     - images/HomeImages/
+    - images/FeatureList/
+    - images/Agent/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

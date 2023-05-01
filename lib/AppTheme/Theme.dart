@@ -11,7 +11,6 @@ class AppTheme {
       textTheme: TextTheme(
         labelSmall: GoogleFonts.montserrat(
           fontSize: 12,
-          color: ColorTheme.white,
         ),
         bodyMedium: GoogleFonts.dmSans(
             fontSize: 12,
@@ -34,6 +33,7 @@ class ColorTheme {
   static const black = Colors.black;
   static const green = Color(0xFF8BC83F);
   static const greenaccent = Color(0xFF8BC83D);
+  static const greenlight = Color(0xFFDAEDC2);
   static const white = Color(0xFFFFFFFF);
   static const white1 = Color(0xFFF5F4F8);
   static const grey = Color(0xFFDFDFDF);
@@ -48,5 +48,5 @@ class ColorTheme {
   static const darkblue = Color(0xFF234F68);
   static const staryellow = Color(0xFFFFC42D);
   static const greyopasity = Color(0xFF53587A);
-  
+  static const transparent = Colors.transparent;
 }
