@@ -70,12 +70,13 @@ class _PromotionScreeenState extends State<PromotionScreeen> {
                         left:  24,right: 24, top: 32),
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height / 3.6,
+                      width: MediaQuery.of(context).size.width / 1.2,
                       child: Stack(
                         children: [
                           Center(
                             child: Container(
                               height: MediaQuery.of(context).size.height / 2,
-                              width: MediaQuery.of(context).size.width / 1.4,
+                              width: MediaQuery.of(context).size.width / 1.2,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(25.0),
                                   image: const DecorationImage(
@@ -128,7 +129,7 @@ class _PromotionScreeenState extends State<PromotionScreeen> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 10.3),
+                            padding: EdgeInsets.only(),
                             child: Align(
                               alignment: Alignment.bottomLeft,
                               child: Container(
@@ -261,7 +262,7 @@ class _PromotionScreeenState extends State<PromotionScreeen> {
                                           .labelLarge!
                                           .copyWith(
                                           color: ColorTheme.greyopasity,
-                                          fontSize: 9,
+                                          fontSize: MediaQuery.of(context).size.width / 60,
                                           fontWeight: FontWeight.w400))
                                 ]),
                               ),

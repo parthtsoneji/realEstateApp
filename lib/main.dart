@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:realstateapp/Screens/Home/Feature/FourthFeatureList.dart';
 import 'package:realstateapp/Screens/Home/HomeDetailPages/PromotionScreen.dart';
+import 'package:realstateapp/Screens/SplashScreen/SplashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PromotionScreeen(),
+      home: SplashScreen(),
     );
   }
 }

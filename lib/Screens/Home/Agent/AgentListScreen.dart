@@ -64,13 +64,9 @@ class _AgentListState extends State<AgentList> {
                                   MediaQuery.of(context).size.height / 25,
                                   color: ColorTheme.blueheading,
                                   fontWeight: FontWeight.w700)),
-                          WidgetSpan(
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width / 2.5,
-                              )),
                           TextSpan(
                               text:
-                              "Find the best recommendations place to live.",
+                              "\nFind the best recommendations place to live.",
                               style: ThemeData.light()
                                   .textTheme
                                   .labelLarge!

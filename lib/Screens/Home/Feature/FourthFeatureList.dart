@@ -103,7 +103,7 @@ class _FourthLocationListState extends State<FourthLocationList> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height / 3.5,
+                        top: MediaQuery.of(context).size.height / 3.3,
                         left: 24),
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height / 12,
@@ -121,13 +121,10 @@ class _FourthLocationListState extends State<FourthLocationList> {
                                                 25,
                                         color: ColorTheme.blueheading,
                                         fontWeight: FontWeight.w700)),
-                            WidgetSpan(
-                                child: SizedBox(
-                              width: MediaQuery.of(context).size.width / 1.2,
-                            )),
+
                             TextSpan(
                                 text:
-                                    "Our recommended real estates in Jakarta.",
+                                    "\nOur recommended real estates in Jakarta.",
                                 style: ThemeData.light()
                                     .textTheme
                                     .labelLarge!
@@ -377,7 +374,7 @@ class _FourthLocationListState extends State<FourthLocationList> {
                         const EdgeInsets.only(top: 14, left: 10, right: 20,bottom: 20),
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height  / 1.5,
-                      width: MediaQuery.of(context).size.width / 1.4,
+                      width: MediaQuery.of(context).size.width / 1.2,
                       child: ListView.builder(
                         physics: NeverScrollableScrollPhysics(),
                         itemCount: imagesFeature.length,
@@ -426,11 +423,11 @@ class _FourthLocationListState extends State<FourthLocationList> {
                                                   top: MediaQuery.of(context)
                                                           .size
                                                           .height /
-                                                      10,
+                                                      13,
                                                   left: 12),
                                               child: Container(
-                                                height: 27,
-                                                width: 63,
+                                                height: MediaQuery.of(context).size.height / 35,
+                                                width: MediaQuery.of(context).size.width / 6.5,
                                                 decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(8),
