@@ -137,7 +137,7 @@ class _ProductTour2State extends State<ProductTour2> {
                     child: SizedBox(
                       width: 100,
                       child: LinearProgressIndicator(
-                        value: 0.6,
+                        value: 0.5,
                         backgroundColor: Colors.grey,
                         valueColor:
                             AlwaysStoppedAnimation<Color>(ColorTheme.white),

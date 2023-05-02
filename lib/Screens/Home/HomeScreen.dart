@@ -121,21 +121,24 @@ class _HomeScreenState extends State<HomeScreen> {
                                 borderRadius: BorderRadius.circular(25.0),
                                 color: ColorTheme.white1),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const Image(
                                     image: AssetImage("images/User.png"),
-                                    height: 15),
+                                    height: 13),
+                                const SizedBox(width: 3),
                                 Text(
                                   "Jakarta, Indonesia",
                                   style: ThemeData.light()
                                       .textTheme
                                       .labelLarge!
                                       .copyWith(
-                                          fontSize: 10,
+                                          fontSize: 8,
                                           fontWeight: FontWeight.w500,
                                           color: ColorTheme.blueheading),
                                 ),
+                                const SizedBox(width: 3),
                                 const Icon(Icons.arrow_drop_down_outlined,
                                     color: ColorTheme.blueheading),
                               ],
@@ -148,34 +151,27 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                           child: Padding(
                             padding: EdgeInsets.only(
-                                left: MediaQuery.of(context).size.width / 3.2),
-                            child: Container(
-                                height: MediaQuery.of(context).size.height / 15,
-                                width: MediaQuery.of(context).size.width / 10,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(25.0),
-                                  color: ColorTheme.white1,
-                                ),
-                                child: const Image(
-                                  image: AssetImage("images/Notification.png"),
-                                  fit: BoxFit.cover,
-                                )),
+                                left: MediaQuery.of(context).size.width / 3.5),
+                            child: const CircleAvatar(
+                              radius: 25,
+                              child: Image(
+                                image: AssetImage("images/Notification.png"),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(
                               left: MediaQuery.of(context).size.width / 30),
-                          child: Container(
-                              height: MediaQuery.of(context).size.height / 15,
-                              width: MediaQuery.of(context).size.width / 10,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25.0),
-                                color: ColorTheme.white1,
-                              ),
-                              child: const Image(
-                                image: AssetImage("images/userelips.png"),
-                                fit: BoxFit.cover,
-                              )),
+                          child: const CircleAvatar(
+                            radius: 25,
+                            backgroundColor: ColorTheme.white1,
+                            child: Image(
+                              image: AssetImage("images/userelips.png"),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         )
                       ],
                     ),
@@ -340,7 +336,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         itemBuilder: (context, index) {
                           return GestureDetector(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => PromotionScreeen(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const PromotionScreeen(),));
                             },
                             child: Stack(
                               children: [
@@ -430,7 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsets.only(top: 24, left: 24, right: 10),
+                        const EdgeInsets.only(top: 24, left: 24, right: 10),
                     child: RichText(
                         text: TextSpan(children: [
                       TextSpan(
@@ -1023,7 +1019,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return SizedBox(
       height: MediaQuery.of(context).size.height / 1.7,
       child: Padding(
-        padding: EdgeInsets.only(left: 24, right: 24),
+        padding: const EdgeInsets.only(left: 24, right: 24),
         child: Column(
           children: [
             Padding(
@@ -1070,7 +1066,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: ColorTheme.darkblue,
               ),
               child: Padding(
-                padding: EdgeInsets.only(left: 15, right: 15),
+                padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Row(
                   children: [
                     Container(
@@ -1079,7 +1075,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25.0),
                           color: ColorTheme.white.withOpacity(0.5)),
-                      child: Icon(Icons.location_on, color: ColorTheme.white),
+                      child: const Icon(Icons.location_on, color: ColorTheme.white),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 15,top: MediaQuery.of(context).size.height / 50),
@@ -1120,7 +1116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: ColorTheme.white,
               ),
               child: Padding(
-                padding: EdgeInsets.only(left: 15, right: 15),
+                padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Row(
                   children: [
                     Container(
@@ -1129,7 +1125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25.0),
                           color: ColorTheme.locationcolor),
-                      child: Icon(Icons.location_on_outlined, color: ColorTheme.greyopasity),
+                      child: const Icon(Icons.location_on_outlined, color: ColorTheme.greyopasity),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 15,top: MediaQuery.of(context).size.height / 50),
@@ -1162,7 +1158,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 20,bottom: 10),
+              padding: const EdgeInsets.only(top: 20,bottom: 10),
               child: Center(
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height / 12,

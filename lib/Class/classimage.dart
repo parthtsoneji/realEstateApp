@@ -60,19 +60,45 @@ class HomeEstate {
       required this.start});
 }
 
-class FeatureListImage{
+class FeatureListImage {
   final String name;
   final String image;
   final String number;
 
-  FeatureListImage({required this.name, required this.image, required this.number});
+  FeatureListImage(
+      {required this.name, required this.image, required this.number});
 }
 
-class AgentDetails{
+class AgentDetails {
   final String name;
   final String image;
   final String star;
   final String number;
 
-  AgentDetails({required this.name, required this.image, required this.star, required this.number});
+  AgentDetails(
+      {required this.name,
+      required this.image,
+      required this.star,
+      required this.number});
+}
+
+class Notificationdetail {
+  final String image;
+  final String name;
+  final String message;
+  final String time;
+  String image2;
+
+  Notificationdetail(
+      this.image, this.name, this.message, this.time, this.image2);
+}
+
+class ChatList {
+  final String image;
+  final String name;
+  final String message;
+  final String time;
+  final String no;
+
+  ChatList(this.image,this.name,this.message, this.time,this.no, );
 }

@@ -14,11 +14,11 @@ class _PromotionScreeenState extends State<PromotionScreeen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
-          child: Stack(
-            children: [
-              Column(
+        body: Stack(
+          children: [
+            SingleChildScrollView(
+
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
@@ -275,7 +275,7 @@ class _PromotionScreeenState extends State<PromotionScreeen> {
                   Padding(
                     padding: EdgeInsets.only(left: 24,right: 24,top: 25),
                     child: Container(
-                      height: MediaQuery.of(context).size.height,
+                      height: MediaQuery.of(context).size.height / 2.2,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15.0),
                         color: ColorTheme.white1,
@@ -295,46 +295,47 @@ class _PromotionScreeenState extends State<PromotionScreeen> {
                         ),
                       ),
                     ),
-                  )
+                  ),
+                  SizedBox(height: 50)
                 ],
               ),
-              Padding(
-                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 1.25),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                    height: MediaQuery.of(context).size.height / 12,
-                    width: MediaQuery.of(context).size.width / 1.4,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all(ColorTheme.green),
-                        shadowColor: MaterialStateProperty.all(ColorTheme.blue),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 1.25,bottom: 43),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height / 12,
+                  width: MediaQuery.of(context).size.width / 1.4,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                      MaterialStateProperty.all(ColorTheme.green),
+                      shadowColor: MaterialStateProperty.all(ColorTheme.blue),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => FeatureEstate(),));
-                      },
-                      child: Text(
-                        "Explore  more",
-                        style: AppTheme.lightTheme()
-                            .textTheme
-                            .labelMedium!
-                            .copyWith(
-                            color: ColorTheme.white,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16),
-                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => FeatureEstate(),));
+                    },
+                    child: Text(
+                      "Explore  more",
+                      style: AppTheme.lightTheme()
+                          .textTheme
+                          .labelMedium!
+                          .copyWith(
+                          color: ColorTheme.white,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16),
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         )
       ),
     );

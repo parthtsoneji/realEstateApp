@@ -66,13 +66,9 @@ class _TopLocationFeatureState extends State<TopLocationFeature> {
                                   MediaQuery.of(context).size.height / 25,
                                   color: ColorTheme.blueheading,
                                   fontWeight: FontWeight.w700)),
-                          WidgetSpan(
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width / 1.9,
-                              )),
                           TextSpan(
                               text:
-                              "Find the best recommendations place to live.",
+                              "\nFind the best recommendations place to live.",
                               style: ThemeData.light()
                                   .textTheme
                                   .labelLarge!

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:realstateapp/Screens/Home/Feature/FourthFeatureList.dart';
-import 'package:realstateapp/Screens/Home/HomeDetailPages/PromotionScreen.dart';
+import 'package:realstateapp/Screens/Home/Notification/NotificationList.dart';
 import 'package:realstateapp/Screens/SplashScreen/SplashScreen.dart';
+
 
 void main() {
   runApp(const MyApp());

@@ -35,29 +35,26 @@ class _FourthLocationListState extends State<FourthLocationList> {
                         image: AssetImage("images/FeatureList/image14.png"),
                         fit: BoxFit.fill,
                       )),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                            height: 180,
-                            width: 100,
-                            child: const Image(
-                              image:
-                                  AssetImage("images/FeatureList/image13.png"),
-                              fit: BoxFit.cover,
-                            )),
-                        Container(
-                            height: 80,
-                            width: 100,
-                            child: const Image(
-                              image:
-                                  AssetImage("images/FeatureList/image12.png"),
-                              fit: BoxFit.cover,
-                            )),
-                      ],
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                          height: 195,
+                          width: 100,
+                          child: const Image(
+                            image:
+                                AssetImage("images/FeatureList/image13.png"),
+                            fit: BoxFit.fill,
+                          )),
+                      Container(
+                          height: 90,
+                          width: 100,
+                          child: const Image(
+                            image:
+                                AssetImage("images/FeatureList/image12.png"),
+                            fit: BoxFit.fill,
+                          )),
+                    ],
                   ),
                 ],
               ),
@@ -103,7 +100,7 @@ class _FourthLocationListState extends State<FourthLocationList> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height / 3.3,
+                        top: MediaQuery.of(context).size.height / 3.1,
                         left: 24),
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height / 12,
@@ -145,7 +142,7 @@ class _FourthLocationListState extends State<FourthLocationList> {
                     child: Container(
                       decoration: BoxDecoration(
                         color: ColorTheme.white,
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,

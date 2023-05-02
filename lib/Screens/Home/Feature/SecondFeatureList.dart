@@ -129,7 +129,7 @@ class _SecondFeatureListState extends State<SecondFeatureList> {
                             padding: const EdgeInsets.only(right: 13),
                             child: Container(
                               height: MediaQuery.of(context).size.height / 3,
-                              width: 290,
+                              width: 330,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(25.0),
                                   color: ColorTheme.white1),
@@ -138,7 +138,7 @@ class _SecondFeatureListState extends State<SecondFeatureList> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-                                      width: 140,
+                                      width: 170,
                                       decoration: BoxDecoration(
                                         borderRadius:
                                         BorderRadius.circular(25.0),
@@ -165,7 +165,7 @@ class _SecondFeatureListState extends State<SecondFeatureList> {
                                                 top: MediaQuery.of(context)
                                                     .size
                                                     .height /
-                                                    7.5,
+                                                    8.2,
                                                 left: 12),
                                             child: Container(
                                               height: 27,

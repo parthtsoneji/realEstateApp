@@ -102,7 +102,7 @@ class _FeatureEstateState extends State<FeatureEstate> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: MediaQuery.of(context).size.height / 3,
+                      height: MediaQuery.of(context).size.height / 3.5,
                       width: MediaQuery.of(context).size.width / 1.8,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
@@ -117,26 +117,26 @@ class _FeatureEstateState extends State<FeatureEstate> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            height: MediaQuery.of(context).size.height / 4.7,
+                            height: MediaQuery.of(context).size.height / 5.7,
                             width: MediaQuery.of(context).size.width / 2.7,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
                                 image: const DecorationImage(
                                     image: AssetImage(
                                         "images/FeatureList/image2.png"),
-                                    fit: BoxFit.fitWidth)),
+                                    fit: BoxFit.cover)),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 3),
                             child: Container(
-                              height: MediaQuery.of(context).size.height / 4.7,
+                              height: MediaQuery.of(context).size.height / 5.7,
                               width: MediaQuery.of(context).size.width / 2.7,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   image: const DecorationImage(
                                       image: AssetImage(
                                           "images/FeatureList/image3.png"),
-                                      fit: BoxFit.fitWidth)),
+                                      fit: BoxFit.cover)),
                             ),
                           ),
                         ],
@@ -162,13 +162,9 @@ class _FeatureEstateState extends State<FeatureEstate> {
                                         MediaQuery.of(context).size.height / 25,
                                     color: ColorTheme.blueheading,
                                     fontWeight: FontWeight.w700)),
-                        WidgetSpan(
-                            child: SizedBox(
-                          width: MediaQuery.of(context).size.width / 1.9,
-                        )),
                         TextSpan(
                             text:
-                                "Our recommended real estates exclusive for you.",
+                                "\nOur recommended real estates exclusive for you.",
                             style: ThemeData.light()
                                 .textTheme
                                 .labelLarge!
