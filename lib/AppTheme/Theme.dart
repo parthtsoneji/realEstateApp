@@ -36,8 +36,10 @@ class ColorTheme {
   static const greenlight = Color(0xFFDAEDC2);
   static const white = Color(0xFFFFFFFF);
   static const white1 = Color(0xFFF5F4F8);
+  static const white2 = Color(0xFFE5E5E5);
   static const grey = Color(0xFFDFDFDF);
   static const locationcolor = Color(0xFFECEDF3);
+  static const lightdark = Color(0xFF53587A);
   static const lightwhite = Color(0xFFA1A5C1);
   static const orablue = Color(0xFF21628A);
   static const blue = Color(0xFF1F4C6B);
@@ -47,6 +49,6 @@ class ColorTheme {
   static const skip = Color(0xFF3A3F67);
   static const darkblue = Color(0xFF234F68);
   static const staryellow = Color(0xFFFFC42D);
-  static const greyopasity = Color(0xFF53587A);
+  static const greyopasity = Color(0xFFE5E5E5);
   static const transparent = Colors.transparent;
 }

@@ -229,7 +229,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                         color: ColorTheme.white,
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(25.0),
                       ),
                       child: TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,

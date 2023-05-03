@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:realstateapp/Screens/Home/Feature/FourthFeatureList.dart';
+import 'package:realstateapp/Screens/Home/NavigationBar.dart';
 import 'package:realstateapp/Screens/Home/Notification/NotificationList.dart';
-import 'package:realstateapp/Screens/SplashScreen/SplashScreen.dart';
+import 'package:realstateapp/Screens/Home/Search/FirstSearchScreen.dart';
+import 'package:realstateapp/Screens/Register/RegisterPage.dart';
 
 
 void main() {
@@ -19,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: FirstSearchScreen(),
     );
   }
 }
