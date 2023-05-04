@@ -20,6 +20,7 @@ class _ChatBoxScreenState extends State<ChatBoxScreen> {
               Padding(
                 padding: const EdgeInsets.only(top: 24, left: 24, right: 24),
                 child: Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
                       onTap: () {
@@ -156,8 +157,8 @@ class _ChatBoxScreenState extends State<ChatBoxScreen> {
                                   top: 20),
                               child: Container(
                                 height:
-                                    MediaQuery.of(context).size.height / 4.8,
-                                width: MediaQuery.of(context).size.width / 1.5,
+                                    MediaQuery.of(context).size.height / 5.2,
+                                width: MediaQuery.of(context).size.width / 1.6,
                                 decoration: const BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                         bottomRight: Radius.circular(25),
@@ -174,7 +175,7 @@ class _ChatBoxScreenState extends State<ChatBoxScreen> {
                                                 4,
                                         width:
                                             MediaQuery.of(context).size.width /
-                                                3.5,
+                                                3.8,
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(25.0),
@@ -204,8 +205,8 @@ class _ChatBoxScreenState extends State<ChatBoxScreen> {
                                                       14,
                                                   left: 12),
                                               child: Container(
-                                                height: 27,
-                                                width: 63,
+                                                height: MediaQuery.of(context).size.height / 40,
+                                                width: MediaQuery.of(context).size.width / 1,
                                                 decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -223,7 +224,7 @@ class _ChatBoxScreenState extends State<ChatBoxScreen> {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
-                                                              fontSize: 10)),
+                                                              fontSize: MediaQuery.of(context).size.width / 50)),
                                                 ),
                                               ),
                                             ),
@@ -233,7 +234,7 @@ class _ChatBoxScreenState extends State<ChatBoxScreen> {
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(
-                                          top: 10, left: 12, right: 10),
+                                          top: 10, left: 8),
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
@@ -245,7 +246,7 @@ class _ChatBoxScreenState extends State<ChatBoxScreen> {
                                                   .copyWith(
                                                       color: ColorTheme
                                                           .blueheading,
-                                                      fontSize: 12,
+                                                      fontSize: 10,
                                                       fontWeight:
                                                           FontWeight.w700)),
                                           Text("Apartment",
@@ -255,7 +256,7 @@ class _ChatBoxScreenState extends State<ChatBoxScreen> {
                                                   .copyWith(
                                                       color: ColorTheme
                                                           .blueheading,
-                                                      fontSize: 12,
+                                                      fontSize: 10,
                                                       fontWeight:
                                                           FontWeight.w700)),
                                           const SizedBox(height: 10),
@@ -288,7 +289,7 @@ class _ChatBoxScreenState extends State<ChatBoxScreen> {
                                               ),
                                               Padding(
                                                 padding: const EdgeInsets.only(
-                                                    left: 5),
+                                                    left: 3),
                                                 child: Text(
                                                     "Jakarta, Indonesia",
                                                     style: ThemeData.light()

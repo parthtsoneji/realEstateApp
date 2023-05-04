@@ -102,3 +102,12 @@ class ChatList {
 
   ChatList(this.image,this.name,this.message, this.time,this.no, );
 }
+
+class SearchList{
+  final String name;
+  final String image;
+  final String icon;
+  final String price;
+
+  SearchList(this.name, this.image, this.icon, this.price);
+}

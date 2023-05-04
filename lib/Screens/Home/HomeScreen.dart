@@ -74,6 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
         price: "\$ 320",
         start: "4.5"),
   ];
+
   int selectedIndex = 0;
   int index = 0;
 

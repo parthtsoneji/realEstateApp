@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Class/classimage.dart';
 import 'package:realstateapp/Screens/Home/Notification/ChatBox.dart';
+import 'package:realstateapp/Screens/Home/Search/FirstSearchScreen.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({Key? key}) : super(key: key);
@@ -350,7 +351,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                                 : MediaQuery.of(context)
                                                         .size
                                                         .width /
-                                                    2.6,
+                                                    2.8,
                                             child: Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
@@ -563,7 +564,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                               left: MediaQuery.of(context)
                                                       .size
                                                       .width /
-                                                  18,
+                                                  30,
                                               top: 24),
                                           child: SizedBox(
                                               height: 50,
@@ -871,14 +872,19 @@ class _NotificationScreenState extends State<NotificationScreen> {
           child: Row(
             children: [
               Expanded(child: SizedBox()),
-              Container(
-                height: MediaQuery.of(context).size.height /11,
-                width: MediaQuery.of(context).size.width /3.5,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: ColorTheme.green,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => FirstSearchScreen(),));
+                },
+                child: Container(
+                  height: MediaQuery.of(context).size.height /11,
+                  width: MediaQuery.of(context).size.width /3.5,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: ColorTheme.green,
+                  ),
+                  child: Center(child: Text("Cancel",style: ThemeData.light().textTheme.labelMedium!.copyWith(color: ColorTheme.white,fontWeight: FontWeight.w700,fontSize: 16),)),
                 ),
-                child: Center(child: Text("Cancel",style: ThemeData.light().textTheme.labelMedium!.copyWith(color: ColorTheme.white,fontWeight: FontWeight.w700,fontSize: 16),)),
               ),
               SizedBox(width: 15),
               Container(

@@ -92,7 +92,41 @@ class _SearchScreenState extends State<SearchScreen> {
                                               }
                                             });
                                           },
-                                        )
+                                        ),
+                                  Marker(
+                                    markerId: const MarkerId('2'),
+                                    position: const LatLng(
+                                        21.1702, 72.8311),
+                                    icon: userIcon!,
+                                    onTap: () {
+                                      setState(() {
+                                        if (_isShow == false) {
+                                          _isShow = true;
+                                          _isgone = false;
+                                        } else {
+                                          _isShow = false;
+                                          _isgone = true;
+                                        }
+                                      });
+                                    },
+                                  ),
+                                  Marker(
+                                    markerId: const MarkerId('3'),
+                                    position: const LatLng(
+                                        22.3072, 73.1812),
+                                    icon: userIcon!,
+                                    onTap: () {
+                                      setState(() {
+                                        if (_isShow == false) {
+                                          _isShow = true;
+                                          _isgone = false;
+                                        } else {
+                                          _isShow = false;
+                                          _isgone = true;
+                                        }
+                                      });
+                                    },
+                                  ),
                                       },
                                 initialCameraPosition: _kGooglePlex),
                           ),
@@ -131,7 +165,41 @@ class _SearchScreenState extends State<SearchScreen> {
                                           }
                                         });
                                       },
-                                    )
+                                    ),
+                              Marker(
+                                markerId: const MarkerId('2'),
+                                position: const LatLng(
+                                    21.1702, 72.8311),
+                                icon: userIcon!,
+                                onTap: () {
+                                  setState(() {
+                                    if (_isShow == false) {
+                                      _isShow = true;
+                                      _isgone = false;
+                                    } else {
+                                      _isShow = false;
+                                      _isgone = true;
+                                    }
+                                  });
+                                },
+                              ),
+                              Marker(
+                                markerId: const MarkerId('3'),
+                                position: const LatLng(
+                                    22.3072, 73.1812),
+                                icon: userIcon!,
+                                onTap: () {
+                                  setState(() {
+                                    if (_isShow == false) {
+                                      _isShow = true;
+                                      _isgone = false;
+                                    } else {
+                                      _isShow = false;
+                                      _isgone = true;
+                                    }
+                                  });
+                                },
+                              ),
                                   },
                             initialCameraPosition: _kGooglePlex),
                       ),

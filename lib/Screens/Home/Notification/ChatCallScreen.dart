@@ -39,7 +39,7 @@ class _ChatCallScreenState extends State<ChatCallScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 34),
+              padding: const EdgeInsets.only(top: 34),
               child: Center(
                   child: Text(
                 "Milano",
@@ -68,32 +68,33 @@ class _ChatCallScreenState extends State<ChatCallScreen> {
                 )),
               ),
             ),
-            SizedBox(height: 90),
+            const SizedBox(height: 90),
             Row(
               children: [
-                Expanded(child: SizedBox()),
+                const Expanded(child: SizedBox()),
                 Stack(
                   children: [
                     Container(
                       height: 192,
                       width: 192,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           image: DecorationImage(
                               image:
                                   AssetImage("images/Notification/color.png"))),
-                      child: Image(
+                      child: const Image(
                           image: AssetImage("images/Notification/notify7.png")),
                     ),
                   ],
                 ),
-                Expanded(child: SizedBox()),
+                const Expanded(child: SizedBox()),
               ],
             ),
-            Expanded(child: SizedBox()),
+            const Expanded(child: SizedBox()),
+
             Padding(
-              padding: EdgeInsets.only(left: 24, right: 24, bottom: 15),
+              padding: const EdgeInsets.only(left: 24, right: 24, bottom: 15),
               child: Container(
-                height: 188,
+                height: MediaQuery.of(context).size.height / 5,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
@@ -102,7 +103,7 @@ class _ChatCallScreenState extends State<ChatCallScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Row(
-                      children: [
+                      children: const [
                         Expanded(child: SizedBox()),
                         CircleAvatar(
                           backgroundColor: ColorTheme.white,
@@ -128,7 +129,7 @@ class _ChatCallScreenState extends State<ChatCallScreen> {
                     ),
                     GestureDetector(
                      onTap: () {
-                       Navigator.push(context, MaterialPageRoute(builder: (context) => ChatBoxScreen(),));
+                       Navigator.push(context, MaterialPageRoute(builder: (context) => const ChatBoxScreen(),));
                      },
                       child: Container(
                         height: MediaQuery.of(context).size.height /11,
@@ -145,7 +146,7 @@ class _ChatCallScreenState extends State<ChatCallScreen> {
                             CircleAvatar(
                               radius: 25,
                               backgroundColor: ColorTheme.white.withOpacity(0.22),
-                              child: Icon(Icons.call_end,color: ColorTheme.white,),
+                              child: const Icon(Icons.call_end,color: ColorTheme.white,),
                             )
                           ],
                         ),
