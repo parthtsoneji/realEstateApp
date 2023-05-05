@@ -278,7 +278,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       Padding(
                         padding: const EdgeInsets.only(top: 20),
                         child: SizedBox(
-                          height: MediaQuery.of(context).size.height / 1.8,
+                          height: MediaQuery.of(context).size.height / 1.5,
                           width: MediaQuery.of(context).size.width,
                           child: ListView.builder(
                             itemCount: notify.length,
@@ -321,105 +321,71 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                       borderRadius: BorderRadius.circular(25),
                                       color: ColorTheme.white1,
                                     ),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(15.0),
-                                          child: CircleAvatar(
-                                            radius: 30,
-                                            backgroundColor:
-                                                ColorTheme.transparent,
-                                            backgroundImage:
-                                                AssetImage(select.image),
+                                    child: ListTile(
+                                      leading:  CircleAvatar(
+                                        radius: 35,
+                                        backgroundColor:
+                                        ColorTheme.transparent,
+                                        backgroundImage:
+                                        AssetImage(select.image),
+                                      ),
+                                      title: Column(
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Text(
+                                            select.name,
+                                            style: ThemeData.light()
+                                                .textTheme
+                                                .labelLarge!
+                                                .copyWith(
+                                                fontSize: 15,
+                                                fontWeight:
+                                                FontWeight.w700,
+                                                color: ColorTheme
+                                                    .blueheading),
                                           ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: 12, left: 5),
-                                          child: SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height /
-                                                8.5,
-                                            width: select.image2.isEmpty
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .height /
-                                                    4
-                                                : MediaQuery.of(context)
-                                                        .size
-                                                        .width /
-                                                    2.8,
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Text(
-                                                  select.name,
-                                                  style: ThemeData.light()
-                                                      .textTheme
-                                                      .labelLarge!
-                                                      .copyWith(
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                          color: ColorTheme
-                                                              .blueheading),
-                                                ),
-                                                Text(
-                                                  select.message,
-                                                  style: ThemeData.light()
-                                                      .textTheme
-                                                      .labelLarge!
-                                                      .copyWith(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          color: ColorTheme
-                                                              .greyopasity),
-                                                ),
-                                                Text(
-                                                  select.time,
-                                                  style: ThemeData.light()
-                                                      .textTheme
-                                                      .labelSmall!
-                                                      .copyWith(
-                                                          fontSize: 10,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: ColorTheme
-                                                              .lightwhite),
-                                                ),
-                                              ],
-                                            ),
+                                          Text(
+                                            select.message,
+                                            style: ThemeData.light()
+                                                .textTheme
+                                                .labelLarge!
+                                                .copyWith(
+                                                fontSize: 12,
+                                                fontWeight:
+                                                FontWeight.w500,
+                                                color: ColorTheme
+                                                    .greyopasity),
                                           ),
-                                        ),
-                                        select.image2 != null &&
-                                                select.image2.isNotEmpty
-                                            ? Padding(
-                                                padding: EdgeInsets.only(
-                                                    top: 24,
-                                                    left: MediaQuery.of(context)
-                                                            .size
-                                                            .width /
-                                                        14),
-                                                child: SizedBox(
-                                                    height: 50,
-                                                    width: 60,
-                                                    child: Image(
-                                                        image: ExactAssetImage(
-                                                            select.image2))),
-                                              )
-                                            : const SizedBox(
-                                                height: 1,
-                                                width: 1,
-                                              ),
-                                      ],
-                                    ),
+                                          Text(
+                                            select.time,
+                                            style: ThemeData.light()
+                                                .textTheme
+                                                .labelSmall!
+                                                .copyWith(
+                                                fontSize: 10,
+                                                fontWeight:
+                                                FontWeight.w400,
+                                                color: ColorTheme
+                                                    .lightwhite),
+                                          ),
+                                        ],
+                                      ),
+                                      trailing:  select.image2 != null &&
+                                          select.image2.isNotEmpty
+                                          ? SizedBox(
+                                              height: 50,
+                                              width: 50,
+                                              child: Image(
+                                                  image: ExactAssetImage(
+                                                      select.image2),fit: BoxFit.cover,))
+                                          : const SizedBox(
+                                        height: 1,
+                                        width: 1,
+                                      ),
+                                    )
                                   ),
                                 ),
                               );
@@ -441,7 +407,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 20),
+                        padding: const EdgeInsets.only(top: 20,bottom: 20),
                         child: SizedBox(
                           height: MediaQuery.of(context).size.height / 5,
                           width: MediaQuery.of(context).size.width,
@@ -478,103 +444,79 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
+                                  padding: const EdgeInsets.only(top: 15),
                                   child: Container(
-                                    height:
-                                        MediaQuery.of(context).size.height / 6,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(25),
-                                      color: ColorTheme.white1,
-                                    ),
-                                    child: Row(
-                                      crossAxisAlignment:
+                                      height:
+                                      MediaQuery.of(context).size.height / 6,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                        color: ColorTheme.white1,
+                                      ),
+                                      child: ListTile(
+                                        leading:  CircleAvatar(
+                                          radius: 35,
+                                          backgroundColor:
+                                          ColorTheme.transparent,
+                                          backgroundImage:
+                                          AssetImage(oldselect.image),
+                                        ),
+                                        title: Column(
+                                          crossAxisAlignment:
                                           CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(15.0),
-                                          child: CircleAvatar(
-                                            radius: 30,
-                                            backgroundColor:
-                                                ColorTheme.transparent,
-                                            backgroundImage:
-                                                AssetImage(oldselect.image),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: 12, left: 5),
-                                          child: SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height /
-                                                8.5,
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                2.9,
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  oldselect.name,
-                                                  style: ThemeData.light()
-                                                      .textTheme
-                                                      .labelLarge!
-                                                      .copyWith(
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                          color: ColorTheme
-                                                              .blueheading),
-                                                ),
-                                                Text(
-                                                  oldselect.message,
-                                                  style: ThemeData.light()
-                                                      .textTheme
-                                                      .labelLarge!
-                                                      .copyWith(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          color: ColorTheme
-                                                              .greyopasity),
-                                                ),
-                                                Text(
-                                                  oldselect.time,
-                                                  style: ThemeData.light()
-                                                      .textTheme
-                                                      .labelSmall!
-                                                      .copyWith(
-                                                          fontSize: 10,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: ColorTheme
-                                                              .lightwhite),
-                                                ),
-                                              ],
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Text(
+                                              oldselect.name,
+                                              style: ThemeData.light()
+                                                  .textTheme
+                                                  .labelLarge!
+                                                  .copyWith(
+                                                  fontSize: 15,
+                                                  fontWeight:
+                                                  FontWeight.w700,
+                                                  color: ColorTheme
+                                                      .blueheading),
                                             ),
-                                          ),
+                                            Text(
+                                              oldselect.message,
+                                              style: ThemeData.light()
+                                                  .textTheme
+                                                  .labelLarge!
+                                                  .copyWith(
+                                                  fontSize: 12,
+                                                  fontWeight:
+                                                  FontWeight.w500,
+                                                  color: ColorTheme
+                                                      .greyopasity),
+                                            ),
+                                            Text(
+                                              oldselect.time,
+                                              style: ThemeData.light()
+                                                  .textTheme
+                                                  .labelSmall!
+                                                  .copyWith(
+                                                  fontSize: 10,
+                                                  fontWeight:
+                                                  FontWeight.w400,
+                                                  color: ColorTheme
+                                                      .lightwhite),
+                                            ),
+                                          ],
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: MediaQuery.of(context)
-                                                      .size
-                                                      .width /
-                                                  30,
-                                              top: 24),
-                                          child: SizedBox(
-                                              height: 50,
-                                              width: 60,
-                                              child: Image(
-                                                  image: AssetImage(
-                                                      oldselect.image2))),
-                                        )
-                                      ],
-                                    ),
+                                        trailing:  oldselect.image2 != null &&
+                                            oldselect.image2.isNotEmpty
+                                            ? SizedBox(
+                                            height: 50,
+                                            width: 50,
+                                            child: Image(
+                                              image: ExactAssetImage(
+                                                  oldselect.image2),fit: BoxFit.cover,))
+                                            : const SizedBox(
+                                          height: 1,
+                                          width: 1,
+                                        ),
+                                      )
                                   ),
                                 ),
                               );
@@ -648,137 +590,102 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                         borderRadius:
                                             BorderRadius.circular(25.0),
                                         color: ColorTheme.white1),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Row(
-                                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    child: ListTile(
+                                      leading: GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                const ChatBoxScreen(),
+                                              ));
+                                        },
+                                        child: CircleAvatar(
+                                          radius: 25,
+                                          backgroundImage:
+                                          AssetImage(select.image),
+                                        ),
+                                      ),
+                                      title: Column(
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                         children: [
-                                          GestureDetector(
-                                            onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const ChatBoxScreen(),
-                                                  ));
-                                            },
-                                            child: CircleAvatar(
-                                              radius: 25,
-                                              backgroundImage:
-                                                  AssetImage(select.image),
-                                            ),
+                                          Text(
+                                            select.name,
+                                            style: ThemeData.light()
+                                                .textTheme
+                                                .labelLarge!
+                                                .copyWith(
+                                                fontSize: 15,
+                                                fontWeight:
+                                                FontWeight.w700,
+                                                color: ColorTheme
+                                                    .blueheading),
                                           ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsets.only(left: 20),
-                                            child: SizedBox(
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width /
-                                                  2.9,
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height /
-                                                  22,
-                                              child: RichText(
-                                                text: TextSpan(children: [
-                                                  TextSpan(
-                                                      text: select.name,
-                                                      style: ThemeData.light()
-                                                          .textTheme
-                                                          .labelLarge!
-                                                          .copyWith(
-                                                              fontSize: MediaQuery.of(
-                                                                          context)
-                                                                      .size
-                                                                      .width /
-                                                                  35,
-                                                              color: ColorTheme
-                                                                  .blueheading,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w700)),
-                                                  const WidgetSpan(
-                                                      child:
-                                                          SizedBox(height: 4)),
-                                                  TextSpan(
-                                                      text:
-                                                          "\n" + select.message,
-                                                      style: ThemeData.light()
-                                                          .textTheme
-                                                          .labelLarge!
-                                                          .copyWith(
-                                                              fontSize: MediaQuery.of(
-                                                                          context)
-                                                                      .size
-                                                                      .width /
-                                                                  50,
-                                                              color: ColorTheme
-                                                                  .greyopasity,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500))
-                                                ]),
-                                              ),
-                                            ),
+                                          Text(
+                                            select.message,
+                                            style: ThemeData.light()
+                                                .textTheme
+                                                .labelLarge!
+                                                .copyWith(
+                                                fontSize: 12,
+                                                fontWeight:
+                                                FontWeight.w500,
+                                                color: ColorTheme
+                                                    .greyopasity),
                                           ),
-                                          Padding(
-                                            padding: EdgeInsets.only(
-                                                left: MediaQuery.of(context)
-                                                        .size
-                                                        .width /
-                                                    6),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                SizedBox(
-                                                    width: 34,
-                                                    height: 16,
-                                                    child: Text(
-                                                      select.time,
-                                                      style: ThemeData.light()
-                                                          .textTheme
-                                                          .labelSmall!
-                                                          .copyWith(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                              color: ColorTheme
-                                                                  .lightwhite,
-                                                              fontSize: 8),
-                                                    )),
-                                                select.no.isNotEmpty &&
-                                                        select.no != null
-                                                    ? CircleAvatar(
-                                                        backgroundColor:
-                                                            ColorTheme.green,
-                                                        radius: 9,
-                                                        child: Center(
-                                                            child: Text(
-                                                          select.no,
-                                                          style: ThemeData
-                                                                  .light()
-                                                              .textTheme
-                                                              .labelSmall!
-                                                              .copyWith(
-                                                                  fontSize: 8,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w400,
-                                                                  color:
-                                                                      ColorTheme
-                                                                          .white),
-                                                        )),
-                                                      )
-                                                    : const CircleAvatar(
-                                                        radius: 1,
-                                                        backgroundColor:
-                                                            ColorTheme
-                                                                .transparent,
-                                                      )
-                                              ],
-                                            ),
+                                        ],
+                                      ),
+                                      trailing:   Column(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        children: [
+                                          SizedBox(
+                                              width: 34,
+                                              height: 16,
+                                              child: Text(
+                                                select.time,
+                                                style: ThemeData.light()
+                                                    .textTheme
+                                                    .labelSmall!
+                                                    .copyWith(
+                                                    fontWeight:
+                                                    FontWeight
+                                                        .w400,
+                                                    color: ColorTheme
+                                                        .lightwhite,
+                                                    fontSize: 8),
+                                              )),
+                                          select.no.isNotEmpty &&
+                                              select.no != null
+                                              ? CircleAvatar(
+                                            backgroundColor:
+                                            ColorTheme.green,
+                                            radius: 9,
+                                            child: Center(
+                                                child: Text(
+                                                  select.no,
+                                                  style: ThemeData
+                                                      .light()
+                                                      .textTheme
+                                                      .labelSmall!
+                                                      .copyWith(
+                                                      fontSize: 8,
+                                                      fontWeight:
+                                                      FontWeight
+                                                          .w400,
+                                                      color:
+                                                      ColorTheme
+                                                          .white),
+                                                )),
+                                          )
+                                              : const CircleAvatar(
+                                            radius: 1,
+                                            backgroundColor:
+                                            ColorTheme
+                                                .transparent,
                                           )
                                         ],
                                       ),
@@ -800,22 +707,22 @@ class _NotificationScreenState extends State<NotificationScreen> {
       ),
     );
   }
+
   Widget _showModelBottomsheet() {
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 13),
-          child: Image(image: const AssetImage("images/Slide.png"),width: MediaQuery.of(context).size.width / 3),
+          child: Image(
+              image: const AssetImage("images/Slide.png"),
+              width: MediaQuery.of(context).size.width / 3),
         ),
         Container(
           width: 150,
           height: 150,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("images/Notification/alert.png")
-              )
-          ),
-
+                  image: AssetImage("images/Notification/alert.png"))),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 18),
@@ -824,79 +731,86 @@ class _NotificationScreenState extends State<NotificationScreen> {
               children: [
                 TextSpan(
                   text: "Are you sure want to",
-                  style: ThemeData.light()
-                      .textTheme
-                      .labelMedium!
-                      .copyWith(
+                  style: ThemeData.light().textTheme.labelMedium!.copyWith(
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
                       color: ColorTheme.blueheading),
                 ),
                 TextSpan(
                   text: "\ndelete",
-                  style: ThemeData.light()
-                      .textTheme
-                      .labelMedium!
-                      .copyWith(
+                  style: ThemeData.light().textTheme.labelMedium!.copyWith(
                       fontSize: 25,
                       fontWeight: FontWeight.w800,
                       color: ColorTheme.blue),
                 ),
                 TextSpan(
                   text: " all your chat?",
-                  style: ThemeData.light()
-                      .textTheme
-                      .labelMedium!
-                      .copyWith(
+                  style: ThemeData.light().textTheme.labelMedium!.copyWith(
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
                       color: ColorTheme.blueheading),
                 ),
-
               ],
             ),
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 20),
-          child: Text(
-              "This action can’t be undo",
-              style: ThemeData.light()
-                  .textTheme
-                  .labelMedium!
-                  .copyWith(fontSize: 12,color: ColorTheme.lightwhite, fontWeight: FontWeight.w400)),
+          child: Text("This action can’t be undo",
+              style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                  fontSize: 12,
+                  color: ColorTheme.lightwhite,
+                  fontWeight: FontWeight.w400)),
         ),
-        Expanded(child: SizedBox()),
+        const Expanded(child: SizedBox()),
         Padding(
           padding: const EdgeInsets.only(bottom: 30),
           child: Row(
             children: [
-              Expanded(child: SizedBox()),
+              const Expanded(child: SizedBox()),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => FirstSearchScreen(),));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FirstSearchScreen(),
+                      ));
                 },
                 child: Container(
-                  height: MediaQuery.of(context).size.height /11,
-                  width: MediaQuery.of(context).size.width /3.5,
+                  height: MediaQuery.of(context).size.height / 11,
+                  width: MediaQuery.of(context).size.width / 3.5,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: ColorTheme.green,
                   ),
-                  child: Center(child: Text("Cancel",style: ThemeData.light().textTheme.labelMedium!.copyWith(color: ColorTheme.white,fontWeight: FontWeight.w700,fontSize: 16),)),
+                  child: Center(
+                      child: Text(
+                    "Cancel",
+                    style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                        color: ColorTheme.white,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16),
+                  )),
                 ),
               ),
-              SizedBox(width: 15),
+              const SizedBox(width: 15),
               Container(
-                height: MediaQuery.of(context).size.height /11,
-                width: MediaQuery.of(context).size.width /3.5,
+                height: MediaQuery.of(context).size.height / 11,
+                width: MediaQuery.of(context).size.width / 3.5,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: ColorTheme.white1,
                 ),
-                child: Center(child: Text("Delete",style: ThemeData.light().textTheme.labelMedium!.copyWith(color: ColorTheme.blueheading,fontWeight: FontWeight.w700,fontSize: 16),)),
+                child: Center(
+                    child: Text(
+                  "Delete",
+                  style: ThemeData.light().textTheme.labelMedium!.copyWith(
+                      color: ColorTheme.blueheading,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16),
+                )),
               ),
-              Expanded(child: SizedBox()),
+              const Expanded(child: SizedBox()),
             ],
           ),
         )

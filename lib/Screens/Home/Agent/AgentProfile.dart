@@ -123,7 +123,7 @@ class _AgentProfileDetailState extends State<AgentProfileDetail> {
                           child: const Image(image: AssetImage("images/Agent/Agent1.png"),
                           ),),
                         Padding(
-                          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 10.7,left: MediaQuery.of(context).size.width / 7.5),
+                          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 10.7,left: MediaQuery.of(context).size.width / 5.8),
                           child: Container(
                             height: 25,
                             width: 27,
@@ -171,7 +171,7 @@ class _AgentProfileDetailState extends State<AgentProfileDetail> {
                           width: 102,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              color: ColorTheme.white1
+                              color: ColorTheme.locationcolor
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -179,7 +179,7 @@ class _AgentProfileDetailState extends State<AgentProfileDetail> {
                             children: [
                               Text("235",style: ThemeData.light().textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w700,color: ColorTheme.blueheading,fontSize: 14),),
                               SizedBox(height: 7),
-                              Text("Reviews",style: ThemeData.light().textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w500,color: ColorTheme.greyopasity,fontSize: 10),),
+                              Text("Reviews",style: ThemeData.light().textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w500,color: ColorTheme.lightdark,fontSize: 10),),
                             ],
                           ),
                         ),
@@ -188,7 +188,7 @@ class _AgentProfileDetailState extends State<AgentProfileDetail> {
                           width: 102,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              color: ColorTheme.white1
+                              color: ColorTheme.locationcolor
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -196,7 +196,7 @@ class _AgentProfileDetailState extends State<AgentProfileDetail> {
                             children: [
                               Text("112",style: ThemeData.light().textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w700,color: ColorTheme.blueheading,fontSize: 14),),
                               SizedBox(height: 7),
-                              Text("Sold",style: ThemeData.light().textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w500,color: ColorTheme.greyopasity,fontSize: 10),),
+                              Text("Sold",style: ThemeData.light().textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w500,color: ColorTheme.lightdark,fontSize: 10),),
                             ],
                           ),
                         ),

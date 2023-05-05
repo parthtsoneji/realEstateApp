@@ -155,7 +155,7 @@ class _ChatCallScreenState extends State<ChatCallScreen> {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

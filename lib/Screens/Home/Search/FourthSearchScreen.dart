@@ -286,7 +286,7 @@ class _FourthSearchScreenState extends State<FourthSearchScreen> {
                                                 top: MediaQuery.of(context)
                                                     .size
                                                     .height /
-                                                    7.5,
+                                                    8.5,
                                                 left: 12),
                                             child: Container(
                                               height: 27,
