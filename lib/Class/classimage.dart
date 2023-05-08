@@ -113,3 +113,15 @@ class SearchList{
 
   SearchList(this.name, this.image, this.icon, this.price);
 }
+
+class TransactionList {
+  final String icon;
+  final String image;
+  final String number;
+  final String price;
+  final String image2;
+  final String logo;
+
+  TransactionList(
+      this.icon, this.image, this.number, this.price, this.image2, this.logo);
+}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Class/classimage.dart';
+import 'package:realstateapp/Screens/Home/Search/Deatil/ViewOnMapDetail.dart';
 
 class FirstDetailScreen extends StatefulWidget {
   const FirstDetailScreen({Key? key}) : super(key: key);
@@ -266,16 +267,16 @@ class _FirstDetailScreenState extends State<FirstDetailScreen> {
                   padding: const EdgeInsets.only(left: 24, right: 24, top: 15),
                   child: Row(
                     children: [
-                      Icon(Icons.location_on,
+                      const Icon(Icons.location_on,
                           color: ColorTheme.blueheading, size: 15),
-                      SizedBox(width: 7),
+                      const SizedBox(width: 7),
                       Text("Jakarta, Indonesia",
                         style: ThemeData.light().textTheme.labelLarge!.copyWith(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             color: ColorTheme.lightdark),
                       ),
-                      Expanded(child: SizedBox()),
+                      const Expanded(child: SizedBox()),
                       Text("per month",
                         style: ThemeData.light().textTheme.labelLarge!.copyWith(
                             fontSize: 12,
@@ -335,10 +336,10 @@ class _FirstDetailScreenState extends State<FirstDetailScreen> {
                               context: context,
                               shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(50.0)),
+                                    top: Radius.circular(55.0)),
                               ),
-                              builder: (context) => _showModelBottomsheet(),
-                          );},
+                              builder: (context) => _locationBottomSheet());
+                          },
                         child: Container(
                           height: 50,
                           width: 50,
@@ -738,7 +739,7 @@ class _FirstDetailScreenState extends State<FirstDetailScreen> {
                                         text: "Kurt Mullins",
                                         style: ThemeData.light().textTheme.labelLarge!.copyWith(color: ColorTheme.blueheading,fontWeight: FontWeight.w700,fontSize: 12),
                                       ),
-                                      WidgetSpan(child: SizedBox(width: 60)),
+                                      const WidgetSpan(child: SizedBox(width: 60)),
                                       WidgetSpan(child: Row(
                                         children: const [
                                           Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
@@ -793,7 +794,7 @@ class _FirstDetailScreenState extends State<FirstDetailScreen> {
                                         text: "Kay Swanson",
                                         style: ThemeData.light().textTheme.labelLarge!.copyWith(color: ColorTheme.blueheading,fontWeight: FontWeight.w700,fontSize: 12),
                                       ),
-                                      WidgetSpan(child: SizedBox(width: 70)),
+                                      const WidgetSpan(child: SizedBox(width: 70)),
                                       WidgetSpan(child: Row(
                                         children: const [
                                           Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
@@ -1090,62 +1091,193 @@ class _FirstDetailScreenState extends State<FirstDetailScreen> {
       ),
     );
   }
-  Widget _showModelBottomsheet() {
+  Widget _locationBottomSheet() {
     return SizedBox(
-      height: MediaQuery.of(context).size.height / 2.5,
+      height: MediaQuery.of(context).size.height / 2.7,
       child: Padding(
         padding: const EdgeInsets.only(left: 24, right: 24),
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 13, bottom: 30),
+              padding: const EdgeInsets.only(top: 11),
               child: Image(
                   image: const AssetImage("images/Slide.png"),
                   width: MediaQuery.of(context).size.width / 3),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 40),
+              padding: const EdgeInsets.only(top: 30, bottom: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Property type",
+                    "Location Distance",
                     style: ThemeData.light().textTheme.labelMedium!.copyWith(
-                        fontSize: 18,
+                        color: ColorTheme.blueheading,
                         fontWeight: FontWeight.w700,
-                        color: ColorTheme.blueheading),
+                        fontSize: 18),
                   ),
                   Container(
                     height: 50,
-                    width: 75,
+                    width: 79,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: ColorTheme.green
-                    ),
-                    child: Center(child: Text("Edit",style: ThemeData.light().textTheme.labelLarge!.copyWith(color: ColorTheme.white,fontSize: 10,fontWeight: FontWeight.w500),)),
+                        borderRadius: BorderRadius.circular(35.0),
+                        color: ColorTheme.green),
+                    child: Center(
+                        child: Text(
+                          "Edit",
+                          style: ThemeData.light().textTheme.labelLarge!.copyWith(
+                              color: ColorTheme.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 10),
+                        )),
                   )
                 ],
               ),
             ),
-            Container(
-              height: 80,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                border: Border.all(width: 1,color: ColorTheme.grey)
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ViewOnMapDetail(),));
+              },
+              child: Container(
+                height: MediaQuery.of(context).size.height / 11,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: ColorTheme.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25.0),
+                            color: ColorTheme.locationcolor),
+                        child: const Icon(Icons.location_on, color: ColorTheme.blue),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 15,top: MediaQuery.of(context).size.height / 35),
+                        child: Center(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RichText(
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: "2.5 km",
+                                        style: ThemeData.light()
+                                            .textTheme
+                                            .labelLarge!
+                                            .copyWith(
+                                            color: ColorTheme.blueheading,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w700)
+                                    ),
+                                    TextSpan(
+                                        text: "   from Srengseng, Kembangan, ",
+                                        style: ThemeData.light()
+                                            .textTheme
+                                            .labelLarge!
+                                            .copyWith(
+                                            color: ColorTheme.lightdark,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400)
+                                    ),
+                                  ]
+                                ),
+                              ),
+                              Text("West Jakarta City, Jakarta 11630",
+                                  style: ThemeData.light()
+                                      .textTheme
+                                      .labelLarge!
+                                      .copyWith(
+                                      color: ColorTheme.lightdark,
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w400))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
+            SizedBox(height: MediaQuery.of(context).size.height / 80),
             Container(
-              height: 80,
+              height: MediaQuery.of(context).size.height / 11,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  border: Border.all(width: 1,color: ColorTheme.grey)
+                borderRadius: BorderRadius.circular(25.0),
+                color: ColorTheme.white,
               ),
-            )
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25.0),
+                          color: ColorTheme.locationcolor),
+                      child: const Icon(Icons.location_on, color: ColorTheme.blue),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 15,top: MediaQuery.of(context).size.height / 35),
+                      child: Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                        text: "18.2 km",
+                                        style: ThemeData.light()
+                                            .textTheme
+                                            .labelLarge!
+                                            .copyWith(
+                                            color: ColorTheme.blueheading,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w700)
+                                    ),
+                                    TextSpan(
+                                        text: "   from Petompon, Kota  ",
+                                        style: ThemeData.light()
+                                            .textTheme
+                                            .labelLarge!
+                                            .copyWith(
+                                            color: ColorTheme.lightdark,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400)
+                                    ),
+                                  ]
+                              ),
+                            ),
+                            Text("Semarang, Jawa Tengah 50232",
+                                style: ThemeData.light()
+                                    .textTheme
+                                    .labelLarge!
+                                    .copyWith(
+                                    color: ColorTheme.lightdark,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w400))
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
+
 }
