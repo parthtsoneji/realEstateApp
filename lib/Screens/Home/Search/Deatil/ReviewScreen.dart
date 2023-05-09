@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Class/classimage.dart';
+import 'package:realstateapp/Screens/Home/Search/Deatil/SliderImageScreen.dart';
 
 class ReviewScreen extends StatefulWidget {
   const ReviewScreen({Key? key}) : super(key: key);
@@ -316,75 +317,80 @@ class _ReviewScreenState extends State<ReviewScreen> {
                       )
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20,left: 24,right: 24),
-                  child: Container(
-                      height: 140,
-                      width: MediaQuery.of(context).size.width / 1.1,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: ColorTheme.white1
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: CircleAvatar(
-                              radius: 25,
-                              child: Image(image: AssetImage("images/Notification/notify7.png")),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SliderImageScreen(),));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20,left: 24,right: 24),
+                    child: Container(
+                        height: 140,
+                        width: MediaQuery.of(context).size.width / 1.1,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: ColorTheme.white1
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: CircleAvatar(
+                                radius: 25,
+                                child: Image(image: AssetImage("images/Notification/notify7.png")),
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10,left: 8),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10,left: 8),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
 
-                                Row(
-                                  children: [
-                                    Text("Samuel Ella",
-                                      style: ThemeData.light().textTheme.labelLarge!.copyWith(color: ColorTheme.blueheading,fontWeight: FontWeight.w700,fontSize: 12),
-                                    ),
-                                    SizedBox(width: MediaQuery.of(context).size.width / 3),
-                                    Row(
-                                      children: const [
-                                        Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
-                                        SizedBox(width: 2),
-                                        Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
-                                        SizedBox(width: 2),
-                                        Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
-                                        SizedBox(width: 2),
-                                        Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
-                                        SizedBox(width: 2),
-                                        Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
-                                      ],)
-                                  ],
-                                ),
-                                const SizedBox(height: 8),
-                                SizedBox(height: 40,
-                                  width: MediaQuery.of(context).size.width / 1.7,
-                                  child: Text("Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperia.",style: ThemeData.light().textTheme.labelLarge!.copyWith(fontSize: 10,fontWeight: FontWeight.w400,color: ColorTheme.lightdark),),
-                                ),
-                                Row(
-                                  children: [
-                                    const Image(image: AssetImage("images/Notification/notifi3.png")),
-                                    const SizedBox(width: 5),
-                                    const Image(image: AssetImage("images/Notification/notifi2.png")),
-                                    const SizedBox(width: 5),
-                                    const Image(image: AssetImage("images/Notification/notifi1.png")),
-                                  ],
-                                ),
-                                const SizedBox(height: 5),
+                                  Row(
+                                    children: [
+                                      Text("Samuel Ella",
+                                        style: ThemeData.light().textTheme.labelLarge!.copyWith(color: ColorTheme.blueheading,fontWeight: FontWeight.w700,fontSize: 12),
+                                      ),
+                                      SizedBox(width: MediaQuery.of(context).size.width / 3),
+                                      Row(
+                                        children: const [
+                                          Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
+                                          SizedBox(width: 2),
+                                          Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
+                                          SizedBox(width: 2),
+                                          Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
+                                          SizedBox(width: 2),
+                                          Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
+                                          SizedBox(width: 2),
+                                          Icon(Icons.star,color: ColorTheme.staryellow,size: 10),
+                                        ],)
+                                    ],
+                                  ),
+                                  const SizedBox(height: 8),
+                                  SizedBox(height: 40,
+                                    width: MediaQuery.of(context).size.width / 1.7,
+                                    child: Text("Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperia.",style: ThemeData.light().textTheme.labelLarge!.copyWith(fontSize: 10,fontWeight: FontWeight.w400,color: ColorTheme.lightdark),),
+                                  ),
+                                  Row(
+                                    children: [
+                                      const Image(image: AssetImage("images/Notification/notifi3.png")),
+                                      const SizedBox(width: 5),
+                                      const Image(image: AssetImage("images/Notification/notifi2.png")),
+                                      const SizedBox(width: 5),
+                                      const Image(image: AssetImage("images/Notification/notifi1.png")),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 5),
 
 
-                                Text("12 Days ago",style: ThemeData.light().textTheme.labelSmall!.copyWith(color: ColorTheme.lightwhite,fontSize: 8,fontWeight: FontWeight.w400),),
+                                  Text("12 Days ago",style: ThemeData.light().textTheme.labelSmall!.copyWith(color: ColorTheme.lightwhite,fontSize: 8,fontWeight: FontWeight.w400),),
 
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
-                      )
+                          ],
+                        )
+                    ),
                   ),
                 ),
                 Padding(

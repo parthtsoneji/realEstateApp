@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
+import 'package:realstateapp/Screens/Home/Transaction/TransactionReviewScreen.dart';
 
 class SliderImageScreen extends StatefulWidget {
   const SliderImageScreen({Key? key}) : super(key: key);
@@ -306,135 +307,140 @@ class _SliderImageScreenState extends State<SliderImageScreen> {
                                 borderRadius: BorderRadius.circular(25),
                                 color: ColorTheme.white.withOpacity(0.8)
                             ),
-                            child:Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    height: MediaQuery.of(context).size.height,
-                                    width: MediaQuery.of(context).size.width / 2.5,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        image: const DecorationImage(
-                                            image: AssetImage("images/ima.png"),fit: BoxFit.cover
-                                        )
-                                    ),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        const Padding(
-                                            padding:
-                                            EdgeInsets.all(8.0),
-                                            child: CircleAvatar(
-                                              radius: 16,
-                                              backgroundColor:
-                                              Colors.transparent,
-                                              child: Image(
-                                                image:
-                                                AssetImage("images/HomeImages/heartgrey.png"),
-                                                height: 100,
-                                              ),
-                                            )),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              top: MediaQuery.of(context)
-                                                  .size
-                                                  .height /
-                                                  14,
-                                              left: 12),
-                                          child: Container(
-                                            height: MediaQuery.of(context).size.height / 30,
-                                            width: MediaQuery.of(context).size.width / 8,
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                BorderRadius.circular(
-                                                    8),
-                                                color: ColorTheme.darkblue
-                                                    .withOpacity(0.69)),
-                                            child: Center(
-                                              child: Text("Apartment",
-                                                  style: ThemeData.light()
-                                                      .textTheme
-                                                      .labelLarge!
-                                                      .copyWith(
-                                                      color: ColorTheme
-                                                          .white,
-                                                      fontWeight:
-                                                      FontWeight
-                                                          .w500,
-                                                      fontSize: MediaQuery.of(context).size.width / 50)),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(16.0),
-                                    child: SizedBox(
-                                      height: MediaQuery.of(context).size.height / 3.52,
-                                      width: 109,
+                            child:GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => TransactionReviewScreen(),));
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      height: MediaQuery.of(context).size.height,
+                                      width: MediaQuery.of(context).size.width / 2.5,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          image: const DecorationImage(
+                                              image: AssetImage("images/ima.png"),fit: BoxFit.cover
+                                          )
+                                      ),
                                       child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text("Sky Dandelions Apartment",
-                                            style: ThemeData.light().textTheme.labelLarge!.copyWith(fontWeight: FontWeight.w700,fontSize: 15,color: ColorTheme.blueheading),),
-                                          const SizedBox(height: 15),
-                                          Row(
-                                            children: [
-                                              const SizedBox(height: 10),
-                                              Row(
-                                                children: [
-                                                  const Icon(Icons.star,
-                                                      color: ColorTheme.staryellow,
-                                                      size: 12),
-                                                  Text(
-                                                    "4.9",
-                                                    style: ThemeData.light()
-                                                        .textTheme
-                                                        .labelSmall!
-                                                        .copyWith(
-                                                        fontSize: 10,
-                                                        fontWeight:
-                                                        FontWeight.w700,
-                                                        color: ColorTheme
-                                                            .blueheading),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                          const SizedBox(height: 15),
-                                          Row(
-                                            children: [
-                                              const Image(
-                                                image: AssetImage(
-                                                    "images/User.png"),
-                                                height: 20,
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 5),
-                                                child: Text(
-                                                    "Jakarta, Indonesia",
+                                          const Padding(
+                                              padding:
+                                              EdgeInsets.all(8.0),
+                                              child: CircleAvatar(
+                                                radius: 16,
+                                                backgroundColor:
+                                                Colors.transparent,
+                                                child: Image(
+                                                  image:
+                                                  AssetImage("images/HomeImages/heartgrey.png"),
+                                                  height: 100,
+                                                ),
+                                              )),
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: MediaQuery.of(context)
+                                                    .size
+                                                    .height /
+                                                    14,
+                                                left: 12),
+                                            child: Container(
+                                              height: MediaQuery.of(context).size.height / 30,
+                                              width: MediaQuery.of(context).size.width / 8,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                  BorderRadius.circular(
+                                                      8),
+                                                  color: ColorTheme.darkblue
+                                                      .withOpacity(0.69)),
+                                              child: Center(
+                                                child: Text("Apartment",
                                                     style: ThemeData.light()
                                                         .textTheme
                                                         .labelLarge!
                                                         .copyWith(
                                                         color: ColorTheme
-                                                            .lightdark,
-                                                        fontSize: 10,
+                                                            .white,
                                                         fontWeight:
                                                         FontWeight
-                                                            .w400)),
+                                                            .w500,
+                                                        fontSize: MediaQuery.of(context).size.width / 50)),
                                               ),
-                                            ],
+                                            ),
                                           ),
-
                                         ],
                                       ),
                                     ),
-                                  )
-                                ],
+                                    Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: SizedBox(
+                                        height: MediaQuery.of(context).size.height / 3.52,
+                                        width: 109,
+                                        child: Column(
+                                          children: [
+                                            Text("Sky Dandelions Apartment",
+                                              style: ThemeData.light().textTheme.labelLarge!.copyWith(fontWeight: FontWeight.w700,fontSize: 15,color: ColorTheme.blueheading),),
+                                            const SizedBox(height: 15),
+                                            Row(
+                                              children: [
+                                                const SizedBox(height: 10),
+                                                Row(
+                                                  children: [
+                                                    const Icon(Icons.star,
+                                                        color: ColorTheme.staryellow,
+                                                        size: 12),
+                                                    Text(
+                                                      "4.9",
+                                                      style: ThemeData.light()
+                                                          .textTheme
+                                                          .labelSmall!
+                                                          .copyWith(
+                                                          fontSize: 10,
+                                                          fontWeight:
+                                                          FontWeight.w700,
+                                                          color: ColorTheme
+                                                              .blueheading),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                            const SizedBox(height: 15),
+                                            Row(
+                                              children: [
+                                                const Image(
+                                                  image: AssetImage(
+                                                      "images/User.png"),
+                                                  height: 20,
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsets.only(
+                                                      left: 5),
+                                                  child: Text(
+                                                      "Jakarta, Indonesia",
+                                                      style: ThemeData.light()
+                                                          .textTheme
+                                                          .labelLarge!
+                                                          .copyWith(
+                                                          color: ColorTheme
+                                                              .lightdark,
+                                                          fontSize: 10,
+                                                          fontWeight:
+                                                          FontWeight
+                                                              .w400)),
+                                                ),
+                                              ],
+                                            ),
+
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),

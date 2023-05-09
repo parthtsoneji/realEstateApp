@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:realstateapp/AppTheme/Theme.dart';
 import 'package:realstateapp/Class/classimage.dart';
+import 'package:realstateapp/Screens/Home/Search/FirstSearchScreen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -241,208 +242,219 @@ class _SearchScreenState extends State<SearchScreen> {
                       ),
                     ),
                     Expanded(child: SizedBox()),
-                    const CircleAvatar(
-                      radius: 25,
-                      backgroundColor: ColorTheme.white1,
-                      child: Center(
-                          child: Icon(
-                        Icons.settings,
-                        color: ColorTheme.blueheading,
-                      )),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => FirstSearchScreen(),));
+                      },
+                      child: const CircleAvatar(
+                        radius: 25,
+                        backgroundColor: ColorTheme.white1,
+                        child: Center(
+                            child: Icon(
+                          Icons.settings,
+                          color: ColorTheme.blueheading,
+                        )),
+                      ),
                     ),
                   ],
                 ),
               ),
-              Expanded(child: SizedBox()),
-              Padding(
-                padding: EdgeInsets.only(left: 24, bottom: 15),
-                child: Container(
-                  height: MediaQuery.of(context).size.height / 15,
-                  width: MediaQuery.of(context).size.width / 3.8,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: ColorTheme.darkblue),
-                  child: Row(
-                    children: [
-                      SizedBox(width: 10),
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundColor: ColorTheme.green,
-                        child: Text("!",
+
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 24, bottom: 200),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / 15,
+                    width: MediaQuery.of(context).size.width / 3.8,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: ColorTheme.darkblue),
+                    child: Row(
+                      children: [
+                        SizedBox(width: 10),
+                        CircleAvatar(
+                          radius: 20,
+                          backgroundColor: ColorTheme.green,
+                          child: Text("!",
+                              style: ThemeData.light()
+                                  .textTheme
+                                  .labelMedium!
+                                  .copyWith(
+                                    fontSize: 20,
+                                    color: ColorTheme.white,
+                                  )),
+                        ),
+                        SizedBox(width: 8),
+                        Text("Nearby You",
                             style: ThemeData.light()
                                 .textTheme
-                                .labelMedium!
+                                .labelLarge!
                                 .copyWith(
-                                  fontSize: 20,
-                                  color: ColorTheme.white,
-                                )),
-                      ),
-                      SizedBox(width: 8),
-                      Text("Nearby You",
-                          style: ThemeData.light()
-                              .textTheme
-                              .labelLarge!
-                              .copyWith(
-                                  fontSize: 12, color: ColorTheme.white))
-                    ],
+                                    fontSize: 12, color: ColorTheme.white))
+                      ],
+                    ),
                   ),
                 ),
               ),
               Visibility(
                 visible: _isShow,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                      bottom: 25,
-                      left: MediaQuery.of(context).size.width / 15),
-                  child: SizedBox(
-                    height: MediaQuery.of(context).size.height / 5,
-                    child: ListView.builder(
-                      itemCount: imagesFeature.length,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 13),
-                          child: Container(
-                            height: MediaQuery.of(context).size.height / 3,
-                            width: 330,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25.0),
-                                color: ColorTheme.white1),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    width: 170,
-                                    decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(25.0),
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              imagesFeature[index].image),
-                                          fit: BoxFit.fill),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        bottom: 25,
+                        left: MediaQuery.of(context).size.width / 15),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height / 5,
+                      child: ListView.builder(
+                        itemCount: imagesFeature.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(right: 13),
+                            child: Container(
+                              height: MediaQuery.of(context).size.height / 3,
+                              width: 330,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25.0),
+                                  color: ColorTheme.white1),
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      width: 170,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                imagesFeature[index].image),
+                                            fit: BoxFit.fill),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const Padding(
+                                            padding: EdgeInsets.all(8.0),
+                                            child: Image(
+                                              image: AssetImage(
+                                                  "images/HomeImages/heart.png"),
+                                              height: 25,
+                                              width: 25,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: MediaQuery.of(context)
+                                                        .size
+                                                        .height /
+                                                    13,
+                                                left: 12),
+                                            child: Container(
+                                              height: 27,
+                                              width: 63,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8),
+                                                  color: ColorTheme.darkblue
+                                                      .withOpacity(0.8)),
+                                              child: Center(
+                                                child: Text(
+                                                    imagesFeature[index].name,
+                                                    style: ThemeData.light()
+                                                        .textTheme
+                                                        .labelLarge!
+                                                        .copyWith(
+                                                            color: ColorTheme
+                                                                .white,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w500,
+                                                            fontSize: 10)),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 18, left: 12, right: 10),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Image(
-                                            image: AssetImage(
-                                                "images/HomeImages/heart.png"),
-                                            height: 25,
-                                            width: 25,
-                                          ),
+                                        SizedBox(height: 15),
+                                        Text("The Laurels Villa",
+                                            style: ThemeData.light()
+                                                .textTheme
+                                                .labelLarge!
+                                                .copyWith(
+                                                    color: ColorTheme
+                                                        .blueheading,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.w700)),
+                                        const SizedBox(height: 13),
+                                        Row(
+                                          children: [
+                                            const Icon(Icons.star,
+                                                color: ColorTheme.staryellow,
+                                                size: 12),
+                                            Text(
+                                              "4.9",
+                                              style: ThemeData.light()
+                                                  .textTheme
+                                                  .labelSmall!
+                                                  .copyWith(
+                                                      fontSize: 10,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color: ColorTheme
+                                                          .blueheading),
+                                            ),
+                                          ],
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              top: MediaQuery.of(context)
-                                                      .size
-                                                      .height /
-                                                  13,
-                                              left: 12),
-                                          child: Container(
-                                            height: 27,
-                                            width: 63,
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        8),
-                                                color: ColorTheme.darkblue
-                                                    .withOpacity(0.8)),
-                                            child: Center(
+                                        const SizedBox(height: 8.5),
+                                        Row(
+                                          children: [
+                                            const Image(
+                                              image: AssetImage(
+                                                  "images/User.png"),
+                                              height: 17,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 5),
                                               child: Text(
-                                                  imagesFeature[index].name,
+                                                  "Jakarta, Indonesia",
                                                   style: ThemeData.light()
                                                       .textTheme
                                                       .labelLarge!
                                                       .copyWith(
                                                           color: ColorTheme
-                                                              .white,
+                                                              .darkblue,
+                                                          fontSize: 10,
                                                           fontWeight:
                                                               FontWeight
-                                                                  .w500,
-                                                          fontSize: 10)),
-                                            ),
-                                          ),
+                                                                  .w400)),
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 18, left: 12, right: 10),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(height: 15),
-                                      Text("The Laurels Villa",
-                                          style: ThemeData.light()
-                                              .textTheme
-                                              .labelLarge!
-                                              .copyWith(
-                                                  color: ColorTheme
-                                                      .blueheading,
-                                                  fontSize: 15,
-                                                  fontWeight:
-                                                      FontWeight.w700)),
-                                      const SizedBox(height: 13),
-                                      Row(
-                                        children: [
-                                          const Icon(Icons.star,
-                                              color: ColorTheme.staryellow,
-                                              size: 12),
-                                          Text(
-                                            "4.9",
-                                            style: ThemeData.light()
-                                                .textTheme
-                                                .labelSmall!
-                                                .copyWith(
-                                                    fontSize: 10,
-                                                    fontWeight:
-                                                        FontWeight.w700,
-                                                    color: ColorTheme
-                                                        .blueheading),
-                                          ),
-                                        ],
-                                      ),
-                                      const SizedBox(height: 8.5),
-                                      Row(
-                                        children: [
-                                          const Image(
-                                            image: AssetImage(
-                                                "images/User.png"),
-                                            height: 17,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 5),
-                                            child: Text(
-                                                "Jakarta, Indonesia",
-                                                style: ThemeData.light()
-                                                    .textTheme
-                                                    .labelLarge!
-                                                    .copyWith(
-                                                        color: ColorTheme
-                                                            .darkblue,
-                                                        fontSize: 10,
-                                                        fontWeight:
-                                                            FontWeight
-                                                                .w400)),
-                                          )
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                        );
-                      },
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),

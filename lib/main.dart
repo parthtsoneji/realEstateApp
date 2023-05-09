@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realstateapp/Screens/Home/Search/Deatil/FirstDetailsScreen.dart';
-
-import 'package:realstateapp/Screens/Home/Search/Deatil/ReviewScreen.dart';
-import 'package:realstateapp/Screens/Home/Search/Deatil/SliderImageScreen.dart';
-import 'package:realstateapp/Screens/Home/Search/Deatil/ViewOnMapDetail.dart';
-import 'package:realstateapp/Screens/Home/Transaction/TransactionReviewScreen.dart';
-
+import 'package:realstateapp/Screens/Home/NavigationBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TransactionReviewScreen(),
+      home: NavigationScreen(),
     );
   }
 }

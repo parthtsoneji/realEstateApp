@@ -57,7 +57,7 @@ class _ViewOnMapDetailState extends State<ViewOnMapDetail> {
           children: [
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Container(
+              child: SizedBox(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: BackdropFilter(
@@ -186,7 +186,7 @@ class _ViewOnMapDetailState extends State<ViewOnMapDetail> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
-                    child: Container(
+                    child: SizedBox(
                       height: 55,
                       width: MediaQuery.of(context).size.width,
                       child: ListView.builder(
